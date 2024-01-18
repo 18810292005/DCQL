@@ -1,0 +1,158 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% if action == 'modify' %}
+    {% trans 'Modify Template' %}
+  {% elif action == 'view' %}
+    {% trans 'View Template' %}
+  {% else %}
+    {% trans 'Create Template' %}
+  {% endif %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/css/perfect-scrollbar.min.css" rel="stylesheet">
+
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="{% static 'css/storage/template.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' with nav_padding='none' nav_action='navbar-fixed-top' %}
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/storage/template/add" style="cursor: pointer;"><span>{% trans 'Template' %}</span></a>
+      </div>
+  </div>
+  <div class="container wrap">
+
+    <div class="col-lg-2 col-md-2 hidden-xs hidden-sm">
+      <div id="left-sidebar" class="left-sidebar" data-spy="affix" data-offset-top="75">
+        <div class="t-controls">
+          <div class="t-control" draggable="true" data-type="STRING"
+               title="{% trans 'A string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'String' %}</div>
+          <div class="t-control" draggable="true" data-type="NUMBER"
+               title="{% trans 'Any number value, including integer, floating point, you can set the value unit.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Number' %}</div>
+          <div class="t-control" draggable="true" data-type="RANGE"
+               title="{% trans 'Numeric interval such as (a, b), or error type like a ± b. a, b are numeric data.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Range' %}</div>
+          <div class="t-control" draggable="true" data-type="CHOICE"
+               title="{% trans 'A series of candidates, the options can be grouped(only allow one level), click Add Option, add one directly, click Add Group, the equivalent of adding a first level title, the group can continue to add a number of options.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Choice' %}</div>
+        </div>
+        <div class="t-controls">
+          <div class="t-control" draggable="true" data-type="IMAGE"
+               title="{% trans 'Common image types, such as jpg, png and other formats, you can check the option "Multiple Images" to allow multiple images.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Image' %}</div>
+          <div class="t-control" draggable="true" data-type="FILE"
+               title="{% trans 'Common file types, such as pdf, word, excel, json, xml, etc. you can check the option "Multiple Files" to allow multiple files to be uploaded.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'File' %}</div>
+        </div>
+        <div class="t-controls">
+          <div class="t-control" draggable="true" data-type="ARRAY"
+               title="{% trans 'One-dimensional array, by selecting the array type, fill in the field name, then, click set button set type.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Array' %}</div>
+          <div class="t-control" draggable="true" data-type="TABLE"
+               title="{% trans 'Table can add string, numeric, range, picture, file and candidate types. Every time add a column, first select the column type, then click "Add Columns" button to add.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Table' %}</div>
+          <div class="t-control" draggable="true" data-type="CONTAINER"
+               title="{% trans 'Container can contain all the types, and arbitrarily nest, you can drag any type of field into the container box.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Container' %}</div>
+          <div class="t-control" draggable="true" data-type="GENERATOR"
+               title="{% trans 'Name and type of the corresponding key combination, after the combination, select a class to generate the corresponding form.' %}"
+               data-toggle="tooltip" data-container="body" data-placement="right">{% trans 'Generator' %}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-10 col-md-10">
+      <div class="alert alert-warning visible-xs-block visible-sm-block" role="alert">
+        <b>{% trans 'Warning!' %}</b>
+        {% trans 'Your screen is too small and the control will not display, which means you can not create a template on this device. Please try again after changing your device.' %}
+      </div>
+
+      <div id="designer">
+        <form class="form-inline text-right" style="margin-bottom: .5rem;">
+          <input type="hidden" id="t-action" value="{{ action|default:'add' }}" data-tid="{{ tid|default:'' }}">
+{#          <div class="row">#}
+{#            {% if tid %}#}
+{#              <div class="form-group">#}
+{#                <input type="button" class="btn btn-warning" id="btn-enable-modify" data-state="off"#}
+{#                       value="{% trans 'Enable Modify' %}({% trans 'OFF' %})" title="{% trans 'Click to turn on' %}">#}
+{#              </div>#}
+{#            {% endif %}#}
+{#            <div class="form-group">#}
+{#              <input type="button" class="btn btn-sm btn-warning" id="publish-state" data-state="0"#}
+{#                     value="{% trans 'State' %}({% trans 'Unpublished' %})">#}
+{#            </div>#}
+{#            <div class="form-group">#}
+{#              <input type="button" class="btn btn-sm btn-primary" id="btn-auto-save" data-state="on"#}
+{#                     value="{% trans 'AutoSave' %}({% trans 'ON' %})" title="{% trans 'Click to turn off' %}">#}
+{#            </div>#}
+{#          </div>#}
+        </form>
+        <form>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group required">
+                <label class="control-label" for="t-title">{% trans 'Title' %}</label>
+                <input class="form-control" id="t-title" name="t-title" placeholder="{% trans 'Title(required)' %}"
+                       data-vf="true" data-vf-regex="^$|^_.*|.*\\..*" data-vf-inverse="true"
+                       data-vf-help="{% trans 'This field cannot be empty or start with `_` or contains `.`' %}"
+                       required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group required">
+                <label class="control-label" for="t-category">{% trans 'Material Category' %}</label>
+                <select class="form-control" id="t-category" name="t-category"
+                        data-vf="true" data-vf-regex="\d+"
+                        data-vf-help="{% trans 'Please select material category' %}" required>
+                  <option value="null">----- {% trans 'Please select material category' %} -----</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label" for="t-abstract">{% trans 'Abstract' %}</label>
+            <input class="form-control" id="t-abstract" name="t-abstract" placeholder="{% trans 'Abstract(required)' %}"
+                   data-vf="true" data-vf-regex="^$|^_.*|.*\\..*" data-vf-inverse="true"
+                   data-vf-help="{% trans 'This field cannot be empty or start with `_` or contains `.`' %}" required>
+          </div>
+        </form>
+
+        <div id="root-container" class="t-field-container" draggable="true"></div>
+
+        <div class="template-actions">
+{#          <button id="save-template" class="btn btn-lg btn-primary">{% trans 'Save and Continue' %}</button>#}
+          <button id="commit-template" class="btn btn-lg btn-primary">{% trans 'Save' %}</button>
+          <button id="add-new-template"
+                  class="btn btn-lg btn-primary hidden">{% trans 'Add new template based on this' %}</button>
+        </div>
+
+        <div class="dividing"></div>
+      </div>
+    </div>
+
+  </div>
+  {% include '_component/modal-dialog-overlay.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{% static 'js/storage/storage.js' %}"></script>
+  <script src="{% static 'js/storage/template.js' %}"></script>
+
+{% endblock %}

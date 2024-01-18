@@ -1,0 +1,104 @@
+/*navbar wraper start*/
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Carousel base class */
+.carousel {
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+.carousel .item {
+  height: 400px;
+  background-color: #777;
+}
+
+.carousel>.item>img {
+  height: 400px;
+}
+
+.navbar-wrapper .navbar {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background-color: #347ab7;
+}
+
+#header-menu > ul.nav:last-child {
+  /*display: none;*/
+}
+
+.carousel-caption {
+  z-index: 10;
+  padding-bottom: 0;
+  margin-bottom: -1rem;
+}
+.profile-avatar {
+  margin-bottom: -3rem;
+}
+.profile-avatar-username {
+  position: absolute;
+  top: -1rem;
+  left: 10rem;
+  font-size: 2rem;
+}
+.profile-menu, .profile-menu-extra {
+  margin-top: 3rem;
+  text-align: left;
+  font-size: 2rem;
+}
+.profile-menu-extra {
+  text-align: right;
+}
+.profile-menu>ul>li>a {
+  text-decoration: none;
+  color: white;
+}
+.profile-menu>ul>li>a:hover {
+  text-decoration: none;
+  color: #61a3dc;
+}
+.profile-menu-extra>ul>li>a {
+  text-decoration: none;
+  color: #61a3dc;
+}
+.profile-menu-extra>ul>li>a:hover {
+  text-decoration: none;
+  color: white;
+}
+.profile-menu>ul>li:not(:last-child),.profile-menu-extra>ul>li:not(:first-child) {
+  margin-left: .5rem;
+}
+
+.profile-content>.tab-content {
+  margin-left: 2.5rem;
+}
+.profile-content:before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  height: 40%;
+  border-left: 1px solid #ccc;
+}

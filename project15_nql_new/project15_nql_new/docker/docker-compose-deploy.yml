@@ -1,0 +1,96 @@
+#version: "3"
+#
+#services:
+#  mongodb:
+#    image: mongo:4.4.0
+#    container_name: mge-backend-dev-mongodb
+#    restart: always
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - mongodb-dev:/data/db
+#
+#  postgres:
+#    image: postgres:14
+#    container_name: mge-backend-dev-postgres
+#    restart: always
+#    volumes:
+#      - postgres-dev:/var/lib/postgresql/data
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_USER: micl
+#      POSTGRES_PASSWORD: micl
+#      POSTGRES_DB: mgedata
+#  es:
+#    image: elasticsearch:7.17.6
+#    container_name: mge-backend-dev-es
+#    restart: always
+#    volumes:
+#      - es-dev:/var/lib/es
+#    ports:
+#      - "9200:9200"
+#
+#  rabbitmq:
+#    image: rabbitmq:3.10-management
+#    container_name: mge-backend-dev-rabbitmq
+#    restart: always
+#    volumes:
+#      - rabbitmq-dev:/var/lib/rabbitmq
+#    ports:
+#      - "5672:5672"
+#
+#  memcached:
+#    image: memcached:latest
+#    command: [ "-m", "4096",'-I','128M' ]
+#    container_name: mge-backend-dev-memcached
+#    ports:
+#      - "11211:11211"
+#
+#  mge:
+#    build:
+#      context: ..
+#      dockerfile: mge.Dockerfile
+#    container_name: mge-backend-dev-mge
+#    #    dns: 223.5.5.5
+#    working_dir: /mgedata
+#    depends_on:
+#      - bigfile
+#      - postgres
+#      - mongodb
+#      - memcached
+#    environment:
+#      DJANGO_SETTINGS_MODULE: mgedata.docker_dev_settings
+#      PYTHONUNBUFFERED: 1
+#      TZ: Asiz/Shanghai
+#    ports:
+#      - "8000:8000"
+#
+#  celery:
+#    build:
+#      context: ..
+#      dockerfile: mge.Dockerfile
+#    container_name: mge-backend-dev-celery
+#    #    dns: 223.5.5.5
+#    working_dir: /mgedata
+#    depends_on:
+#      - rabbitmq
+#      - memcached
+#      - mge
+#    environment:
+#      DJANGO_SETTINGS_MODULE: mgedata.docker_dev_settings
+#      PYTHONUNBUFFERED: 1
+#      TZ: Asiz/Shanghai
+#    entrypoint: [ "poetry", "run", "celery","worker", "-A", "mgedata", "-l", "INFO" ]
+#
+#  bigfile:
+#    build:
+#      context: bigfile
+#      dockerfile: bigfile/bigfile.Dockerfile
+#    container_name: mge-backend-dev-bigfile
+#
+#volumes:
+#  mongodb-dev:
+#  postgres-dev:
+#  rabbitmq-dev:
+#  es-dev:

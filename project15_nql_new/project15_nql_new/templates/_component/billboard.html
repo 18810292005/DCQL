@@ -1,0 +1,65 @@
+<style>
+    .Billboard {
+        position: fixed;
+        display: relative;
+        right: 0;
+        bottom: 0;
+        width: 320px;
+        background: #FFF;
+        border-radius: 4px;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.16);
+    }
+    .Billboard__title {
+        font-size: 20px;
+        background: #5AA6C7;
+        color: #FFF;
+        padding: 8px;
+    }
+    .Billboard__ol {
+        margin: 8px;
+        border: 1px solid #95B8E7;
+        padding: 8px;
+        padding-left: 32px;
+        color: #000;
+    }
+    .Billboard__ol li {
+        padding-bottom: 8px;
+    }
+    .Billboard a {
+        color: white;
+        float: right;
+    }
+</style>
+<script>
+    function closeBillboard() {
+        document.getElementById('billboard').remove();
+        document.cookie = "billboard=0";
+    }
+</script>
+<div class="Billboard" id="billboard">
+    <div class="Billboard__title">
+        通告
+        <a href="javascript:closeBillboard()"><i class="fa fa-times"></i></a>
+    </div>
+    <ol class="Billboard__ol">
+        <li>
+            材料基因工程专用数据库平台使用过程中，如有任何问题，可通过反馈按钮进行在线咨询联系我们
+        </li>
+        <li>
+            由于用户管理权限的改变，所有用户请通过反馈按钮向用户管理员反馈所需权限，用户管理员审核之后赋予相关权限
+        </li>
+        <li>
+            温馨提示：拥有模板管理员权限的老师请您及时审核模板，谢谢！在<b>2019年1月20日</b>后，未审核通过的模板将无法上传数据，也无法通过模板高级检索相关数据，给您带来的不便敬请谅解
+        </li>
+    </ol>
+</div>
+<script>
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+    if (getCookie('billboard')) {
+        closeBillboard();
+    }
+</script>

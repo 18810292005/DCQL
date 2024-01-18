@@ -1,0 +1,15 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Export Data' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static_ver 'webpack/export_data.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static_ver 'webpack/export_data.js' %}"></script>
+{% endblock %}

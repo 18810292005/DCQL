@@ -1,0 +1,41 @@
+/*.score {*/
+/*font-size: 4rem;*/
+/*}*/
+
+.score-detail {
+  font-family: FontAwesome;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.score-info {
+  margin-top: 1rem;
+}
+
+.score-description {
+  font-size: large;
+}
+
+.rating {
+  margin-top: 4rem;
+  text-align: center;
+  display: block;
+}
+
+.star {
+  margin-left: 1.5rem;
+  display: inline-block;
+}
+.star i{
+  margin-left: 0;
+}
+.star:hover {
+  cursor: pointer;
+}
+
+div.star span.label {
+  font-size: large;
+  vertical-align: 40%;
+  margin-left: 2rem;
+}

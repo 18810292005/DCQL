@@ -1,0 +1,33 @@
+.item-card {
+    margin: 0;
+    height: 32px;
+    width: 100%;
+    clear: both;
+}
+
+.item-card .title{
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    padding-right: 8px;
+    /*width: 25%;*/
+    /*border-right: 1px solid rgb(221, 221, 221);*/
+    word-wrap: break-word;
+}
+
+.item-card .content{
+    float: left;
+    line-height: 32px;
+    /*width: 75%;*/
+    padding-left: 8px;
+}
+.panel{
+    margin-top: 20px;
+    clear: both;
+}
+.top-right {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}

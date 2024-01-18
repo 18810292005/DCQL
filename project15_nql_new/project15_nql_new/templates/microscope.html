@@ -1,0 +1,77 @@
+{% extends '_layout/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block pageTitle %}
+    {% trans 'introductions & download' %}
+{% endblock %}
+{% block pageHeadExtra %}
+    <style type="text/css">
+        h1{
+            font-weight: 900;
+            font-size: 300%;
+            text-align: center;
+        }
+        h2{
+            font-weight: 700;
+            font-size: 200%;
+        }
+        p.lead{
+            text-indent:50px;/*首行缩进*/
+        }
+        p.lead,li {
+        text-align: justify;/*两端对齐*/
+        text-justify: inter-ideograph;/*IE*/}
+        img.intro-img{
+            width: 100%;
+            height: 220px;
+
+        }
+    </style>
+{% endblock %}
+{% block pageBody %}
+    {% include '_component/header.html' %}
+    <div class="container">
+        <h1 >{% trans 'Microscopic analysis software' %}</h1>
+        <br/>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <img class="intro-img" src={% static 'img/software1.png' %} alt="software_1">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <img class="intro-img" src={% static 'img/software2.png' %} alt="software_2">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 ">
+                <img class="intro-img" src={% static 'img/software3.png' %} alt="software_3">
+            </div>
+        </div>
+        <h2>{% trans 'Introduction' %}</h2>
+        <hr/>
+        <p class="lead">{% trans 'In order to assist materials researchers to quickly process and analyze the image of material microstructures, we develop a software for processing and analyzing typical microscopic images. The functions of this software are shown follows:' %}</p>
+        <ul class="lead">
+            <li>{% trans 'Sequential images stitching: by integrating GPU acceleration and incremental searching strategy, we achieve the state-of-art performance both on speed and accuracy aspects'%}!
+                <sup >[1]</sup>.</li>
+            <li>{% trans 'Still in development'%}<sup >[2]</sup>.</li>
+        </ul>
+        <h2>{% trans 'Download' %}</h2>
+        <hr/>
+        <p class="lead">{% trans 'Please use the account of MGE to log in. The first use could get 10 freely use-rights. The software encourages users to upload the analyzed image data. Besides, 10 data could exchange 1 use-right.'%}</p>
+        <a href="http://ima.mgedata.cn/static/software/ImageAnalysis_V_1.4_Setup.exe" download="ImageAnalysis_V_1.4_Setup.exe">
+           <button id="download" class="btn btn-primary pull-right">{% trans 'Download（lastest V1.4）' %}</button>
+        </a>
+        <br/><br/>
+            <div class="pull-right">{% trans '*Only supporting Windows 64 bit' %}</div>
+
+        <h2>{% trans 'Citation' %}</h2>
+        <hr/>
+        <p class="lead">{% trans 'If you use our code, please consider citing relevant papers：'%}</p>
+        <ol class="list-unstyled ">
+            <li>[1]  Boyuan Ma, Xiaojuan Ban, Haiyou Huang, Ya Su, Wanbo Liu. VFSMS：Very fast sequential micrograph stitching.Still in submission.</li>
+            <li>[2]  Ma, B.; Ban, X.; Huang, H.; Chen, Y.; Liu, W.; Zhi, Y. Deep Learning-Based Image Segmentation for Al-La Alloy Microscopic Images. Symmetry 2018, 10, 107.</li>
+        </ol>
+        <h2>{% trans 'Acknowledgement' %}</h2>
+        <hr/>
+        <p class="lead">{% trans 'The authors acknowledge the financial support from the National Key Research and Development Program of China (No. 2016YFB0700500). Beside, we acknowledge freely code implementation from python, numpy, opencv and tensorflow.' %}</p>
+        <div style="text-align: center;font-weight: bold">{% trans 'Developed by team of Prof. Xiaojuan Ban at USTB' %}</div>
+    </div>
+  {% include '_component/footer.html' %}
+{% endblock %}

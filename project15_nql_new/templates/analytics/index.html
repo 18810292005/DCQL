@@ -1,0 +1,17 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Analytics' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static_ver 'webpack/analytics.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block pageFootExtra %}
+  <script src="{% static_ver 'webpack/analytics.js' %}"></script>
+{% endblock %}

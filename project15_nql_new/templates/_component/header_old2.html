@@ -1,0 +1,118 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as LANG %}
+{% get_available_languages as LANGUAGES %}
+{% get_media_prefix as MEDIA %}
+{% with_default key='nav_action' default='' as nav_action %}
+{% with_default key='nav_padding' default='padded' as nav_padding %}
+
+{% with_default key='show_func' default=True as show_func %}
+
+<nav id="navbar-top" class="navbar navbar-inverse {{ nav_action }} navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu"
+              aria-expanded="false">
+        <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'site_index' %}">
+        <img src="{% static 'img/logo.png' %}" alt="MGE DATA">
+      </a>
+      <!-- <span style="color: #00aeff;">Alpha</span> -->
+    </div>
+
+    <div class="collapse navbar-collapse navbar-right" id="header-menu">
+      <ul class="nav navbar-nav" id="ul-site-navs">
+        <li><a href="{% url 'site_index' %}">{% trans 'Home' %}</a></li>
+        {% if show_func %}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">
+              <span>{% trans 'Upload' %}</span>
+            </a>
+            <ul class="dropdown-menu inverse-dropdown" style="margin-top: 26px">
+              <li>
+                <a href="{% url 'storage:add_data' %}">{% trans 'Data' %}</a>
+                <a href="{% url 'storage:add_template' %}">{% trans 'Template' %}</a>
+              </li>
+              <li></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'search:index' %}">{% trans 'Search' %}</a></li>
+          <li><a href="{% url 'storage:export_data' %}">{% trans 'Export' %}</a></li>
+          <li><a href="{% url 'analytics:index' %}">{% trans 'Analytics' %}</a></li>
+          <li><a href="{% url 'site_help' %}">{% trans 'Help' %}</a></li>
+        {% endif %}
+      </ul>
+
+      <ul class="nav navbar-nav" id="ul-lang-selector">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <span>{{ LANG.name_local }}</span>
+          </a>
+          <ul class="dropdown-menu inverse-dropdown">
+            {% for lang in LANGUAGES %}
+              <li>
+                {% get_language_info for lang.0 as cur_lang %}
+                <a
+                  href="{% url 'site_set_language' %}?lang={{ cur_lang.code }}&next={{ request.get_full_path|urlencode }}">{{ cur_lang.name_local }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+
+      {% if request.user.is_authenticated %}
+        <ul class="nav navbar-header" id="ul-account">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">
+            <img src="{{ request.user.get_avatar_uri }}"
+                 class="img-responsive" alt="{{ request.user.username }}">
+            {% if request.user.unread_count %}
+              <span class="avatar-messages">{{ request.user.unread_count }}</span>
+            {% endif %}
+          </a>
+          <ul class="dropdown-menu inverse-dropdown">
+            <li><a href="{% url 'account:my_info' %}">{% trans 'Settings' %}</a></li>
+            {% if request.user.roles_for_template.TEMPLATE_ADMIN %}
+              <li><a href="{% url 'storage:show_template_review' page=1 state=0 %}">{% trans 'Review Templates' %}</a>
+              </li>
+            {% endif %}
+            {% if request.user.roles_for_template.DATA_ADMIN %}
+              <li><a href="{% url 'storage:review_data' %}">{% trans 'Review Data' %}</a></li>
+            {% endif %}
+            {% if request.user.roles_for_template.USER_ADMIN %}
+              <li><a href="{% url 'account:user_list' %}">{% trans 'Manage Users' %}</a></li>
+            {% endif %}
+            <li><a href="{% url 'account:notifications' %}">{% trans 'Messages' %}</a></li>
+            <li><a href="{% url 'task:index' %}">{% trans 'My Tasks' %}</a></li>
+            <li><a href="{% url 'account:upload_history' %}">{% trans 'Upload History' %}</a></li>
+            {% if request.user.roles_for_template.DATA_UPLOADER %}
+              <li><a href="{% url 'account:upload_history' %}">{% trans 'My Data' %}</a></li>
+            {% endif %}
+            {% if request.user.roles_for_template.TEMPLATE_UPLOADER %}
+              <li><a href="{% url 'account:my_templates' %}">{% trans 'My Templates' %}</a></li>
+            {% endif %}
+            <li><a href="javascript:logout()" id="btn-header-logout">{% trans 'Sign Out' %}</a></li>
+          </ul>
+        </li>
+      {% else %}
+        <ul class="nav navbar-nav" id="ul-account">
+        <li>
+          <a href="{% url 'account:login' %}">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <span>{% trans 'Sign In' %}&nbsp;|&nbsp;{% trans 'Sign Up' %}</span>
+          </a>
+        </li>
+      {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

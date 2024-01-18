@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+  <form method="POST" action="{{ path }}">
+    {% csrf_token %}
+    <p>
+      <input type="hidden" name="action" value="{{ action }}"/>
+      项目编号：<input type="text" name="project_id"/>
+      课题编号：<input type="text" name="subject_id"/>
+      {% for meta_id in meta_id_list %}
+        <input type="hidden" name="_selected_action" value="{{ meta_id }}"/>
+      {% endfor %}
+      <input type="submit" value="确定"/>
+      <input type="submit" name="cancel" value="取消"/>
+    </p>
+    <p>将批量修改以下所有元数据</p>
+    <ul>
+    <li>数据id&nbsp&nbsp｜数据标题&nbsp&nbsp｜上传用户&nbsp&nbsp｜公开时间</li>
+      {% for obj in objs %}
+        <li>{{ obj.id }}&nbsp&nbsp{{ obj.title }}&nbsp&nbsp{{ obj.user }}&nbsp&nbsp{{ obj.public_date }}</li>
+      {% endfor %}
+    </ul>
+  </form>
+{% endblock %}

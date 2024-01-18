@@ -1,0 +1,165 @@
+.data-meta:hover, .data-meta:focus {
+  cursor: pointer;
+  border: 1px solid #61a3dc;
+  -webkit-box-shadow: 0 0 10px 1px #61a3dc;
+  -moz-box-shadow: 0 0 10px 1px #61a3dc;
+  box-shadow: 0 0 10px 1px #61a3dc;
+}
+
+.data-meta {
+  -webkit-box-shadow: 0 0 5px 1px #ccc;
+  -moz-box-shadow: 0 0 5px 1px #ccc;
+  box-shadow: 0 0 5px 1px #ccc;
+
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+span.dt {
+  font-weight: bold;
+}
+
+span.dt:after {
+  content: ':';
+}
+
+span.dd, a.dd {
+  margin-left: .5rem;
+}
+
+span.dm {
+  color: #aaa;
+  font-size: small;
+}
+
+.d-result-info {
+  margin: .5rem auto 1rem;
+}
+
+.dm.dt + .dm.dd {
+  margin-right: 1rem;
+}
+
+.d-title {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #3182c7;
+}
+
+.d-labels {
+  margin-left: 1rem;
+  font-size: small;
+}
+
+span.label + span.label {
+  margin-left: .5rem;
+}
+
+.panel-heading + .panel-body {
+  padding-top: 0;
+}
+
+/***statistic start***/
+.statistic {
+  margin: 1rem 0;
+  text-transform: uppercase;
+  display: block;
+  float: left;
+}
+
+.statistic .value {
+  font-size: 4rem;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.statistic .value.text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.statistic .value img {
+  max-height: .8rem;
+  vertical-align: baseline;
+}
+
+.statistic .label {
+  color: inherit;
+  display: block;
+  font-size: .75rem;
+  text-align: center;
+  margin-top: .5rem;
+}
+
+.statistic + .statistic {
+  margin-left: 1.5rem;
+}
+
+/*** Horizontal Statistic ***/
+.statistic.horizontal .value,
+.statistic.horizontal .label {
+  display: inline;
+  vertical-align: middle;
+}
+
+/****** Statistic Group ******/
+.statistic-group {
+  margin: 1rem 0;
+}
+
+.statistic-group .statistic {
+  display: inline-block;
+}
+
+/*** Horizontal Statistic Group ***/
+.statistic-group.horizontal .statistic {
+  display: block;
+}
+
+.statistic-group.horizontal .statistic .value,
+.statistic-group.horizontal .statistic .label {
+  display: inline;
+  vertical-align: middle;
+}
+
+.statistic-group.horizontal .statistic + .statistic {
+  margin-left: 0;
+}
+
+/*** Float Statistics ***/
+.statistic.pull-left {
+  margin-right: 1rem;
+}
+
+.statistic.pull-right {
+  margin-left: 1rem;
+}
+
+/****** Statistic Sizes ******/
+.statistic.mini .label {
+  font-size: .5rem;
+}
+
+.statistic.mini .value {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.statistic.tiny .value {
+  font-size: 2rem;
+}
+
+.statistic.small .value {
+  font-size: 3rem !important;
+}
+
+.statistic.large .value {
+  font-size: 5rem;
+}
+
+.statistic.huge .value {
+  font-size: 6rem;
+}
+
+#paginator a {
+  cursor: pointer;
+}

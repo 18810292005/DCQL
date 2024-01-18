@@ -1,0 +1,41 @@
+[2020-05-13 18:40:47,736] root:INFO: 1
+[2020-05-13 18:45:38,951] root:INFO: 2
+[2020-05-13 18:50:30,129] root:INFO: 3
+[2020-05-13 18:55:22,167] root:INFO: 4
+[2020-05-13 19:00:14,829] root:INFO: 5
+[2020-05-13 19:05:04,685] root:INFO: 6
+[2020-05-13 19:09:57,806] root:INFO: 7
+[2020-05-13 19:14:50,002] root:INFO: 8
+[2020-05-13 19:19:43,323] root:INFO: 9
+[2020-05-13 19:24:36,158] root:INFO: 10
+[2020-05-13 19:29:28,762] root:INFO: 11
+[2020-05-13 19:34:21,947] root:INFO: 12
+[2020-05-13 19:39:14,059] root:INFO: 13
+[2020-05-13 19:44:04,938] root:INFO: 14
+[2020-05-13 19:49:00,064] root:INFO: 15
+[2020-05-13 19:53:49,031] root:INFO: 16
+[2020-05-13 19:58:38,569] root:INFO: 17
+[2020-05-13 20:03:29,114] root:INFO: 18
+[2020-05-13 20:08:19,384] root:INFO: 19
+[2020-05-13 20:13:08,831] root:INFO: 20
+[2020-05-13 20:17:58,726] root:INFO: 21
+
+
+[2020-05-13 11:59:59,722] root:INFO: 5003
+[2020-05-13 11:59:59,722] root:ERROR: error at:/home/cjh/Coding/data/groundturth/.gitignore, wrong extensions.
+[2020-05-13 12:00:06,361] root:ERROR: not enough values to unpack (expected 2, got 0)
+[2020-05-13 12:14:03,971] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/4.16-4.24论文总结.20190704213412.docx, wrong extensions.
+[2020-05-13 12:14:04,683] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/B树插入示例-2.20190521101555.gif, wrong extensions.
+[2020-05-13 12:14:04,837] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/PotPlayerMini.20190705092224.exe, wrong extensions.
+[2020-05-13 12:14:05,342] root:ERROR: cannot identify image file '/home/cjh/Coding/data/groundturth/non material/Al3Li晶格常数.20191119170824.jpg'
+[2020-05-13 12:14:05,792] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/.DS_Store.20180828152219, wrong extensions.
+[2020-05-13 12:14:06,957] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/B-树插入示例.20190521101534.gif, wrong extensions.
+[2020-05-13 12:14:07,804] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/两种可变长度hash表插入示例.20190722143832.gif, wrong extensions.
+[2020-05-13 12:14:08,232] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/钛合金模板3.20181126065543.20181126151241.xlsx, wrong extensions.
+[2020-05-13 12:14:09,810] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/基于领域词典与机器学习的中文评论情感分析_杨鹏_1.20190704210438.caj, wrong extensions.
+[2020-05-13 12:14:10,866] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/2019-0703MGE测试用例.20190704210410.docx, wrong extensions.
+[2020-05-13 12:14:13,353] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/4.25论文总结.20190704213341.docx, wrong extensions.
+[2020-05-13 12:14:14,447] root:ERROR: error at:/home/cjh/Coding/data/groundturth/non material/Attention-Based_Convolutional_Neural_Network.20190704210344.pdf, wrong extensions.
+[2020-05-13 12:15:48,968] root:INFO: 949
+[2020-05-13 12:15:48,968] root:INFO: --------------------
+[2020-05-13 12:15:48,968] root:INFO: 0.1896861882870278

@@ -1,0 +1,148 @@
+{% extends '_layout/profile.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'Personal Infos' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'css/account/settings.css' %}">
+{% endblock %}
+
+
+{% block navList %}
+  <li class="active">
+    <a href="#info" data-toggle="tab">{% trans 'My information' %}</a>
+  </li>
+
+  <li>
+    <a href="#avatar" data-toggle="tab">{% trans 'My Avatar' %}</a>
+  </li>
+{% endblock %}
+
+{% block mainContent %}
+  <div id="info" class="tab-pane active">
+    <form id="me-form" class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Username' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="username" type="text" placeholder="{{ request.user.username }}" disabled>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Roles' %}</label>
+        <div class="col-sm-8">
+          <div class="panel panel-default">
+            <div disabled="true"
+                 class="panel-body">
+              {% for role in request.user.roles_components %}
+                <div>
+                  {{ role.description }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Real name' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="real_name" name="real_name" type="text" value="{{ request.user.real_name }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Institution' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="institution" name="institution" type="text"
+                 value="{{ request.user.institution }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Email address' %}</label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input id="email" name="email" class="form-control" value="{{ request.user.email }}">
+
+            {% if request.user.email_verified %}
+              <span class="input-group-addon verified-status">{% trans 'Verified' %}</span>
+
+            {% else %}
+              <span class="input-group-addon unverified-status">{% trans 'Not Verified' %}</span>
+            {% endif %}
+
+          </div>
+          {% if not request.user.email_verified %}
+            <a class="pull-right verify-link">{% trans 'Send verification email' %}</a>
+          {% endif %}
+
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Old Password' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="old_password" name="old_password" type="password"
+                 placeholder="{% trans 'Needed when changing password' %}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'New Password' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="new_password" name="new_password" type="password">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{% trans 'Password Confirmation' %}</label>
+        <div class="col-sm-8">
+          <input class="form-control" id="password_again" name="password_again" type="password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-4 control-label"></label>
+        <div class="col-sm-8" style="text-align: center">
+          <button class="btn btn-primary" id="login-button" type="submit">
+            {% trans 'Save' %}
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+
+  <div id="avatar" class="tab-pane">
+    <div class="col-sm-6 avatar-content">
+      <div id="preview-area" class="panel panel-default">
+        <p style="margin: 0 auto">{% trans 'Preview' %}</p>
+      </div>
+
+      <input type="file" id="avatar-input" accept="image/*">
+      <button id="choose-button" class="btn center-block btn-primary">
+        {% trans 'Choose Image' %}
+        <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="col-sm-6">
+      <div id="avatar-wrapper">
+
+      </div>
+    </div>
+
+    <p class="text-center">
+      <button data-username="{{ request.user.username }}" id="set-avatar" disabled="disabled"
+              class="btn btn-lg btn-success">{% trans 'Set Avatar' %}</button>
+    </p>
+  </div>
+{% endblock %}
+
+{% block pageFootExtra %}
+  <link href="https://cdn.bootcss.com/croppie/2.5.1/croppie.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/croppie/2.5.1/croppie.min.js"></script>
+  <script src="{% static 'js/vendor/formValidation.min.js' %}"></script>
+  <script src="{% static 'js/vendor/formValidation.bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'js/account/settings.js' %}"></script>
+{% endblock %}
+

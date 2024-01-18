@@ -1,0 +1,166 @@
+================
+存储外部接口 API
+================
+
+.. http:get:: /api/v1/storage/o/templates
+
+获取MGE系统中所有的模板
+
+**Example request**
+
+.. sourcecode:: http
+
+    GET /api/v1/storage/o/templates HTTP/1.1
+    Host: www.mgedata.cn
+    Accept: application/json
+    Authorization: Bearer <oauth2_access_token>
+
+**Example response**
+
+.. sourcecode:: http
+
+    HTTP/1.1 200 OK
+    Vary: Accept
+    Content-Type: application/json
+
+    {
+        "code": 0,
+        "data": {
+            "templates": []
+            "total": 0
+        }
+    }
+
+
+-----------------------------
+
+.. http:get:: /api/v1/storage/o/templates/(int:tid)
+
+获取MGE系统中 `tid` 代表的模板
+
+**Example request**
+
+.. sourcecode:: http
+
+    GET /api/v1/storage/o/templates/100 HTTP/1.1
+    Host: www.mgedata.cn
+    Accept: application/json
+    Authorization: Bearer <oauth2_access_token>
+
+**Example response**
+
+.. sourcecode:: http
+
+    HTTP/1.1 200 OK
+    Vary: Accept
+    Content-Type: application/json
+
+    {
+        "code": 0,
+        "data": {}
+    }
+
+
+-----------------------------
+
+.. http:get:: /api/v1/storage/o/material/category/tree
+
+获取MGE系统中的材料分类，以JSON树形结构返回。
+
+**Example request**
+
+.. sourcecode:: http
+
+    GET /api/v1/storage/o/material/category/tree HTTP/1.1
+    Host: www.mgedata.cn
+    Accept: application/json
+    Authorization: Bearer <oauth2_access_token>
+
+.. sourcecode:: http
+
+    HTTP/1.1 200 OK
+    Vary: Accept
+    Content-Type: application/json
+
+    {
+        "code": 0,
+        "data": {}
+    }
+
+.. http:get:: /api/v1/storage/o/material/projects/
+
+获取MGE中项目与课题信息
+
+**Example request**
+
+.. sourcecode:: http
+
+    GET /api/v1/storage/o/material/projects/ HTTP/1.1
+    Host: www.mgedata.cn
+    Accept: application/json
+    Authorization: Bearer <oauth2_access_token>
+
+.. sourcecode:: http
+
+    HTTP/1.1 200 OK
+    Vary: Accept
+    Content-Type: application/json
+
+    {
+        "code": 0,
+        "data": [
+            {},
+            {}
+        ]
+    }
+
+.. http:post:: /api/v1.1/storage/o/data/full?username=<username>
+
+上传数据
+
+**Example Request**
+
+.. sourcecode:: http
+
+    POST /api/v1.1/storage/o/data/full?username=<username> HTTP/1.1
+    Host: www.mgedata.cn
+    Accept: application/json
+    Authorization: Bearer <oauth2_access_token>
+
+    {
+        {
+            'meta': {
+                'tid': 1,
+                'title': 'test 1',
+                'abstract': 'abstract',
+                'keywords': 'a b',
+                'source': {
+                    'source': '10',
+                    'methods': '000'
+                }
+            },
+            'content': {'a': 'abc'}
+        }
+    }
+
+说明：
+
+1. meta.source.source 类型为字符串，两个二进制位(如上述10)分别代表自产和摘录。
+比如10表示该数据是自产的（该选项是单选，该值为10和01中的一个
+
+2. meta.source.methods 类型为字符串，前三个二进制位(如上述000)分别代表计算、实验、生产。
+比如011表示该数据是通过实验和生产获取的，001表示该数据是通过生产获得的（该选项是多选）
+
+3. 注意，该API需要加一个username参数，表示该数据上传的用户
+
+.. sourcecode:: http
+
+    HTTP/1.1 200 OK
+    Vary: Accept
+    Content-Type: application/json
+
+    {
+        "code": 0,
+        "data": 100
+    }
+

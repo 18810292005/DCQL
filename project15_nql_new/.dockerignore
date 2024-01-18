@@ -1,0 +1,10 @@
+venv/
+docker/
+django.mo
+djangojs.mo
+pg.json
+docker-compose-front-dev.yml
+*.log
+*.zip
+dev.py
+static/webpack/

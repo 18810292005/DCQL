@@ -1,0 +1,75 @@
+version: "3"
+
+services:
+  mongodb:
+    image: mongo:4.4.0
+    container_name: mge-dev-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-dev:/data/db
+
+  postgres:
+    image: postgres:14
+    container_name: mge-dev-postgres
+    restart: always
+    volumes:
+      - postgres-dev:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: micl
+      POSTGRES_PASSWORD: micl
+      POSTGRES_DB: mgedata
+  es:
+    image: elasticsearch:7.17.6
+    container_name: mge-dev-es
+    restart: always
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms2G -Xmx2G"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - es-dev:/var/lib/es
+    ports:
+      - "9200:9200"
+
+  rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: mge-dev-rabbitmq
+    restart: always
+    volumes:
+      - rabbitmq-dev:/var/lib/rabbitmq
+    ports:
+      - "5672:5672"
+
+  memcached:
+    image: memcached:latest
+    command: [ "-m", "4096",'-I','128M' ]
+    container_name: mge-dev-memcached
+    ports:
+      - "11211:11211"
+
+  bigfile:
+    build:
+      dockerfile: bigfile.Dockerfile
+    image: mge/bigfile:v1.0
+    container_name: mge-dev-bigfile
+    ports:
+      - "8080:8080"
+
+volumes:
+  mongodb-dev:
+  postgres-dev:
+  rabbitmq-dev:
+  es-dev:

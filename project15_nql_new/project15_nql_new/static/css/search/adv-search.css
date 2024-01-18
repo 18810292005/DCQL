@@ -1,0 +1,128 @@
+h3 {
+  color: #347ab7;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.btn.dropdown-toggle {
+  /*padding: 8px;*/
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 10px;
+  min-width: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.caret { /*选择框线按钮的样式*/
+  text-align: right;
+  float: right;
+  margin-top: 7px;
+}
+
+.compare {
+  width: 50%;
+}
+.number{
+  height: 30px;
+  width: 100%;
+}
+#add-templateData .row{
+  margin-bottom: 10px;
+}
+
+
+#temp-tree {
+  margin-top: 10px;
+}
+
+.slider-value {
+  width: auto;
+}
+
+.separator {
+  height: 2px;
+  border-top: 2px dashed gray;
+}
+
+/* 元数据搜索 */
+.slim-padding {
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.arg-container .form-control {
+  border-radius: 0;
+}
+
+.arg-container .btn{
+  border-radius: 0;
+}
+
+/* 搜索按钮*/
+
+#btn-search{
+  display: block;
+  margin: 0 auto;
+  min-width: 120px;
+}
+
+
+select.td-str-sel {
+  /* min-width: 250px; */
+}
+
+select.selectpicker {
+  min-width: 100px;
+}
+
+div.t-item {
+  margin: 10px;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-left: 5px solid rgb(52, 102, 148);
+}
+
+button.suicide-btn {
+  background-color: rgb(184, 28, 28);
+  border: 0px;
+  width: 60px;
+}
+
+span.td-str-one {
+  background-color: rgba(127, 98, 175, 0.69);
+}
+span.td-str-one button {
+  border: 0;
+  background: none;
+}
+
+div.td-container {
+  margin: 2px;
+}
+
+.multi-select-btn {
+  min-width: 330px !important;
+}
+
+input.td-str-text {
+  min-width: 288px  !important;
+}
+
+div.input-sec input {
+  min-width: 322px;
+}
+
+button#temp-clear-all {
+  width: 100%;
+}
+
+div.td-title {
+  font-size: 18px;
+}

@@ -1,0 +1,538 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+    {% trans 'Help' %} - MGE DATA
+{% endblock %}
+
+{% block pageHeadExtra %} 
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+{% endblock %} 
+
+{% block pageBody %}
+    {% include '_component/header.html' with nav_action='navbar-fixed-top' %}
+    <div class="Breadcrumb">
+            <div class="Breadcrumb__item">
+                <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+            </div>
+            <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+            <div class="Breadcrumb__item">
+                <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+            </div>
+            <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+            <div class="Breadcrumb__item">
+                <a href="/help" style="cursor: pointer;"><span>{% trans 'Help' %}</span></a>
+            </div>
+        </div>
+    {% get_media_prefix as MEDIA_ROOT %}
+
+    <div class="container docs-container">
+        <div class="row">
+            <div class="col-md-9" role="main">
+
+
+                <div class="docs-section">
+                    <h1 id="start-using" class="page-header">Start using</h1>
+                    <h3>Please register your account before using this system</h3>
+                    <h2 id="register">Register account</h2>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/register.png" class="img-responsive img-rounded">
+                    </p>
+
+                    <ul>
+                        <li>IE9 or above is recommended to use or chrome browser to access mgedata</li>
+                        <li>Register with your school email: Enter your username, password, confirmation password,email
+                            address, name
+                            (real name recommended), institution (school or company), all must be filled in and checked
+                            "I have read
+                            and agree to the Terms of Use and Terms and Conditions "Can be submitted
+                        </li>
+                        <li>After registration,you will receive a notification in the message, please go to the mailbox
+                            to verify
+                        </li>
+                        <li>If you have an account please log in directly to start using the system</li>
+                    </ul>
+                    <h2 id="login">Login account</h2>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/login.png" class="img-responsive img-rounded">
+                    </p>
+                    <p>If you already have an account, please enter your user name, password, and verification code.
+                        If you do not have an account, click "No account, register now"</p>
+                    <ul>
+                        <li>If you do not fill in "username/email", the system will prompt "must fill in username"</li>
+                        <li>If you do not fill in the "password", the system will be prompted "must fill in the
+                            password"
+                        </li>
+                        <li>If you do not fill in the "verification code", a dialog box will pop up prompt "An error
+                            occurred,
+                            please fill in the verification code"
+                        </li>
+                        <li>If you fill in the "username" and "password" are inconsistent, a dialog box will pop-up
+                            prompt "
+                            error, wrong password"
+                        </li>
+                        <li>You can check to keep the login status, after opening this site you will be automatically
+                            logged in
+                        </li>
+                        <li>If you forget your password, you can click "Reset Password" to set the password again</li>
+                    </ul>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/reset_password.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <h2 id="personal-setting">Personal settings</h2>
+                    <p>Settings are divided into personal information settings and avatar settings, click on the
+                        "personal
+                        information settings" to improve personal information and go to the mailbox click on the
+                        certification
+                        link to become certified users</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/personal-info.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>Click "avatar settings", the right frame can be avatar adjustment, click to set the avatar,
+                        pop-up
+                        success is set to success</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/person-icon.png"
+                             class="img-rounded img-responsive">
+                    </p>
+                </div>
+                >
+
+
+                <div class="docs-section">
+                    <h1 id="index" class="page-header">Home</h1>
+                    <p>Into the home page, will first see a carousel map, showing the latest hot data or article
+                        description of
+                        high impact factor, turn down to see some of the material on the introduction</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/index-content.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>At the bottom of the system is the introduction of several module functions: upload, search,
+                        statistics</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/index-btn.png" class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+
+                <div class="docs-section">
+                    <h1 id="template" class="page-header">Templates</h1>
+                    <h2 id="template-introduction">Templates introduction</h2>
+                    <p>Into the home page of "My Data", click on the template, select Add new entry, enter the template
+                        edit page</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-mydata.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-all.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>Or click the plus sign on the user's personal interface to enter the template creation interface
+                        directly</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-add.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>The template can only be created by <strong>the advanced user (database administrator and
+                        above)</strong>,
+                        enter into the template creation page as follows</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-create.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <ul>
+                        <li>The submission template must be <strong> Authenticated </strong> and have the <strong> Admin
+                            and
+                            Above </strong> permissions or the dialog box will pop up "There was a problem with the
+                            template,
+                            non-accredited users could not create templates, please go to E-mail for certification "
+                        </li>
+                        <li>You can choose to automatically save the template</li>
+                        <li>After editing the template, you can choose to save and continue editing, or you can select
+                            "Create Template", the template is released, you can submit the template directly, and use
+                            the
+                            template to submit data, but if you do not click "Publish the template." The template will
+                            be
+                            Unpublished state, can not be found in the data submitted page just edit the template
+                        </li>
+                        <li>Fill in the template title, the title can not be repeated, if repeated, the dialog box will
+                            pop up
+                            when submitted "Error, the template title can not be repeated, please modify and submit"
+                        </li>
+                        <li>Select material classification, otherwise it will not submit and prompt "Please select
+                            material
+                            classification"
+                        </li>
+                        <li>When you fill in the field name, do not repeat the name, if repeated, when submitted to the
+                            system
+                            will be marked red "field name can not be repeated"
+                        </li>
+                        <li>The left side of the page is a template field type, when the mouse cursor touches the
+                            control,
+                            the system will give a message
+                        </li>
+                    </ul>
+                    <h2 id="template-modify">Modify the templates</h2>
+                    <p>Into my data, click on the template, find the template you want to modify, click the modify
+                        button below,
+                        you can enter the modify interface</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-btn.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>
+                        If the template has been submitted data, there will be a prompt "already have data using your
+                        template,
+                        modify the operation will create a new template, the original template will not be deleted, sure
+                        you
+                        want to modify it?", Select "OK" Enter the modification mode, then the name of the template will
+                        become
+                        "XXX-copy", the original template will not be deleted, still can be used if the template has not
+                        crossed
+                        the data, there will be no prompt, directly into the edit mode.
+                    </p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-1.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-2.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+
+                <div class="docs-section">
+                    <h1 id="upload" class="page-header">Upload data</h1>
+                    <p>Uploading data can be submitted in the following four ways.</p>
+                    <ul>
+                        <li>Into the personal interface "My Data", select "Add New Item" to enter the upload data page
+                        </li>
+                        <li>Click "View" in the home page and select "Upload" in the view page to enter the upload data
+                            page
+                        </li>
+                        <li>Under the home page select "Upload" to enter the upload data page</li>
+                        <li>Into the personal interface "My Data", click the upload arrow to enter the upload data
+                            page
+                        </li>
+                    </ul>
+                    <p>After entering the submit page, select the material classification and the corresponding
+                        template,
+                        you can see there are 2 ways to submit: 1. Submit by form 2. Submit by file</p>
+                    <h2 id="upload-table">Table submission</h2>
+                    <p>Click on the generated data form can generate the form to be filled in, fill in the content you
+                        want to
+                        and then it can be submitted, for example, as shown below</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/upload-table.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <h2 id="upload-file">File submission</h2>
+                    <p>In the uploading interface, click "submit by file", you can choose to upload through Json, XML,
+                        Excel and
+                        other formats, according to the selected file, upload the corresponding type of file. <strong>In
+                            order to
+                            ensure that the template and upload the same file, please Advance to the template download
+                            page,
+                            according to the template prompts to fill in the data, and upload the final file.</strong>>
+                    </p>
+                    <h3>Excel submission</h3>
+                    <p>When uploading data via Excel, you need to have the following precautions:</p>
+                    <ul>
+                        <li>For the data ID in the Excel table, the data ID of the same data needs to be the same, the
+                            value of
+                            the specific ID is optional, as long as the data ID is the same
+                        </li>
+                        <li>If some of the data do not need to fill in, you need to empty the original prompt content in
+                            the
+                            template file to ensure that only the metadata remains in the table
+                        </li>
+                        <li>Use <strong> Commas </strong> as a separator when filling in multiple files in a table
+                            , or range data
+                        </li>
+                        <li>For the generator type, select which type to generate, the corresponding column to fill
+                            things
+                            , all other columns empty
+                        </li>
+                        <li>Candidate data need to select the data in the template through the drop-down box in the
+                            Excel table
+                        </li>
+                        <li>When you upload an attachment via Excel, the name of the attachment is best used in English,
+                            otherwise errors may occur, separated by <strong> commas </strong> when the same data
+                            contains more
+                            than one attachment
+                        </li>
+                        <li>Fill in the data,and then you can put the picture and Excel in the same folder, compressed
+                            upload
+                        </li>
+                    </ul>
+                    <h3>Json submission</h3>
+                    <p>After entering the "Data Submission" page, select "File Submission". After generating the Json
+                        template, simply open the corresponding Json file, fill in the corresponding data to complete
+                        the generated Json file, upload the file, after the analysis is successful, you can view data
+                    </p>
+                    <h3>XML submission</h3>
+                    <p>Not yet realized</p>
+
+                    <h2 id="upload-modify">Update the data</h2>
+                    <p>Into the personal page, select "My data", select "Modify personal data", when you enter the
+                        modify data interface, you can modify the data.After modifying the data, you can save the new data
+                    and finish this process.</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/upload-modify.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+
+                <div class="docs-section">
+                    <h1 id="data-statistics" class="page-header">Statistics</h1>
+                    <p>The data statistics section counts the amount of data, the amount of templates, the amount of
+                        traffic and the amount of downloads for each material database by month</p>
+                    <p>The first thing you see in the data statistics page is the total amount of data, templates, views
+                        , and downloads for <strong> the whole Materials Database </strong>,
+                        which can be viewed by clicking the <strong> Contents Bar </strong> on the left <strong>
+                            Each Materials Database </strong> This Month's Visits and Downloads. Visits and downloads
+                        are all represented by a line chart.
+                    </p>
+                    <p>The data statistics of the whole database is:</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-all.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>By clicking on a sub-sub-category under a category, you can see trends in the view, downloads,
+                        data counts, and the number of templates for that sub-library.</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-seclib.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <p>Click on a level library, such as special alloy, there will be more than two charts: view
+                        the amount of each sub-library, downloads, data count, the number of templates, all the figures
+                        will be displayed as a bar chart</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-firstlib.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+
+                <div class="docs-section">
+                    <h1 id="search-data" class="page-header">Retrieve data</h1>
+                    <h2 id="search-full-text">Full-text search</h2>
+                    <p>Into the home page Click "Search", enter the search page, directly to see the full-text search.
+                    </p>
+                    <h2 id="search-advanced">Advanced search</h2>
+                    <p>Click "Advanced Search" to enter the advanced search interface, and only three types of search
+                     methods are available now</p>
+                    <ul>
+                        <li>Metadata only</li>
+                        <li>Only retrieve the template</li>
+                        <li>Retrieve the template and metadata</li>
+                    </ul>
+                    <h3>Metadata only</h3>
+                    <p>In the search interface, select the metadata search, you can add multiple search conditions below
+                        , you can select the specific filter fields and filters Click to start the search, the search
+                        results will appear in the bottom of the page.
+                    </p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/search-metaonly.png"
+                             class="img-responsive img-rounded">
+                    </p>
+
+                    <h3>Only retrieve the template.</h3>
+                    <p>In the search-only template, first select the retrieved template, select the template and select
+                        the field under the template, the template field will automatically be selected according to the
+                        type of conditions to select the conditions to enter the search conditions, click on the "start
+                        search" The search results appear below the page</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/search-templateonly.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                    <h3>Retrieve metadata and templates.</h3>
+                    <p>Through the above two search methods, the use is similar to the previous two methods,
+                        as shown below</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/search-meta-template.PNG"
+                             class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+
+                <div class="docs-section">
+                    <h1 id="data-service" class="page-header">Data service</h1>
+                    <p>When the user first uses the system, a questionnaire will be conducted to know the user's
+                        interest and direction in material research. The user may also subscribe and the system will
+                        regularly recommend relevant data to the user.</p>
+                    <h2 id="subscribe">Subscribe</h2>
+                    <ul>
+                        <li>At the end of registration, the relevant categories will be displayed for the subscribers.
+                        </li>
+                        <li>In my subscription which you can choose to subscribe/unsubscribe categories</li>
+                        <li>The news page displays the hot data based on the categories subscribed by the users.</li>
+                    </ul>
+                    <h2 id="recommend">Suggestion</h2>
+                    <ul>
+                        <li>Recommended content from the independent server analysis and access data derived and
+                            stored in the database</li>
+                        <li>When the user request the recommended content, the system will read the database and get the
+                        recommended list</li>
+                    </ul>
+                    <h2 id="feedback">Feedback</h2>
+                    <p>Enter the home page, click on the "Aircraft" logo at the bottom right of the page, click will
+                        pop up a quick feedback box, there is a link next to the send button to enter the complete
+                        feedback page, with feedback pictures and other information can be completed through the
+                        feedback page</p>
+                    <p>
+                        <img src="{{ MEDIA_ROOT }}_docs/img/template/service-feedback.png"
+                             class="img-responsive img-rounded">
+                    </p>
+                </div>
+
+                <div class="docs-section">
+                    <h1 id="fields" class="page-header">Field types</h1>
+
+                    <h2 id="field-string">String type</h2>
+                    <p>A long list of texts, numbers, both Chinese and English can be entered</p>
+
+                    <h2 id="field-number">Numerical type</h2>
+                    <p>Arbitrary values, including integer, floating-point numbers, all of them can take units</p>
+
+                    <h2 id="field-range">Range type</h2>
+                    <p>A numerical interval, such as (a,b), or an error a ± b, a, b is numeric data</p>
+
+                    <h2 id="field-choice">Candidate type</h2>
+                    <p>A series of candidates, the options can be grouped, temporarily allowed only one level, click
+                        Add Options, add one directly, click Add Group, the equivalent of adding a first level title,
+                        the group can continue to add a number of options.</p>
+
+                    <h2 id="field-image">Picture type</h2>
+                    <p>Common picture types, such as jpg, png and other formats, you can check the option "Allow
+                        multiple pictures" to allow multiple pictures to upload</p>
+
+                    <h2 id="field-file">File type</h2>
+                    <p>Common file types, such as pdf, word, excel, json.xml, etc. format, you can check the option
+                        "Allow multiple files" to allow multiple files to be uploaded</p>
+
+                    <h2 id="field-array">Array type</h2>
+                    <p>One-dimensional array, by selecting the array type, fill in the field name,
+                        click Set to this type to array name: [1,2,3,4,5,6,7,8]</p>
+
+                    <h2 id="field-table">Table type</h2>
+                    <p>Table, you can add string, numeric, range, picture, file type, candidate type of these six types
+                        of data, add a column, first select the column type, click the button "Add Columns" to add
+                        success</p>
+
+                    <h2 id="field-container">Container type</h2>
+                    <p>This type can contain all the types, can be any nesting, any type of field into the
+                        container-type box, you can nest successfully</p>
+
+                    <h2 id="field-generator">Generator type</h2>
+                    <p>Name and type of the corresponding key-value combination, after the combination,
+                        by selecting a class to generate the corresponding form</p>
+                </div>
+            </div>
+            <div class="col-md-3" role="complementary">
+                <nav id="docs-sidebar" class="docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a href="help#start-using" class="collapsed" data-toggle="collapse"
+                               data-target="#start-using-navbar">Start using</a>
+                            <ul id="start-using-navbar" class="nav collapse">
+                                <li><a href="help#register" data-target="#register">Register account</a></li>
+                                <li><a href="help#login" data-target="#login">Login account</a></li>
+                                <li><a href="help#personal-setting" data-target="#personal-setting">Personal settings</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="help#index" class="collapsed" data-target="#index">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="help#template" class="collapsed" data-toggle="collapse" data-target="#template-navbar">Templates</a>
+                            <ul id="template-navbar" class="nav collapse">
+                                <li><a href="help#template-introduction" data-target="#template-introduction">Templates introduction</a></li>
+                                <li><a href="help#template-modify" data-target="#template-modify">Modify the templates</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="help#upload" class="collapsed" data-toggle="collapse"
+                               data-target="#upload-navbar">Upload data</a>
+                            <ul id="upload-navbar" class="nav collapse">
+                                <li><a href="help#upload-table" data-target="#upload-table">Table submission</a></li>
+                                <li><a href="help#upload-file" data-target="#upload-file">File submission</a></li>
+                                <li><a href="help#upload-modify" data-target="#upload-modify">Update the data</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="help#data-statistics" class="collapsed" data-target="data-statistics">Statistics</a>
+                        </li>
+
+                        <li>
+                            <a href="help#search-data" class="collapsed" data-toggle="collapse"
+                               data-target="#search-data-navbar">Retrieve data</a>
+                            <ul id="search-data-navbar" class="nav collapse">
+                                <li><a href="help#search-full-text" data-target="#search-full-text">Full-text search</a></li>
+                                <li><a href="help#search-advanced" data-target="#search-advanced">Advanced search</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="help#data-service" class="collapsed" data-toggle="collapse"
+                               data-target="#data-service-navbar">Data service</a>
+                            <ul id="data-service-navbar" class="nav collapse">
+                                <li><a href="help#subscribe" data-target="#subscribe">Subscribe</a></li>
+                                <li><a href="help#recommend" data-target="#recommend">Suggestion</a></li>
+                                <li><a href="help#feedback" data-target="#feedback">Feedback</a></li>
+                            </ul>
+                        </li>
+
+
+                        {#            <li>#}
+                        {#              <a href="#overview" class="collapsed" data-toggle="collapse" data-target="#overview-navbar">概览</a>#}
+                        {#              <ul id="overview-navbar" class="nav collapse">#}
+                        {##}
+                        {#                <li><a href="#add-template">创建模板</a></li>#}
+                        {#                <li><a href="#add-data">提交数据</a></li>#}
+                        {#                <li><a href="#data-manage">数据管理</a></li>#}
+                        {#                <li><a href="#data-analytics">数据统计</a></li>#}
+                        {#                <li><a href="#data-search">数据搜索</a></li>#}
+                        {#              </ul>#}
+                        {#            </li>#}
+
+
+                        <li>
+                            <a href="help#fields" class="collapsed" data-toggle="collapse"
+                               data-target="#fields-navbar">Field types</a>
+                            <ul id="fields-navbar" class="nav collapse">
+                                <li><a href="help#field-string" data-target="#field-string">String type</a></li>
+                                <li><a href="help#field-number" data-target="#field-number">Numerical type</a></li>
+                                <li><a href="help#field-range" data-target="#field-range">Range type</a></li>
+                                <li><a href="help#field-choice" data-target="#field-choice">Candidate type</a></li>
+                                <li><a href="help#field-image" data-target="#field-image">Picture type</a></li>
+                                <li><a href="help#field-file" data-target="#field-file">File type</a></li>
+                                <li><a href="help#field-array" data-target="#field-array">Array type</a></li>
+                                <li><a href="help#field-table" data-target="#field-table">Table type</a></li>
+                                <li><a href="help#field-container" data-target="#field-container">Container type</a></li>
+                                <li><a href="help#field-generator" data-target="#field-generator">Generator type</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    {% include '_component/modal-dialog-overlay.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

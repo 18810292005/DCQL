@@ -1,0 +1,406 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Help' %} - MGE DATA
+{% endblock %}
+
+{% block pageHeadExtra %} 
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+{% endblock %} 
+
+{% block pageBody %}
+  {% include '_component/header.html' with nav_action='navbar-fixed-top' %}
+  <div class="Breadcrumb">
+        <div class="Breadcrumb__item">
+            <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+        </div>
+        <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+        <div class="Breadcrumb__item">
+            <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+        </div>
+        <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+        <div class="Breadcrumb__item">
+            <a href="/help" style="cursor: pointer;"><span>{% trans 'Help' %}</span></a>
+        </div>
+    </div>
+  {% get_media_prefix as MEDIA_ROOT %}
+
+  <div class="container docs-container">
+    <div class="row">
+      <div class="col-md-9" role="main">
+
+
+
+        <div class="docs-section">
+          <h1 id="start-using" class="page-header">开始使用</h1>
+            <h3>请先注册账户后再使用本系统</h3>
+          <h2 id="register">注册账户</h2>
+          <p>
+            <img src="{{ MEDIA_ROOT }}_docs/img/template/register.png" class="img-responsive img-rounded">
+          </p>
+
+          <ul>
+            <li>MGE DATA支持IE10及以上版本、Chrome、Safari等浏览器，推荐使用<a href="https://www.google.cn/chrome/">Chrome</a>或基于Chromium内核的浏览器（如<a href="http://se.360.cn/">360浏览器</a>、<a href="https://ie.sogou.com/">搜狗浏览器</a>等）访问MGE DATA</li>
+            <li>使用学校邮箱注册：输入用户名、密码、确认密码、邮箱地址、姓名（建议使用真实姓名）、机构（学校或者公司单位），全部必须填写并勾选“我已阅读并同意使用条款与用户须知”才可提交</li>
+            <li>注册之后会在消息中收到通知，请前往邮箱验证</li>
+            <li>如有账户请直接进入登录开始使用本系统</li>
+          </ul>
+          <h2 id="login">登录账号</h2>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/login.png" class="img-responsive img-rounded">
+            </p>
+            <p>若已有账号,请输入用户名,密码以及验证码.若无账号,请点击"尚无账号,立即注册"</p>
+            <ul>
+                <li>若未填写“用户名/电子邮箱”，将提示"必须填写用户名"</li>
+                <li>若未填写“密码”，将提示"必须填写密码"</li>
+                <li>若未填写“验证码”，将弹出对话框提示“出错了，请填写验证码”</li>
+                <li>若填写的“用户名”和“密码”不一致，将弹出对话框提示“出错了，密码错误”</li>
+                <li>可勾选保持登录状态，以后打开本网站将自动登录</li>
+                <li>若忘记密码，可点击“重置密码”，重新通过邮箱设置密码</li>
+            </ul>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/reset_password.png" class="img-responsive img-rounded">
+            </p>
+          <h2 id="personal-setting">个人设置</h2>
+            <p>分为了个人信息设置和头像设置,点击"个人信息设置",完善个人信息.并前往邮箱点击认证链接,成为认证用户</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/personal-info.png" class="img-responsive img-rounded">
+            </p>
+            <p>点击"头像设置",右边框内可以进行头像调整,点击设置头像,弹出设置成功即为成功</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/person-icon.png" class="img-rounded img-responsive">
+            </p>
+        </div>>
+
+
+
+
+        <div class="docs-section">
+            <h1 id="index" class="page-header">首页</h1>
+            <p>进入首页,会先看到一个轮播图,显示最新热点数据或者影响因子高的文章介绍,往下翻会看到一些材料的介绍</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/index-content.png" class="img-responsive img-rounded">
+            </p>
+            <p>底部是系统几个模块功能的介绍:上传,搜索,统计</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/index-btn.png" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+
+
+        <div class="docs-section">
+            <h1 id="template" class="page-header">模板</h1>
+            <h2 id="template-introduction">模板介绍</h2>
+            <p>进入首页的"我的数据",点击模板,选择添加新项,进入模板编辑页面</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-mydata.png" class="img-responsive img-rounded">
+            </p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-all.png" class="img-responsive img-rounded">
+            </p>
+            <p>或者直接点击用户个人界面中的加号就可以进入模板创建界面</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-add.png" class="img-responsive img-rounded">
+            </p>
+            <p>模板只能由<strong>高级用户(数据库管理员及以上权限)</strong>创建,进入模板创建页面如下</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-create.png" class="img-responsive img-rounded">
+            </p>
+            <ul>
+                <li>提交模板必须是<strong>认证用户</strong>,并拥有<strong>高级管理员及其以上</strong>的权限,
+                    否则将弹出对话框“出错了,非认证用户不能创建模板,请前往邮箱进行认证”</li>
+                <li>可选择自动保存模板;</li>
+                <li>模板编辑好之后,可选择保存并继续编辑,也可以选择"创建模板",该模板成为发布状态,即可直接提交模板,并使用模板提交数据,
+                    但是如果没有点击"发布模板",将是未发布状态,不能在数据提交页面找到刚编辑的模板</li>
+                <li>填写模板标题,标题不能重复,如果重复,提交的时候将弹出对话框"出错了,模板标题不能重复,请修改之后再提交"</li>
+                <li>选择材料分类,否则将不能提交并提示"请选择材料分类"</li>
+                <li>填写字段名称时,不要重复名称,如果重复,提交的时候将标红提示"字段名称不能重复"</li>
+                <li>页面左边是模板字段类型,将鼠标箭头触到控件时,将给出提示信息</li>
+            </ul>
+            <h2 id="template-modify">修改模板</h2>
+            <p>进入我的数据,点击模板,找到要修改的模板,点击下图的修改按钮,即可进入修改界面</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-btn.png" class="img-responsive img-rounded">
+            </p>
+            <p>
+                如果该模板已经提交过数据,将出现提示“已经有数据使用了你的模板,
+                修改操作将会创建新的模板,原来的模板不会被删除,确定要修改吗?",选择"确定",进入修改模式,此时,
+                模板的名称会变为"XXX-副本",原来的模板不会被删除,仍能使用 <br>
+                如果该模板未交过数据,不会出现提示,直接进入编辑模式
+            </p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-1.png" class="img-responsive img-rounded">
+            </p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/template-modify-2.png" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+
+
+
+
+        <div class="docs-section">
+            <h1 id="upload" class="page-header">上传数据</h1>
+            <p>上传数据可通过如下4种方式进行提交</p>
+            <ul>
+                <li>进入个人界面中的"我的数据",选择"添加新项",进入上传数据页面</li>
+                <li>在首页中点击"查看",在查看页面中选择"上传",进入上传数据页面</li>
+                <li>在首页下方选择"上传",进入上传数据页面</li>
+                <li>进入个人界面中的"我的数据",点击上传的箭头,进入上传数据页面</li>
+            </ul>
+            <p>进入到提交页面后，fd选择材料分类与对应的模板,可以看到有2种提交方式: 1.通过表单提交 2.通过文件提交</p>
+            <h2 id="upload-table">表单提交</h2>
+            <p>点击生成数据表单就可以生成所要填写的表单,填写好所要填写的内容即可提交,例如下图所示</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/upload-table.png" class="img-responsive img-rounded">
+            </p>
+            <h2 id="upload-file">文件提交</h2>
+            <p>在上传界面中点击"通过文件提交",可以选择通过Json,XML,Excel等3种格式进行上传,根据所选文件，上传相对应类型的文件即可<br>
+                <strong>为了保证模板和上传的文件一致,请提前前往模板下载页,根据模板中的提示来填写数据,并上传最后的文件</strong>
+            </p>
+            <h3>Excel提交数据</h3>
+            <p>通过Excel上传数据时,需要有以下注意事项：</p>
+            <ul>
+                <li>对于Excel表格中的数据ID,同一条数据的数据ID都需要相同,具体ID的值随意,只要相同就可以</li>
+                <li>如果某些数据不需要填写,则需要将模板文件中原有的提示内容清空,保证表格内仅保留元数据</li>
+                <li>在表格内填入多个文件,或者是范围型数据时,要使用<strong>英文逗号</strong>作为分隔符</li>
+                <li>对于生成器类型来说,选择生成哪个类型,对应的列要填东西,其他列全部清空</li>
+                <li>候选型数据需要通过Excel表格中的下拉框来选择模板中的数据</li>
+                <li>通过Excel上传附件时,附件名字最好用英文,否则可能会出错,同一数据包含多个附件时,用<strong>英文逗号</strong>分隔</li>
+                <li>填写完成后,可以把图片和Excel放在同一个文件夹中,压缩后上传</li>
+            </ul>
+            <h3>Json提交数据</h3>
+            <p>进入到"数据提交"页面后,选择"文件提交",生成Json模板后,只需打开对应的Json文件,填写对应的数据<br>
+            填写完生成的Json文件后,上传文件,解析成功后,即可查看数据</p>
+            <h3>XML提交数据</h3>
+            <p>暂未实现</p>
+
+            <h2 id="upload-modify">修改数据</h2>
+            <p>进入个人页面中,选择"我的数据",选择"修改个人数据",进入修改数据界面后即可对数据进行修改,修改完成后保存即可</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/upload-modify.png" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+
+        <div class="docs-section">
+            <h1 id="data-statistics" class="page-header">数据统计</h1>
+            <p>数据统计部分按月份统计每个材料数据库的数据量,模板量,访问量和下载量</p>
+            <p>进入数据统计页面,首先看到的是<strong>整个材料数据库</strong>总的数据量,模板量,访问量<br>
+                和下载量,通过点击左边的<strong>目录栏</strong>,可以查看<strong>每个材料数据库</strong>本月的访问量和下<br>
+                载量。访问量和下载量都是通过折线图表示。
+            </p>
+            <p>整个数据库的数据统计结果：</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-all.png" class="img-responsive img-rounded">
+            </p>
+            <p>通过点击某一分类下的二级子库,可以查看该子库的查看量、下载量、数据计数和模板数量的趋势。</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-seclib.png" class="img-responsive img-rounded">
+            </p>
+            <p>点击一级库,例如特种合金,将多出现两个图:各个子库的查看量,下载量,数据计数,模板数量,以条形图的方式展现</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/statistics-firstlib.png" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+
+
+
+
+
+        <div class="docs-section">
+            <h1 id="search-data" class="page-header">检索数据</h1>
+            <h2 id="search-full-text">全文检索</h2>
+            <p>进入首页点击"搜索",进入搜索页面，直接看到的是全文搜索。</p>
+            <h2 id="search-advanced">高级检索</h2>
+            <p>点击"高级搜索",进入高级检索界面,目前仅限3种类型检索: </p>
+            <ul>
+                <li>仅限元数据</li>
+                <li>仅检索模板</li>
+                <li>检索模板和元数据</li>
+            </ul>
+            <h3>仅检索元数据</h3>
+            <p>在搜索界面中选择元数据搜索,可以在下方添加多个搜索条件，可以选择具体的筛选字段以及筛选条件<br>
+                点击开始搜索后,会在页面下方出现搜索结果
+            </p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/search-metaonly.png" class="img-responsive img-rounded">
+            </p>
+
+            <h3>仅检索模板</h3>
+            <p>在仅检索模板下,首先选择检索的模板,选择好模板后选择该模板下的字段,会自动根据该模板字段的类型进行条件选择<br>
+            在条件选择中输入检索条件,点击"开始搜索",会在页面下方出现搜索结果</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/search-templateonly.png" class="img-responsive img-rounded">
+            </p>
+            <h3>检索元数据和模板</h3>
+            <p>综合上述两种检索方式,使用方式类似,如下图所示</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/search-meta-template.PNG" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+
+
+        <div class="docs-section">
+            <h1 id="data-service" class="page-header">数据服务</h1>
+            <p>用户在第一次使用该系统会进行一个问卷调查,从而知道用户的材料研究兴趣和方向,
+                用户也可以进行订阅,系统会定时向用户推荐相关数据。</p>
+            <h2 id="subscribe">订阅</h2>
+            <ul>
+                <li>注册结束时显示相关的类别供用户订阅</li>
+                <li>在我的订阅里面可以选择订阅/取消订阅类别</li>
+                <li>news页面根据用户所订阅类别显示热点数据</li>
+            </ul>
+            <h2 id="recommend">建议</h2>
+            <ul>
+                <li>推荐内容由独立服务器分析访问数据得出并存放在数据库中</li>
+                <li>请求推荐内容时,读取数据库获得推荐列表</li>
+            </ul>
+            <h2 id="feedback">反馈</h2>
+            <p>进入首页,点击页面右下方的"飞机"标识,点击会弹出快速反馈框,发送按钮旁边有个链接点击可以进去完整的反馈页面,
+                带有图片等信息的反馈,可以通过完整的反馈页面填写</p>
+            <p>
+                <img src="{{ MEDIA_ROOT }}_docs/img/template/service-feedback.png" class="img-responsive img-rounded">
+            </p>
+        </div>
+
+        <div class="docs-section">
+          <h1 id="fields" class="page-header">字段类型</h1>
+
+          <h2 id="field-string">字符串型</h2>
+          <p>一长串文本,数字,中英文都可以输入</p>
+
+          <h2 id="field-number">数值型</h2>
+          <p>任意数值,包括整型,浮点数,可以带单位</p>
+
+          <h2 id="field-range">范围型</h2>
+          <p>数值区间，例如(a,b),或者误差表示a±b,a,b都是数值型数据</p>
+
+          <h2 id="field-choice">候选型</h2>
+          <p>一系列候选项，选项可以分组，暂时只能允许一级，点击添加选项，直接增加一项，
+            点击添加分组，相当于添加一个一级标题，在该分组下可继续添加若干选项。</p>
+
+          <h2 id="field-image">图片型</h2>
+          <p>常见的图片类型,例如jpg,png等等格式,可以勾选选项"允许多张图片",允许上传多张图片</p>
+
+          <h2 id="field-file">文件型</h2>
+          <p>常见的文件类型,例如pdf,word,excel,json.xml等等格式,可以勾选选项"允许多文件",
+            允许上传多个文件</p>
+
+          <h2 id="field-array">数组型</h2>
+          <p>一维数组,通过选择数组类型,填写字段名,点击设置为这种类型即可 数组名:[1,2,3,4,5,6,7,8]</p>
+
+          <h2 id="field-table">表格型</h2>
+          <p>表格,可以添加字符串型,数值型,范围型,图片型,文件型,候选型这六种类型数据,
+            每添一列,先选择列类型,点击按钮"添加列",即可添加成功</p>
+
+          <h2 id="field-container">容器型</h2>
+          <p>可以包含所有的类型,可以任意嵌套,将任意类型字段拖入容器型所在框内,即可嵌套成功</p>
+
+          <h2 id="field-generator">生成器型</h2>
+          <p>名称和类型对应的键值对组合,组合之后,通过选择某一类来生成对应的表单</p>
+        </div>
+      </div>
+      <div class="col-md-3" role="complementary">
+        <nav id="docs-sidebar" class="docs-sidebar hidden-print hidden-xs hidden-sm affix">
+          <ul class="nav nav-pills nav-stacked">
+
+            <li>
+              <a href="help#start-using" class="collapsed" data-toggle="collapse" data-target="#start-using-navbar">开始使用</a>
+              <ul id="start-using-navbar" class="nav collapse">
+                <li><a href="help#register" data-target="#register">注册账户</a></li>
+                <li><a href="help#login" data-target="#login">登录账号</a></li>
+                <li><a href="help#personal-setting" data-target="#personal-setting">个人设置</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="help#index" class="collapsed" data-target="#index">首页</a>
+            </li>
+
+            <li>
+              <a href="help#template" class="collapsed" data-toggle="collapse" data-target="#template-navbar">模板</a>
+              <ul id="template-navbar" class="nav collapse">
+                <li><a href="help#template-introduction" data-target="#template-introduction">模板介绍</a></li>
+                <li><a href="help#template-modify" data-target="#template-modify">模板修改</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="help#upload" class="collapsed" data-toggle="collapse" data-target="#upload-navbar">上传数据</a>
+              <ul id="upload-navbar" class="nav collapse">
+                <li><a href="help#upload-table" data-target="#upload-table">表单提交</a></li>
+                <li><a href="help#upload-file" data-target="#upload-file">文件提交</a></li>
+                <li><a href="help#upload-modify" data-target="#upload-modify">修改数据</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="help#data-statistics" class="collapsed" data-target="#data-statistics">数据统计</a>
+            </li>
+
+            <li>
+              <a href="help#search-data" class="collapsed" data-toggle="collapse" data-target="#search-data-navbar">检索数据</a>
+              <ul id="search-data-navbar" class="nav collapse">
+                <li><a href="help#search-full-text" data-target="#search-full-text">全文检索</a></li>
+                <li><a href="help#search-advanced" data-target="#search-advanced">高级检索</a></li>
+              </ul>
+            </li>
+
+            <li>
+                <a href="help#data-service" class="collapsed" data-toggle="collapse" data-target="#data-service-navbar">数据服务</a>
+                <ul id="data-service-navbar" class="nav collapse">
+                    <li><a href="help#subscribe" data-target="#subscribe">订阅</a></li>
+                    <li><a href="help#recommend" data-target="#recommend">建议</a></li>
+                    <li><a href="help#feedback" data-target="#feedback">反馈</a></li>
+                </ul>
+            </li>
+
+
+
+{#            <li>#}
+{#              <a href=about"#overview" class="collapsed" data-toggle="collapse" data-target="#overview-navbar">概览</a>#}
+{#              <ul id="overview-navbar" class="nav collapse">#}
+{##}
+{#                <li><a href="help#add-template" data-target="#add-template">创建模板</a></li>#}
+{#                <li><a href="help#add-data" data-target="#add-data">提交数据</a></li>#}
+{#                <li><a href="help#data-manage" data-target="#data-manage">数据管理</a></li>#}
+{#                <li><a href="help#data-analytics" data-target="#data-analytics">数据统计</a></li>#}
+{#                <li><a href="help#data-search" data-target="#data-search">数据搜索</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+
+
+            <li>
+              <a href="help#fields" class="collapsed" data-toggle="collapse" data-target="#fields-navbar">字段类型</a>
+              <ul id="fields-navbar" class="nav collapse">
+                <li><a href="help#field-string" data-target="#field-string">字符串型</a></li>
+                <li><a href="help#field-number" data-target="#field-number">数值型</a></li>
+                <li><a href="help#field-range" data-target="#field-range">范围型</a></li>
+                <li><a href="help#field-choice" data-target="#field-choice">候选型</a></li>
+                <li><a href="help#field-image" data-target="#field-image">图片型</a></li>
+                <li><a href="help#field-file" data-target="#field-file">文件型</a></li>
+                <li><a href="help#field-array" data-target="#field-array">数组型</a></li>
+                <li><a href="help#field-table" data-target="#field-table">表格型</a></li>
+                <li><a href="help#field-container" data-target="#field-container">容器型</a></li>
+                <li><a href="help#field-generator" data-target="#field-generator">生成器型</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  {% include '_component/modal-dialog-overlay.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

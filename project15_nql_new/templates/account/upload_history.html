@@ -1,0 +1,146 @@
+{% extends "_layout/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %}
+  {% trans 'Data Importing Histories' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <style>
+    th {
+      text-align: center;
+    }
+
+    .table > tbody > tr > td {
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .btn-primary-outline {
+      color: #2e6da4;
+      border-color: #2e6da4;
+    }
+
+
+  </style>
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="Breadcrumb">
+    <div class="Breadcrumb__item">
+      <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+    </div>
+    <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+    <div class="Breadcrumb__item">
+      <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+    </div>
+    <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+    <div class="Breadcrumb__item">
+      <a href="/account/me/uploads/" style="cursor: pointer;"><span>{% trans 'History' %}</span></a>
+    </div>
+  </div>
+  <div class="container">
+    <div id="history-panel">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="btn-group" role="group">
+
+            <a
+              class="btn btn-sm {% if state == 'pending' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'account:upload_history_state' state='pending' page=1 %}">{% trans 'Pending' %}</a>
+            <a
+              class="btn btn-sm {% if state == 'approved' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'account:upload_history_state' state='approved' page=1 %}">{% trans 'Approved' %}</a>
+            <a
+              class="btn btn-sm {% if state == 'disapproved' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'account:upload_history_state' state='disapproved' page=1 %}">{% trans 'Disapproved' %}</a>
+            <a class="btn btn-sm {% if state == 'all' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+               href="{% url 'account:upload_history_state' state="all" page=1 %}">{% trans 'All' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div id="history-table" data-state="{{ state }}" class="col-sm-12">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th class="col-sm-2">{% trans 'Upload Time' %}</th>
+            <th class="col-sm-2">{% trans 'Data Count' %}</th>
+            <th class="col-sm-2">{% trans 'Uploaded Via' %}</th>
+            <th class="col-sm-2">{% trans 'Reviewer' %}</th>
+            <th class="col-sm-2">{% trans 'Status' %}</th>
+            <th class="col-sm-2">{% trans 'Action' %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for history in history_list %}
+            <tr class="history-row" data-history-id="{{ history.id }}">
+              <td class="col-sm-2">{{ history.time }}</td>
+              <td class="col-sm-2">{{ history.count }}</td>
+              <td class="col-sm-2">
+                {% if history.via_file %}
+                  {% trans 'File' %}
+                {% else %}
+                  {% trans 'Web Form' %}
+                {% endif %}
+              </td>
+              <td class="col-sm-2">
+                {% if not history.pending %}
+                  {{ history.reviewer_real_name }}
+                {% endif %}
+              </td>
+              <td class="col-sm-2">
+                {% if history.pending %}
+                  <span>{% trans 'Reviewing Pending' %}</span>
+                {% elif history.approved %}
+                  <span>{% trans 'Approved' %}</span>
+                {% elif history.disapproved %}
+                  <div style="color: red">{% trans 'Disapproved' %}</div>
+                  {% if history.reason_list %}
+                    {% for reason in history.reason_list %}
+                      <div style="color: red">{{ reason }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endif %}
+              </td>
+              <td class="col-sm-2">
+                <button class="view-button btn btn-sm btn-primary"
+                        data-history-id="{{ history.id }}">{% trans 'View Data' %} </button>
+
+                {% if history.disapproved %}
+                  <button class="delete-button btn btn-sm btn-danger"
+                          data-history-id="{{ history.id }}">{% trans 'Retract' %} </button>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="col-sm-12 paginator-wrapper text-center">
+      <ul id="paginator" data-page-count="{{ page_count }}"
+          data-current-page="{{ current_page }}">
+      </ul>
+    </div>
+  </div>
+
+
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script src="{% static 'js/vendor/jquery.base64.js' %}"></script>
+  <script src="{% static 'js/account/upload_history.js' %}"></script>
+  <script>
+
+  </script>
+{% endblock %}

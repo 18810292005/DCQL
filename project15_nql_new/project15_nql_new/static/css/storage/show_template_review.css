@@ -1,0 +1,110 @@
+.panel{
+    margin-top: 20px;
+    clear: both;
+}
+
+.data-meta {
+  -webkit-box-shadow: 0 0 5px 1px #ccc;
+          box-shadow: 0 0 5px 1px #ccc;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /*** Horizontal Statistic ***/
+  /****** Statistic Group ******/
+  /*** Horizontal Statistic Group ***/
+  /*** Float Statistics ***/
+  /****** Statistic Sizes ******/ }
+  .data-meta:hover, .data-meta:focus {
+    -webkit-box-shadow: 0 0 10px 1px #61a3dc;
+            box-shadow: 0 0 10px 1px #61a3dc;
+    cursor: pointer;
+    border: 1px solid #61a3dc; }
+  .data-meta span.dt {
+    font-weight: bold; }
+  .data-meta span.dt:after {
+    content: ':'; }
+  .data-meta span.dd,
+  .data-meta a.dd {
+    margin-left: .5rem; }
+  .data-meta span.dm {
+    color: #aaa;
+    font-size: small; }
+  .data-meta .d-result-info {
+    margin: .5rem auto 1rem; }
+  .data-meta .dm.dt + .dm.dd {
+    margin-right: 1rem; }
+  .data-meta .d-title {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #3182c7; }
+  .data-meta .d-labels {
+    margin-left: 1rem;
+    font-size: small; }
+  .data-meta span.label + span.label {
+    margin-left: .5rem; }
+  .data-meta .panel-heading + .panel-body {
+    padding-top: 0; }
+  .data-meta .statistic {
+    margin: 1rem 0;
+    text-transform: uppercase;
+    display: block;
+    float: left; }
+  .data-meta .statistic .value {
+    font-size: 4rem;
+    line-height: 1rem;
+    text-align: center; }
+  .data-meta .statistic .value.text {
+    font-size: 2rem;
+    font-weight: bold; }
+  .data-meta .statistic .value img {
+    max-height: .8rem;
+    vertical-align: baseline; }
+  .data-meta .statistic .label {
+    color: inherit;
+    display: block;
+    font-size: .75rem;
+    text-align: center;
+    margin-top: .5rem; }
+  .data-meta .statistic + .statistic {
+    margin-left: 1.5rem; }
+  .data-meta .statistic.horizontal .value,
+  .data-meta .statistic.horizontal .label {
+    display: inline;
+    vertical-align: middle; }
+  .data-meta .statistic-group {
+    margin: 1rem 0; }
+  .data-meta .statistic-group .statistic {
+    display: inline-block; }
+  .data-meta .statistic-group.horizontal .statistic {
+    display: block; }
+  .data-meta .statistic-group.horizontal .statistic .value,
+  .data-meta .statistic-group.horizontal .statistic .label {
+    display: inline;
+    vertical-align: middle; }
+  .data-meta .statistic-group.horizontal .statistic + .statistic {
+    margin-left: 0; }
+  .data-meta .statistic.pull-left {
+    margin-right: 1rem; }
+  .data-meta .statistic.pull-right {
+    margin-left: 1rem; }
+  .data-meta .statistic.mini .label {
+    font-size: .5rem; }
+  .data-meta .statistic.mini .value {
+    font-size: 1rem;
+    font-weight: bold; }
+  .data-meta .statistic.tiny .value {
+    font-size: 2rem; }
+  .data-meta .statistic.small .value {
+    font-size: 3rem !important; }
+  .data-meta .statistic.large .value {
+    font-size: 5rem; }
+  .data-meta .statistic.huge .value {
+    font-size: 6rem; }
+
+@charset "UTF-8";
+/* 这个类让文字不可选取，不属于CSS标准 */
+.noselect {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }

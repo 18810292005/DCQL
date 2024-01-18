@@ -1,0 +1,175 @@
+create role 角色1 with 角色2,角色3,
+                      create on template,
+                      drop on templates, 
+                      drop on template a,
+                      alter on templates, 
+                      alter on template a,
+                      describe on templates,
+                      insert on templates, 
+                      insert on template a,
+                      delete on templates, 
+                      delete on template a,
+                      update on templates, 
+                      update on template a,
+                      select on templates,
+                      create on role,
+                      drop on roles,
+                      drop on role a,
+                      rename on roles,
+                      rename on role a,
+                      show on roles with grant,
+                      show on roles,
+                      create on user,
+                      drop on users,
+                      drop on user a,
+                      rename on users,
+                      rename on user a,
+                      update on users with password,
+                      update on user a with password,
+                      show on users with password,
+                      show on user a with password,
+                      show on users with role,
+                      show on user a with role,
+                      show on users,
+                      all privileges,
+                      all on template,
+                      all on template a,
+                      all on templates,
+                      all on role,
+                      all on role a,
+                      all on roles,
+                      all on user,
+                      all on user a,
+                      all on users
+
+drop role 角色1,角色2,角色3
+
+rename role 新角色,旧角色
+
+grant create on template,
+      drop on templates, 
+      drop on template a,
+      alter on templates, 
+      alter on template a,
+      describe on templates,
+      insert on templates, 
+      insert on template a,
+      delete on templates, 
+      delete on template a,
+      update on templates, 
+      update on template a,
+      select on templates,
+      create on role,
+      drop on roles,
+      drop on role a,
+      rename on roles,
+      rename on role a,
+      show on roles with grant,
+      show on roles,
+      create on user,
+      drop on users,
+      drop on user a,
+      rename on users,
+      rename on user a,
+      update on users with password,
+      update on user a with password,
+      show on users with password,
+      show on user a with password,
+      show on users with role,
+      show on user a with role,
+      show on users,
+      all privileges,
+      all on template,
+      all on template a,
+      all on templates,
+      all on role,
+      all on role a,
+      all on roles,
+      all on user,
+      all on user a,
+      all on users
+to 角色1
+
+grant create on template to 角色1,角色2,角色3
+
+revoke create on template,
+      drop on templates, 
+      drop on template a,
+      alter on templates, 
+      alter on template a,
+      describe on templates,
+      insert on templates, 
+      insert on template a,
+      delete on templates, 
+      delete on template a,
+      update on templates, 
+      update on template a,
+      select on templates,
+      create on role,
+      drop on roles,
+      drop on role a,
+      rename on roles,
+      rename on role a,
+      show on roles with grant,
+      show on roles,
+      create on user,
+      drop on users,
+      drop on user a,
+      rename on users,
+      rename on user a,
+      update on users with password,
+      update on user a with password,
+      show on users with password,
+      show on user a with password,
+      show on users with role,
+      show on user a with role,
+      show on users,
+      all privileges,
+      all on template,
+      all on template a,
+      all on templates,
+      all on role,
+      all on role a,
+      all on roles,
+      all on user,
+      all on user a,
+      all on users
+from 角色1
+
+revoke create on template from 角色1,角色2,角色3
+
+show role 角色1,角色2,角色3
+
+show roles
+
+show roles with grant
+
+create user 张三 with password qwer1234,role 角色1,角色2,角色3
+
+drop user 张三,李四,王五
+
+rename user 旧张三,新张三
+
+update user 张三 with password qwe1234,dfgh54424
+
+grant 角色1,角色2,角色3 to 张三
+
+grant 角色1,角色2,角色3 to PUBLIC
+
+grant 角色1 to 张三,李四,王五
+
+grant 角色1 to public
+
+revoke 角色1,角色2,角色3 from 张三
+
+revoke 角色1,角色2,角色3 from PUBLIC
+
+revoke 角色1 from 张三,李四,王五
+
+revoke 角色1 from public
+
+show user 张三,李四,王五 with password,role
+
+show users
+
+show users with password,role

@@ -1,0 +1,50 @@
+{% extends '_layout/profile.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'Notifications' %}
+{% endblock %}
+
+
+{% block navList %}
+  <li class="active">
+    <a href="{% url 'account:notifications' %}">{% trans 'All Notifications' %}</a>
+  </li>
+{% endblock %}
+{% block mainContent %}
+
+  {% for n in notifications %}
+    <div class="alert alert-default alert-dismissible fade in" role="alert" data-nid="' + notification.id + '">
+      <button data-notification-id="{{ n.id }}" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"><i class="fa fa-trash"></i></span>
+      </button>
+      <h4>{{ n.timestamp }}</h4>
+      <p>{{ n.string | safe }}</p>
+    </div>
+  {% endfor %}
+  <div class="col-sm-12 paginator-wrapper text-center">
+    <ul id="paginator" data-page-count="{{ page_count }}"
+        data-current-page="{{ current_page }}">
+    </ul>
+  </div>
+{% endblock %}
+{% block pageFootExtra %}
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script>
+    var paginator = $('#paginator');
+    var options = {
+      bootstrapMajorVersion: 3,
+      currentPage: paginator.data('currentPage'),
+      numberOfPages: 15,
+      totalPages: paginator.data('pageCount'),
+      onPageClicked: function (e, originalEvent, type, page) {
+        window.location = Urls.resolve('account:notifications_page', {page: page});
+        e.stopImmediatePropagation();
+      }
+    };
+    if (options.totalPages > 1) {
+      paginator.bootstrapPaginator(options);  // 仅大于一页时分页
+    }
+  </script>
+{% endblock %}
+
