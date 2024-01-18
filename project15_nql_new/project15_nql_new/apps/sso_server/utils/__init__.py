@@ -1,9 +1,0 @@
-# -*- coding: utf-8 -*-
-
-# @File   : __init__.py
-# @Author : Yuvv
-# @Date   : 2018/6/6
-
-
-if __name__ == '__main__':
-    pass
