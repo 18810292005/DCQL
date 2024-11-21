@@ -1,0 +1,1261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-20 14:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: static/js/account/login.js:24
+msgid "Invalid username"
+msgstr "无效的用户名"
+
+#: static/js/account/login.js:27
+msgid "Username cannot be empty"
+msgstr "用户名不能为空"
+
+#: static/js/account/login.js:34
+msgid "Password cannot be empty"
+msgstr "密码不能为空"
+
+#: static/js/account/login.js:48
+msgid "Please fill in the verification code"
+msgstr "请填写验证码"
+
+#: static/js/account/my-data.js:78
+msgid "registerdoi"
+msgstr "注册DOI"
+
+#: static/js/account/my-data.js:83 static/js/account/my-data.js:88
+#: static/js/account/my-data.js:176 static/js/account/my-data.js:180
+msgid "View"
+msgstr "查看"
+
+#: static/js/account/my-data.js:86 static/js/account/my-data.js:178
+#: static/webpack/search.js:4489
+msgid "Edit"
+msgstr "编辑"
+
+#: static/js/account/my-data.js:87 static/js/account/my-data.js:179
+msgid "Delete"
+msgstr "删除"
+
+#: static/js/account/my-data.js:94
+msgid "Add Time"
+msgstr "提交时间"
+
+#: static/js/account/my-data.js:99 static/js/analytics.js:82
+#: static/js/analytics.js:223 static/js/search/meta-search.js:64
+#: static/webpack/expr_search.js:4839 static/webpack/expr_search.js:4840
+#: static/webpack/search.js:3819 static/webpack/search.js:4489
+msgid "Views"
+msgstr "查看"
+
+#: static/js/account/my-data.js:102 static/js/analytics.js:104
+#: static/js/analytics.js:245 static/webpack/expr_search.js:4835
+#: static/webpack/expr_search.js:4836 static/webpack/search.js:3819
+#: static/webpack/search.js:4489
+msgid "Downloads"
+msgstr "下载"
+
+#: static/js/account/my-data.js:105 static/js/search/meta-search.js:65
+#: static/webpack/expr_search.js:4843 static/webpack/expr_search.js:4844
+#: static/webpack/search.js:3819 static/webpack/search.js:4489
+msgid "Score"
+msgstr "评分"
+
+#: static/js/account/my-data.js:110
+msgid "Material Class"
+msgstr "材料类别"
+
+#: static/js/account/my-data.js:113 static/js/account/my-data.js:198
+#: static/js/search/meta-search.js:56 static/webpack/expr_search.js:4827
+#: static/webpack/expr_search.js:4828 static/webpack/search.js:3819
+#: static/webpack/search.js:4489
+msgid "Abstract"
+msgstr "数据摘要"
+
+#: static/js/account/my-data.js:119 static/js/search/meta-search.js:57
+msgid "Purpose"
+msgstr "目的"
+
+#: static/js/account/my-data.js:158 static/js/account/my-data.js:242
+#: static/js/account/my-templates.js:6 static/js/main.js:1119
+#: static/js/storage/template.js:329
+msgid "Warning"
+msgstr "警告"
+
+#: static/js/account/my-data.js:159 static/js/account/my-data.js:243
+#, javascript-format
+msgid "Are you sure to delete \"%s\""
+msgstr "确定要删除 \"%s\"吗？"
+
+#: static/js/account/my-data.js:186 static/webpack/search.js:4489
+msgid "Material Category"
+msgstr "材料类别"
+
+#: static/js/account/my-data.js:189
+msgid "Publish Date"
+msgstr "发布时间"
+
+#: static/js/account/my-data.js:189
+msgid "Publish State"
+msgstr "发布状态"
+
+#: static/js/account/my-data.js:190 static/js/storage/template.js:376
+msgid "Unpublished"
+msgstr "未发布"
+
+#: static/js/account/my-data.js:193 static/js/analytics.js:132
+#: static/js/analytics.js:273
+msgid "Data Count"
+msgstr "数据计数"
+
+#: static/js/account/my-data.js:203 static/js/search/meta-search.js:58
+#: static/webpack/expr_search.js:4831 static/webpack/expr_search.js:4832
+#: static/webpack/search.js:3669 static/webpack/search.js:3819
+#: static/webpack/search.js:4489
+msgid "Author"
+msgstr "提交者"
+
+#: static/js/account/my-templates.js:7
+msgid "Are you sure to delete this template?"
+msgstr "确定要删除这个模板吗？"
+
+#: static/js/account/my-templates.js:15 static/js/account/settings.js:180
+#: static/js/main.js:465 static/js/main.js:1032
+#: static/js/storage/add_data.js:384 static/js/storage/add_data.js:441
+#: static/js/storage/data_score.js:65 static/js/storage/show_data.js:116
+#: static/js/storage/show_data.js:125 static/js/storage/show_data.js:408
+#: static/js/storage/show_data.js:446
+#: static/js/storage/show_template_review.js:19
+#: static/js/storage/show_template_review.js:57
+#: static/js/ticketing/create-ticket.js:36
+msgid "Success"
+msgstr "成功"
+
+#: static/js/account/my-templates.js:16
+msgid "Template deleted"
+msgstr "模板删除成功"
+
+#: static/js/account/register.js:24
+msgid "The username is required and can't be empty"
+msgstr "必须填写用户名"
+
+#: static/js/account/register.js:31 static/js/account/register.js:38
+#: static/js/account/reset_password.js:19
+#: static/js/account/reset_password.js:26 static/js/account/settings.js:20
+#: static/js/account/settings.js:28 static/js/account/settings.js:36
+msgid "The password is required and can't be empty"
+msgstr "必须填写密码"
+
+#: static/js/account/register.js:42 static/js/account/reset_password.js:30
+#: static/js/account/settings.js:40
+msgid "The password and its confirm are not the same"
+msgstr "两次密码不一致"
+
+#: static/js/account/register.js:50 static/js/account/reset_password.js:38
+msgid "Your email address is required and can't be empty"
+msgstr "必需填写邮箱地址"
+
+#: static/js/account/register.js:57 static/js/account/settings.js:47
+msgid "Your institution is required and can't be empty"
+msgstr "必须填写机构"
+
+#: static/js/account/register.js:64 static/js/account/settings.js:54
+msgid "Your real name is required and can't be empty"
+msgstr "必需填写真实姓名"
+
+#: static/js/account/register.js:85
+msgid "Please read and agree to the user instructions"
+msgstr "请阅读并同意用户使用协议"
+
+#: static/js/account/settings.js:191 static/js/main.js:306
+msgid "Network Error"
+msgstr "网络错误"
+
+#: static/js/account/settings.js:192 static/js/main.js:307
+msgid "Connection Timeout"
+msgstr "连接超时"
+
+#: static/js/account/settings.js:198 static/js/main.js:322
+msgid "Internal Server Error"
+msgstr "服务器内部错误"
+
+#: static/js/account/settings.js:199 static/js/main.js:323
+msgid "Please try again later or contact admin."
+msgstr "请稍后重试或联系管理员。"
+
+#: static/js/account/settings.js:201
+msgid "Response is not json. Maybe there is an internal server error."
+msgstr "服务器返回的数据不是json，可能是服务器错误。"
+
+#: static/js/account/upload_history.js:4
+msgid "Are you sure?"
+msgstr "确定要删除吗？"
+
+#: static/js/account/upload_history.js:5
+msgid "All data within this record will be deleted!"
+msgstr "本次导入的全部数据将被删除！"
+
+#: static/js/account/upload_history.js:9
+msgid "Are you really sure?"
+msgstr "您真的确定吗？"
+
+#: static/js/account/upload_history.js:10
+msgid "Click OK to delete."
+msgstr "点击确定后删除"
+
+#: static/js/analytics.js:72
+msgid "Month"
+msgstr "月"
+
+#: static/js/analytics.js:154 static/js/analytics.js:295
+msgid "Template Count"
+msgstr "模板数量"
+
+#: static/js/analytics.js:213 static/js/search/meta-search.js:67
+#: static/webpack/expr_search.js:5582 static/webpack/search.js:3819
+msgid "Category"
+msgstr "材料类别"
+
+#: static/js/gphase/gphase.js:105
+msgid "You must run the algorithm first!"
+msgstr "请先运行算法进行计算！"
+
+#: static/js/gphase/gphase.js:124 static/js/gphase/gphase.js:170
+msgid "XRD data and its composition must be uploaded!"
+msgstr "请上传X射线衍射数据和组成成分数据！"
+
+#: static/js/gphase/gphase.js:138 static/js/gphase/gphase.js:194
+msgid "The BG_Sub parameter must equal to 0 or 1!"
+msgstr "去除背景参数选项限定为0或1！"
+
+#: static/js/gphase/gphase.js:164
+msgid "You need to enter the system name!"
+msgstr "请输入体系名称！"
+
+#: static/js/gphase/gphase.js:167
+msgid "You need to enter the title!"
+msgstr "请输入标题！"
+
+#: static/js/gphase/gphase.js:234
+msgid "XRD data item entry system success!"
+msgstr "XRD数据添加成功！"
+
+#: static/js/gphase/gphase.js:246
+msgid "Network error, please try again!"
+msgstr "发生了错误，请重试。"
+
+#: static/js/gphase/gphase.js:278
+msgid ""
+"The algorithm is running wrong. Please check the input data and parameter "
+"settings."
+msgstr "计算错误，请检查输入数据和参数设定！"
+
+#: static/js/gphase/gphase.js:292 static/js/gphase/gphase.js:300
+#: static/js/gphase/gphase.js:308
+msgid "Prompt"
+msgstr "提示"
+
+#: static/js/left-navbar.js:60
+msgid "Global"
+msgstr "全局"
+
+#: static/js/main.js:44
+msgid "Note"
+msgstr "提示"
+
+#: static/js/main.js:47 static/js/main.js:1037
+#: static/js/storage/add_data.js:446 static/js/storage/show_data.js:121
+#: static/js/storage/show_data.js:130
+msgid "OK"
+msgstr "确定"
+
+#: static/js/main.js:48
+msgid "Cancel"
+msgstr "取消"
+
+#: static/js/main.js:72
+msgid "Show details"
+msgstr "查看详情"
+
+#: static/js/main.js:315 static/js/storage/add_data.js:311
+#: static/js/storage/add_data.js:342 static/js/storage/doi_list.js:213
+#: static/js/storage/register_doi.js:45 static/js/storage/register_doi.js:67
+#: static/js/storage/template.js:431
+msgid "ERROR"
+msgstr "错误"
+
+#: static/js/main.js:316
+msgid "Sadly, an error occurred when send your request.💀"
+msgstr "真难过（ 请求时发生了错误 💀"
+
+#: static/js/main.js:446 static/js/ticketing/create-ticket.js:21
+msgid "Please input the subject."
+msgstr "请输入主题"
+
+#: static/js/main.js:452 static/js/ticketing/create-ticket.js:15
+#: static/js/ticketing/show_ticket.js:8
+msgid "Please input a description."
+msgstr "请输入描述信息"
+
+#: static/js/main.js:466 static/js/ticketing/create-ticket.js:37
+msgid "We will handle your ticket as soon as possible."
+msgstr "我们将会尽快处理你的问题"
+
+#: static/js/main.js:804 static/js/main.js:805
+msgid "Add to download list"
+msgstr "添加到下载列表"
+
+#: static/js/main.js:812 static/js/main.js:813
+msgid "Already in download list"
+msgstr "已在下载列表中"
+
+#: static/js/main.js:1033 static/js/storage/show_data.js:117
+msgid ""
+"An exporting task has been added to your task list. Click OK to check the "
+"progress."
+msgstr "已将数据导出加入任务列表，您可以点击确定按钮查看任务进度"
+
+#: static/js/main.js:1120
+msgid "Are you sure to delete this data?"
+msgstr "确定要删除这条数据吗？"
+
+#: static/js/mge.js:42 static/js/storage/storage.js:90
+#: static/js/storage/storage_check.js:87 static/js/ticketing/init_editor.js:8
+msgid "Your file is large than 100MB, it will be ignored."
+msgstr "您的文件大小超过100MB，将会被忽略。"
+
+#: static/js/mge.js:138 static/js/mge.js:147 static/js/storage/add_data.js:415
+#: static/js/storage/add_data.js:432 static/js/storage/storage.js:101
+#: static/js/storage/storage.js:119 static/js/storage/storage_check.js:98
+#: static/js/storage/storage_check.js:116 static/js/ticketing/init_editor.js:19
+#: static/js/ticketing/init_editor.js:36
+msgid "Uploading..."
+msgstr "上传中..."
+
+#: static/js/mge.js:164 static/js/storage/storage.js:132
+#: static/js/storage/storage_check.js:129
+msgid "Upload failed, please reselect files."
+msgstr "上传失败，请重试重新选择文件"
+
+#: static/js/mge.js:170
+msgid "添加图片"
+msgstr ""
+
+#: static/js/mge.js:170
+msgid "添加文件"
+msgstr ""
+
+#: static/js/mge.js:179
+msgid "清空"
+msgstr ""
+
+#: static/js/search/adv-search.js:8 static/webpack/analytics.js:646
+#: static/webpack/expr_search.js:796 static/webpack/search.js:1243
+msgid "equals"
+msgstr "等于"
+
+#: static/js/search/adv-search.js:9 static/webpack/analytics.js:649
+#: static/webpack/expr_search.js:799 static/webpack/search.js:1246
+msgid "not equals"
+msgstr "不等于"
+
+#: static/js/search/adv-search.js:10 static/js/search/adv-search.js:54
+#: static/js/search/meta-search.js:12 static/js/search/meta-search.js:20
+msgid "contains"
+msgstr "包含字符串"
+
+#: static/js/search/adv-search.js:11 static/js/search/meta-search.js:13
+#: static/js/search/meta-search.js:21
+msgid "not contains"
+msgstr "不包含字符串"
+
+#: static/js/search/adv-search.js:14
+msgid "Press Enter to add a keyword."
+msgstr "按 Enter 键添加选项"
+
+#: static/js/search/adv-search.js:55 static/js/search/adv-search.js:94
+#: static/js/search/meta-search.js:16 static/js/search/meta-search.js:22
+#: static/js/search/meta-search.js:32 static/webpack/analytics.js:682
+#: static/webpack/expr_search.js:832 static/webpack/search.js:1279
+msgid "in"
+msgstr "包含于"
+
+#: static/js/search/adv-search.js:95 static/js/search/meta-search.js:17
+#: static/js/search/meta-search.js:23 static/js/search/meta-search.js:33
+#: static/webpack/analytics.js:685 static/webpack/expr_search.js:835
+#: static/webpack/search.js:1282
+msgid "not in"
+msgstr "不包含于"
+
+#: static/js/search/adv-search.js:299
+msgid "text"
+msgstr "文本"
+
+#: static/js/search/adv-search.js:326 static/js/search/adv-search.js:605
+#: static/js/storage/storage.js:965 static/js/storage/storage_check.js:963
+msgid "lower bound"
+msgstr "下界"
+
+#: static/js/search/adv-search.js:333 static/js/search/adv-search.js:607
+#: static/js/storage/storage.js:966 static/js/storage/storage_check.js:964
+msgid "upper bound"
+msgstr "上界"
+
+#: static/js/search/adv-search.js:350 static/js/search/adv-search.js:609
+#: static/js/storage/storage.js:965 static/js/storage/storage_check.js:963
+msgid "value"
+msgstr "实际值"
+
+#: static/js/search/adv-search.js:357 static/js/search/adv-search.js:611
+msgid "deviation"
+msgstr "误差值"
+
+#: static/js/search/adv-search.js:933 static/js/search/meta-search.js:211
+#: static/js/storage/add_data.js:548
+msgid "There are no templates under the current category!"
+msgstr "此分类下没有可用模板！"
+
+#: static/js/search/meta-search.js:54 static/webpack/expr_search.js:4819
+#: static/webpack/expr_search.js:4820 static/webpack/search.js:3669
+#: static/webpack/search.js:3819
+msgid "Title"
+msgstr "标题"
+
+#: static/js/search/meta-search.js:55 static/webpack/expr_search.js:4823
+#: static/webpack/expr_search.js:4824 static/webpack/search.js:3819
+#: static/webpack/search.js:4489
+msgid "DOI"
+msgstr "DOI"
+
+#: static/js/search/meta-search.js:59 static/webpack/search.js:4489
+msgid "Source"
+msgstr "来源"
+
+#: static/js/search/meta-search.js:60 static/webpack/search.js:4489
+msgid "Project"
+msgstr "项目"
+
+#: static/js/search/meta-search.js:61 static/webpack/search.js:4489
+msgid "Reference"
+msgstr "引用"
+
+#: static/js/search/meta-search.js:62
+msgid "Others"
+msgstr "其它"
+
+#: static/js/search/meta-search.js:63
+msgid "Created"
+msgstr "创建时间"
+
+#: static/js/search/meta-search.js:66 static/webpack/search.js:3819
+msgid "Keywords"
+msgstr "关键词"
+
+#: static/js/search/meta-search.js:74
+msgid "Separate keywords with commas."
+msgstr "使用逗号分隔多个词"
+
+#: static/js/search/meta-search.js:75
+msgid "Separate numbers with commas"
+msgstr "使用空格分隔多个数字"
+
+#: static/js/search/meta-search.js:82 static/webpack/expr_search.js:5560
+msgid "Select a category"
+msgstr "选择一个分类"
+
+#: static/js/search/meta-search.js:190
+msgid "Invalid number."
+msgstr "无效的数字"
+
+#: static/js/search/meta-search.js:215 static/webpack/expr_search.js:5536
+msgid "Select a template"
+msgstr "请先选择一个模板！"
+
+#: static/js/storage/add_data.js:28 static/js/storage/storage.js:328
+#: static/js/storage/storage_check.js:325
+msgid "This field cannot be null."
+msgstr "此字段不能为空"
+
+#: static/js/storage/add_data.js:78 static/js/storage/storage.js:338
+#: static/js/storage/storage_check.js:335
+msgid ""
+"Abstract value of first must large than second and second value must large "
+"than 0"
+msgstr "第一个值的绝对值必须比第二个值大且第二个值必须大于 0"
+
+#: static/js/storage/add_data.js:88 static/js/storage/storage.js:346
+#: static/js/storage/storage_check.js:343
+msgid "First value must less than or equal to second value"
+msgstr "第一个值不能小于第二个值"
+
+#: static/js/storage/add_data.js:183
+msgid "You need to add at lease one row in this table."
+msgstr "表格至少应该添加一行"
+
+#: static/js/storage/add_data.js:262
+msgid "You have not fill any field!"
+msgstr "您尚未填写任一字段！"
+
+#: static/js/storage/add_data.js:269
+#, javascript-format
+msgid "%s fields are empty!"
+msgstr "%s 个字段没有填写！"
+
+#: static/js/storage/add_data.js:303 static/js/storage/add_data.js:329
+#, javascript-format
+msgid ""
+"Successfully committed the data!\n"
+"You can continue adding new data or jump to the %s data details page %s to "
+"view data."
+msgstr ""
+"数据提交成功！\n"
+"您可以继续添加数据或跳转到 %s 数据详情页面 %s 查看数据"
+
+#: static/js/storage/add_data.js:305 static/js/storage/add_data.js:331
+msgid "Data committed successfully!"
+msgstr "数据提交成功"
+
+#: static/js/storage/add_data.js:312 static/js/storage/add_data.js:343
+msgid "An error has occurred! Please check your data and try again."
+msgstr "发生了错误！请检查您的数据并重试。"
+
+#: static/js/storage/add_data.js:371
+msgid "Please select a template first!"
+msgstr "请先选择一个模板！"
+
+#: static/js/storage/add_data.js:385 static/js/storage/add_data.js:391
+msgid "Excel file cannot preview, download it yourself."
+msgstr "Excel文件无法预览，请自行下载"
+
+#: static/js/storage/add_data.js:389
+msgid "Download"
+msgstr "下载"
+
+#: static/js/storage/add_data.js:442
+msgid ""
+"An importing task has been added to your task list. Click OK to check the "
+"progress."
+msgstr "已将数据导入加入任务列表，您可以点击确定按钮查看任务进度"
+
+#: static/js/storage/add_data.js:586 static/js/storage/add_data.js:658
+msgid "Commit Data"
+msgstr "提交数据"
+
+#: static/js/storage/add_data.js:597
+msgid "Please check your template selected !"
+msgstr "请检查您选择的模板！"
+
+#: static/js/storage/add_data.js:620
+msgid "Please select a file."
+msgstr "请先选择一个文件！"
+
+#: static/js/storage/add_data.js:634 static/js/storage/template.js:486
+msgid "Loading..."
+msgstr "加载中"
+
+#: static/js/storage/add_data.js:674
+msgid "Failed to get template content."
+msgstr "获取模板内容失败"
+
+#: static/js/storage/data_score.js:66
+msgid "you have successfully submit score for this data"
+msgstr "您已成功评分"
+
+#: static/js/storage/doi_list.js:155
+msgid "Yes"
+msgstr "是"
+
+#: static/js/storage/doi_list.js:156
+msgid "No"
+msgstr "否"
+
+#: static/js/storage/doi_list.js:196
+msgid "Register successfully"
+msgstr "提交成功"
+
+#: static/js/storage/doi_list.js:197
+msgid "you have successfully register some DOI numbers"
+msgstr "您已成功注册DOI"
+
+#: static/js/storage/doi_list.js:214 static/js/storage/register_doi.js:46
+#: static/js/storage/register_doi.js:68
+msgid "Your operation has an encounter an error"
+msgstr "您的操作遇到一个问题"
+
+#: static/js/storage/register_doi.js:14
+msgid "please fill in the full information"
+msgstr "请填写全部信息"
+
+#: static/js/storage/register_doi.js:27
+msgid "no data selected"
+msgstr "当前没有任何数据被选择"
+
+#: static/js/storage/register_doi.js:39 static/js/storage/register_doi.js:61
+msgid "Submit successfully"
+msgstr "提交成功"
+
+#: static/js/storage/register_doi.js:40 static/js/storage/register_doi.js:62
+msgid "your application for doi has been successfully submitted."
+msgstr "你的申请信息已成功提交"
+
+#: static/js/storage/show_data.js:126
+msgid "Click OK to download file."
+msgstr "点击确定下载文件"
+
+#: static/js/storage/show_data.js:235
+msgid "Item"
+msgstr "其中一项"
+
+#: static/js/storage/show_data.js:290 static/js/ticketing/init_editor.js:88
+#: static/webpack/analytics.js:5722 static/webpack/export_data.js:4100
+#: static/webpack/expr_search.js:3616 static/webpack/search.js:4177
+msgid "File"
+msgstr "文件"
+
+#: static/js/storage/show_data.js:409
+msgid "You have approved this data."
+msgstr "成功审核该数据"
+
+#: static/js/storage/show_data.js:427
+#: static/js/storage/show_template_review.js:66
+msgid "Please choose reasons of disapproval:"
+msgstr "请选择拒绝通过的理由："
+
+#: static/js/storage/show_data.js:436
+#: static/js/storage/show_template_review.js:47
+msgid "Please choose at least one reason."
+msgstr "请选择至少一个理由"
+
+#: static/js/storage/show_data.js:447
+msgid "Data disapproved."
+msgstr "已拒绝通过"
+
+#: static/js/storage/show_template_review.js:20
+msgid "Template approved"
+msgstr "模板已通过"
+
+#: static/js/storage/show_template_review.js:58
+msgid "Template disapproved"
+msgstr "已拒绝此模板"
+
+#: static/js/storage/storage.js:7
+msgid "STRING"
+msgstr "字符串型"
+
+#: static/js/storage/storage.js:7
+msgid "NUMBER"
+msgstr "数值型"
+
+#: static/js/storage/storage.js:7
+msgid "RANGE"
+msgstr "范围型"
+
+#: static/js/storage/storage.js:8
+msgid "IMAGE"
+msgstr "图片型"
+
+#: static/js/storage/storage.js:8
+msgid "FILE"
+msgstr "文件型"
+
+#: static/js/storage/storage.js:8
+msgid "ARRAY"
+msgstr "数组型"
+
+#: static/js/storage/storage.js:8
+msgid "CHOICE"
+msgstr "候选型"
+
+#: static/js/storage/storage.js:9
+msgid "TABLE"
+msgstr "表格型"
+
+#: static/js/storage/storage.js:9
+msgid "CONTAINER"
+msgstr "容器型"
+
+#: static/js/storage/storage.js:9
+msgid "GENERATOR"
+msgstr "生成器型"
+
+#: static/js/storage/storage.js:162 static/js/storage/storage_check.js:159
+msgid "Option/Group name cannot be null or spaces."
+msgstr "选项或分组名不能为空或全部为空白符"
+
+#: static/js/storage/storage.js:180 static/js/storage/storage_check.js:177
+msgid "Option/Group name duplicate"
+msgstr "选项或分组名重复"
+
+#: static/js/storage/storage.js:238 static/js/storage/storage.js:797
+#: static/js/storage/storage_check.js:235
+#: static/js/storage/storage_check.js:795
+msgid "You don't need to fill this field"
+msgstr "此字段不需要填写"
+
+#: static/js/storage/storage.js:262 static/js/storage/storage.js:1244
+#: static/js/storage/storage_check.js:259
+#: static/js/storage/storage_check.js:1231
+msgid "Delete this row"
+msgstr "删除此行"
+
+#: static/js/storage/storage.js:359 static/js/storage/storage_check.js:356
+msgid "Fields are empty!"
+msgstr "字段为空！"
+
+#: static/js/storage/storage.js:369 static/js/storage/storage_check.js:366
+msgid "Some fields are empty!"
+msgstr "有很多字段没有填写！"
+
+#: static/js/storage/storage.js:385 static/js/storage/storage.js:1160
+#: static/js/storage/storage_check.js:382
+#: static/js/storage/storage_check.js:1147
+msgid "Delete this field"
+msgstr "删除此字段"
+
+#: static/js/storage/storage.js:415 static/js/storage/storage_check.js:412
+msgid "You can't delete any more"
+msgstr "无法再删除了"
+
+#: static/js/storage/storage.js:571 static/js/storage/storage_check.js:568
+msgid "Press Enter to add option"
+msgstr "按 Enter 键添加选项"
+
+#: static/js/storage/storage.js:571 static/js/storage/storage_check.js:568
+msgid "Add option"
+msgstr "添加选项"
+
+#: static/js/storage/storage.js:571 static/js/storage/storage_check.js:568
+msgid "Add group"
+msgstr "添加分组"
+
+#: static/js/storage/storage.js:574 static/js/storage/storage_check.js:571
+msgid "Field name"
+msgstr "字段名"
+
+#: static/js/storage/storage.js:578 static/js/storage/storage_check.js:575
+msgid "Field name cannot be empty or start with `_` or contains `.`"
+msgstr "字段名称不能为空、包含`.`或以下划线开头"
+
+#: static/js/storage/storage.js:580 static/js/storage/storage_check.js:577
+msgid "Name"
+msgstr "字段名"
+
+#: static/js/storage/storage.js:587 static/js/storage/storage_check.js:585
+msgid "Down"
+msgstr "下移"
+
+#: static/js/storage/storage.js:588 static/js/storage/storage_check.js:586
+msgid "Up"
+msgstr "上移"
+
+#: static/js/storage/storage.js:600 static/js/storage/storage.js:968
+#: static/js/storage/storage.js:971 static/js/storage/storage.js:1012
+#: static/js/storage/storage.js:1034 static/js/storage/storage.js:1258
+#: static/js/storage/storage.js:1264 static/js/storage/storage_check.js:598
+#: static/js/storage/storage_check.js:966
+#: static/js/storage/storage_check.js:967
+#: static/js/storage/storage_check.js:1004
+#: static/js/storage/storage_check.js:1022
+#: static/js/storage/storage_check.js:1243
+#: static/js/storage/storage_check.js:1246
+msgid "Required"
+msgstr "必填项"
+
+#: static/js/storage/storage.js:647 static/js/storage/storage.js:648
+#: static/js/storage/storage.js:681 static/js/storage/storage.js:682
+#: static/js/storage/storage_check.js:645
+#: static/js/storage/storage_check.js:646
+#: static/js/storage/storage_check.js:679
+#: static/js/storage/storage_check.js:680
+msgid "Unit"
+msgstr "单位"
+
+#: static/js/storage/storage.js:673 static/js/storage/storage_check.js:671
+msgid "Type"
+msgstr "类型"
+
+#: static/js/storage/storage.js:677 static/js/storage/storage_check.js:675
+msgid "Interval"
+msgstr "区间型"
+
+#: static/js/storage/storage.js:677 static/js/storage/storage_check.js:675
+msgid "Error"
+msgstr "误差型"
+
+#: static/js/storage/storage.js:702 static/js/storage/storage_check.js:700
+msgid "Multiple Images"
+msgstr "允许多张图片"
+
+#: static/js/storage/storage.js:721 static/js/storage/storage_check.js:719
+msgid "Multiple Files"
+msgstr "允许多个文件"
+
+#: static/js/storage/storage.js:763 static/js/storage/storage_check.js:761
+msgid "Add your choices bellow"
+msgstr "在下方添加选项"
+
+#: static/js/storage/storage.js:785 static/js/storage/storage_check.js:783
+msgid "Array Type"
+msgstr "数组类型"
+
+#: static/js/storage/storage.js:791 static/js/storage/storage_check.js:789
+msgid "Set this type"
+msgstr "设置为这种类型"
+
+#: static/js/storage/storage.js:792 static/js/storage/storage_check.js:790
+msgid ""
+"Choose array type and click add button, then array type attributes will show "
+"bellow"
+msgstr "选择一个类型然后点击添加按钮，该类型的属性将会在下方列出"
+
+#: static/js/storage/storage.js:826 static/js/storage/storage_check.js:824
+msgid "Column Type"
+msgstr "列类型"
+
+#: static/js/storage/storage.js:836 static/js/storage/storage_check.js:834
+msgid "Add column"
+msgstr "添加列"
+
+#: static/js/storage/storage.js:844 static/js/storage/storage_check.js:842
+msgid ""
+"Choose column type and click add button, then column attributes will show "
+"bellow"
+msgstr "选择一个列类型然后点击添加按钮，该类型的属性将会在下方列出"
+
+#: static/js/storage/storage.js:904 static/js/storage/storage_check.js:902
+msgid "Field Type"
+msgstr "字段类型"
+
+#: static/js/storage/storage.js:910 static/js/storage/storage_check.js:908
+msgid "Add field"
+msgstr "添加字段"
+
+#: static/js/storage/storage.js:918 static/js/storage/storage_check.js:916
+msgid ""
+"Choose field type and click add button, then field attributes will show "
+"bellow"
+msgstr "选择一个字段类型然后点击添加按钮，该类型的属性将会在下方列出"
+
+#: static/js/storage/storage.js:966 static/js/storage/storage_check.js:964
+msgid "error"
+msgstr "误差值"
+
+#: static/js/storage/storage.js:1166 static/js/storage/storage_check.js:1153
+msgid "Add new"
+msgstr "添加一项"
+
+#: static/js/storage/storage.js:1311 static/js/storage/storage_check.js:1292
+msgid "Add row"
+msgstr "添加一行"
+
+#: static/js/storage/storage.js:1370 static/js/storage/storage_check.js:1351
+msgid "Select item then click button"
+msgstr "选择一项然后点击生成按钮"
+
+#: static/js/storage/template.js:59
+msgid "Group items cannot be empty"
+msgstr "分组不能为空"
+
+#: static/js/storage/template.js:67
+msgid "You have to add at lease one option"
+msgstr "至少应添加一个选项"
+
+#: static/js/storage/template.js:71
+msgid "Group is empty, add options or remove it"
+msgstr "分组为空，添加选项或移除它"
+
+#: static/js/storage/template.js:81
+msgid "You have to set array type"
+msgstr "数组类型必须设置"
+
+#: static/js/storage/template.js:97 static/js/storage/template.js:175
+msgid "You have to add at lease one field."
+msgstr "至少应添加一个字段"
+
+#: static/js/storage/template.js:110 static/js/storage/template.js:161
+msgid "Field name duplicate"
+msgstr "字段名称重复"
+
+#: static/js/storage/template.js:229
+msgid "Template saved!"
+msgstr "模板已保存"
+
+#: static/js/storage/template.js:235
+msgid "Saved failed! Please check your template title or fields."
+msgstr "保存失败！请检查您选择的模板标题或模板字段！"
+
+#: static/js/storage/template.js:305 static/js/storage/template.js:309
+msgid ""
+"You have entered the viewing mode, you can enable editing or create a new "
+"template based on this template."
+msgstr "你已经进入查看模式，你可以启用编辑或基于此模板创建新模板。"
+
+#: static/js/storage/template.js:330 static/js/storage/template.js:362
+msgid ""
+"Already have data using your template, modify the operation will create a "
+"new template, the original template will not be deleted, are you sure you "
+"want to modify it?"
+msgstr ""
+"已经有数据使用了你的模板，修改操作将会创建新的模板，原来的模板不会被删除，确"
+"定要修改吗？"
+
+#: static/js/storage/template.js:336
+msgid "Copy"
+msgstr "副本"
+
+#: static/js/storage/template.js:357
+msgid ""
+"You have entered the modifying mode, you can change controls or other "
+"attributes of this template, and then publish it."
+msgstr "你已经进入修改模式，你可以修改模板字段或其它属性，然后提交。"
+
+#: static/js/storage/template.js:373 static/js/storage/template.js:376
+msgid "State"
+msgstr "状态"
+
+#: static/js/storage/template.js:373
+msgid "Published"
+msgstr "已发布"
+
+#: static/js/storage/template.js:419
+#, javascript-format
+msgid ""
+"Successfully created the template!\n"
+"You can continue adding new templates or jump to the %s add data page %s to "
+"add data after this template has been approved. "
+msgstr ""
+"模板创建成功！\n"
+"您可以继续添加模板或跳转到 %s 数据添加页面 %s 添加数据（需等待审核通过）"
+
+#: static/js/storage/template.js:421
+msgid "Template created!"
+msgstr "模板创建成功"
+
+#: static/js/storage/template.js:432
+msgid ""
+"An error has occurred! May be the template title already exists, please "
+"change and try again."
+msgstr "发生了错误！可能是模板名称重复，请修改后重试。"
+
+#: static/js/storage/template.js:447 static/js/storage/template.js:455
+msgid "AutoSave"
+msgstr "自动保存"
+
+#: static/js/storage/template.js:447
+msgid "OFF"
+msgstr "关"
+
+#: static/js/storage/template.js:448
+msgid "Click to turn on"
+msgstr "点击启用"
+
+#: static/js/storage/template.js:455
+msgid "ON"
+msgstr "开"
+
+#: static/js/storage/template.js:456
+msgid "Click to turn off"
+msgstr "点击关闭"
+
+#: static/js/ticketing/init_editor.js:99
+msgid "Select your files"
+msgstr "选择你的文件"
+
+#: static/js/ticketing/init_editor.js:102
+#: static/js/ticketing/init_editor.js:105
+msgid "Insert File"
+msgstr "插入文件"
+
+#: static/js/ticketing/init_editor.js:177
+msgid "Write text here..."
+msgstr "在这里填写内容。。。"
+
+#: static/webpack/analytics.js:643 static/webpack/expr_search.js:793
+#: static/webpack/search.js:1240
+msgid "is not null"
+msgstr "非空值"
+
+#: static/webpack/analytics.js:652 static/webpack/expr_search.js:802
+#: static/webpack/search.js:1249
+msgid "greater than"
+msgstr "大于"
+
+#: static/webpack/analytics.js:655 static/webpack/expr_search.js:805
+#: static/webpack/search.js:1252
+msgid "greater than or equal"
+msgstr "大于等于"
+
+#: static/webpack/analytics.js:658 static/webpack/expr_search.js:808
+#: static/webpack/search.js:1255
+msgid "less than"
+msgstr "小于"
+
+#: static/webpack/analytics.js:661 static/webpack/expr_search.js:811
+#: static/webpack/search.js:1258
+msgid "less than or equals"
+msgstr "小于等于"
+
+#: static/webpack/analytics.js:664 static/webpack/expr_search.js:814
+#: static/webpack/search.js:1261
+msgid "contains string"
+msgstr "包含字符串"
+
+#: static/webpack/analytics.js:667 static/webpack/expr_search.js:817
+#: static/webpack/search.js:1264
+msgid "not contains string"
+msgstr "不包含字符串"
+
+#: static/webpack/analytics.js:670 static/webpack/expr_search.js:820
+#: static/webpack/search.js:1267
+msgid "begins with string"
+msgstr "以...为前缀"
+
+#: static/webpack/analytics.js:673 static/webpack/expr_search.js:823
+#: static/webpack/search.js:1270
+msgid "not begins with string"
+msgstr "不以...为前缀"
+
+#: static/webpack/analytics.js:676 static/webpack/expr_search.js:826
+#: static/webpack/search.js:1273
+msgid "ends with string"
+msgstr "以...为后缀"
+
+#: static/webpack/analytics.js:679 static/webpack/expr_search.js:829
+#: static/webpack/search.js:1276
+msgid "not ends with string"
+msgstr "不以...为后缀"
+
+#: static/webpack/analytics.js:688 static/webpack/expr_search.js:838
+#: static/webpack/search.js:1285
+msgid "is null"
+msgstr "是空值"
+
+#: static/webpack/analytics.js:691 static/webpack/expr_search.js:841
+#: static/webpack/search.js:1288
+msgid "all satisfy"
+msgstr "全部满足"
+
+#: static/webpack/analytics.js:694 static/webpack/expr_search.js:844
+#: static/webpack/search.js:1291
+msgid "exists one that satisfies"
+msgstr "存在一行(个)满足"
+
+#: static/webpack/analytics.js:697 static/webpack/expr_search.js:847
+#: static/webpack/search.js:1294
+msgid "exists none that satisfies"
+msgstr "不存在一行(个)满足"
+
+#: static/webpack/analytics.js:700 static/webpack/expr_search.js:850
+#: static/webpack/search.js:1297
+msgid "n-th one satisfies"
+msgstr "第n行(个)满足"
+
+#: static/webpack/analytics.js:5710 static/webpack/export_data.js:4088
+#: static/webpack/expr_search.js:3604 static/webpack/search.js:4165
+msgid "String"
+msgstr "字符串型"
+
+#: static/webpack/analytics.js:5713 static/webpack/export_data.js:4091
+#: static/webpack/expr_search.js:3607 static/webpack/search.js:4168
+msgid "Number"
+msgstr "数字型"
+
+#: static/webpack/analytics.js:5716 static/webpack/export_data.js:4094
+#: static/webpack/expr_search.js:3610 static/webpack/search.js:4171
+msgid "Range"
+msgstr "范围型"
+
+#: static/webpack/analytics.js:5719 static/webpack/export_data.js:4097
+#: static/webpack/expr_search.js:3613 static/webpack/search.js:4174
+msgid "Image"
+msgstr "图片型"
+
+#: static/webpack/analytics.js:5725 static/webpack/export_data.js:4103
+#: static/webpack/expr_search.js:3619 static/webpack/search.js:4180
+msgid "Choice"
+msgstr "候选型"
+
+#: static/webpack/analytics.js:5728 static/webpack/export_data.js:4106
+#: static/webpack/expr_search.js:3622 static/webpack/search.js:4183
+msgid "Array"
+msgstr "数组类型"
+
+#: static/webpack/analytics.js:5731 static/webpack/export_data.js:4109
+#: static/webpack/expr_search.js:3625 static/webpack/search.js:4186
+msgid "Table"
+msgstr "表格型"
+
+#: static/webpack/analytics.js:5734 static/webpack/export_data.js:4112
+#: static/webpack/expr_search.js:3628 static/webpack/search.js:4189
+msgid "Container"
+msgstr "容器型"
+
+#: static/webpack/analytics.js:5737 static/webpack/export_data.js:4115
+#: static/webpack/expr_search.js:3631 static/webpack/search.js:4192
+msgid "Generator"
+msgstr "生成器型"
+
+#: static/webpack/analytics.js:5742 static/webpack/export_data.js:4120
+#: static/webpack/expr_search.js:3636 static/webpack/search.js:4197
+msgid "Parse error"
+msgstr "解析错误"
+
+#: static/webpack/analytics.js:6248 static/webpack/export_data.js:5580
+#: static/webpack/expr_search.js:5303 static/webpack/search.js:5167
+msgid "[Select a choice]"
+msgstr "[选择一个选项]"
+
+#: static/webpack/expr_search.js:283
+msgid "Lower bound"
+msgstr "下界"
+
+#: static/webpack/expr_search.js:285
+msgid "Upper bound"
+msgstr "上界"
+
+#: static/webpack/expr_search.js:289
+msgid "Value"
+msgstr "实际值"
+
+#: static/webpack/expr_search.js:290
+msgid "Error value"
+msgstr "误差值"
+
+#: static/webpack/expr_search.js:4169 static/webpack/expr_search.js:4292
+msgid "Field"
+msgstr "字段名"
+
+#: static/webpack/expr_search.js:4169 static/webpack/expr_search.js:4292
+#: static/webpack/expr_search.js:4611
+msgid "AND"
+msgstr "且"
+
+#: static/webpack/expr_search.js:4169 static/webpack/expr_search.js:4292
+#: static/webpack/expr_search.js:4611
+msgid "OR"
+msgstr "或"
+
+#: static/webpack/expr_search.js:4175
+msgid "Select condition type"
+msgstr "选择条件类型"
+
+#: static/webpack/expr_search.js:4235 static/webpack/expr_search.js:4291
+#: static/webpack/expr_search.js:4304
+msgid "Click to add condition."
+msgstr "点击添加条件"
+
+#: static/webpack/expr_search.js:4278
+msgid "Select a template first."
+msgstr "请先选择一个模板！"
+
+#: static/webpack/expr_search.js:5562
+msgid "Choose category"
+msgstr "选择材料类别"
+
+#: static/webpack/expr_search.js:5590
+msgid "No available templates."
+msgstr "无模板"
+
+#: static/webpack/search.js:3669 static/webpack/search.js:3819
+msgid "Time"
+msgstr "提交时间"
+
+#: static/webpack/search.js:3676
+msgid "Descending"
+msgstr "降序"
+
+#: static/webpack/search.js:3676
+msgid "Ascending"
+msgstr "升序"
+
+#: static/webpack/search.js:3770
+msgid "Results"
+msgstr "结果"
+
+#: static/webpack/search.js:3819
+msgid "Text"
+msgstr "全文检索"
+
+#: static/webpack/search.js:4489
+msgid "Data Score"
+msgstr "数据评分"
+
+#: static/webpack/search.js:4489
+msgid "Add time"
+msgstr "提交时间"
+
+#~ msgid "Info"
+#~ msgstr "信息"
+
+#~ msgid "All"
+#~ msgstr "全部字段"
+
+#~ msgid "Choose Field"
+#~ msgstr "选择字段"
+
+#~ msgid "Partial"
+#~ msgstr "部分字段"
+
+#~ msgid "Partial field export requires single template."
+#~ msgstr "导出部分字段时，只能选择同一模板下的数据"
+
+#, fuzzy
+#~| msgid "Template saved!"
+#~ msgid "Template Pass"
+#~ msgstr "模板已保存"
+
+#, fuzzy
+#~| msgid "Template created!"
+#~ msgid "Template Trash"
+#~ msgstr "模板创建成功"
+
+#~ msgid "equal"
+#~ msgstr "等于"
+
+#~ msgid "not equal"
+#~ msgstr "不等于"
+
+#~ msgid "at least one row satisfy"
+#~ msgstr "存在一行满足"
+
+#~ msgid "all not satisfy"
+#~ msgstr "全部满足"
+
+#~ msgid "the nth row satisfy"
+#~ msgstr "第n行满足"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Username or email"
+msgstr "用户名/邮箱"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Remember me"
+msgstr "保持登录状态"
+
+msgid "Captcha"
+msgstr "验证码"
+
+msgid "Forgot your password?"
+msgstr "忘记密码？"
+
+msgid "Signup"
+msgstr "注册"

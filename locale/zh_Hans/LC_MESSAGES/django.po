@@ -1,0 +1,3023 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: apps/account/models/notifications.py:96
+#: apps/account/models/notifications.py:97
+#: apps/account/models/notifications.py:98
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-27 11:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# !!! 下面这三个不用翻译
+#: apps/account/admin.py:56
+msgid "Personal info"
+msgstr ""
+
+#: apps/account/admin.py:57 templates/account/user_list.html:66
+#: templates/account/user_permissions.html:100
+#: templates/account/user_permissions.html:131
+msgid "Permissions"
+msgstr "权限"
+
+#: apps/account/admin.py:59
+msgid "Important dates"
+msgstr ""
+
+#: apps/account/admin.py:100
+msgid "Delete selected notifications"
+msgstr "删除所选通知"
+
+#: apps/account/apis/v1/user.py:385 apps/account/tests/v1/test_user.py:101
+#, python-format
+msgid ""
+"An email has been sent to %(object1)s. Please click the link in it to reset "
+"your password"
+msgstr "重置密码邮件已经发送到您的邮箱：%(object1)s，请点击链接重置密码。"
+
+#: apps/account/apis/v1/user.py:401 apps/account/tests/v1/test_user.py:110
+msgid "Your password has been reset."
+msgstr "您的密码已重置"
+
+#: apps/account/apis/v1/user.py:455
+msgid "Part name \"avatar\" required"
+msgstr "\"avatar\"字段必须设置"
+
+#: apps/account/apis/v1/user.py:492 apps/account/tests/v1/test_user.py:120
+#, python-format
+msgid ""
+"An email has been sent to %(object1)s. Please click the link in it to verify "
+"your email address."
+msgstr "激活邮件已经发送到您的邮箱：%(object1)s，请点击连接进行认证。"
+
+#: apps/account/models/notifications.py:14
+#, python-format
+msgid ""
+"A confirmation email has been sent to your email address: %(object1)s, "
+"please click the link in it to verify your account."
+msgstr "激活邮件已经发送到您的邮箱：%(object1)s，请点击连接进行认证。"
+
+#: apps/account/models/notifications.py:16
+#, python-format
+msgid "Your ticket %(object1)s has a new reply."
+msgstr "你的问题反馈单 %(object1)s 有了新的回复"
+
+#: apps/account/models/notifications.py:17
+#, python-format
+msgid "%(object1)s has opened a new ticket %(object2)s."
+msgstr "%(object1)s 新开了一个问题反馈单 %(object2)s"
+
+#: apps/account/models/notifications.py:18
+#, python-format
+msgid "Ticket %(object1)s has a new reply from %(object2)s."
+msgstr "你的反馈单 %(object1)s 收到了来自 %(object2)s 的新回复"
+
+#: apps/account/models/notifications.py:19
+#, python-format
+msgid "Admin closed your ticket %(object1)s."
+msgstr "管理员关闭了反馈单 %(object1)s"
+
+#: apps/account/models/notifications.py:20
+#, python-format
+msgid "Your task \"%(object1)s\" has been done."
+msgstr "您的%(object1)s任务已完成！"
+
+#: apps/account/models/notifications.py:21
+#, python-format
+msgid "Your task \"%(object1)s\" failed... :("
+msgstr "您的%(object1)s任务运行失败！"
+
+#: apps/account/models/notifications.py:22
+#, python-format
+msgid "Your template \"%(object1)s\" has been approved."
+msgstr "您的模板\"%(object1)s\"已审核通过！"
+
+#: apps/account/models/notifications.py:23
+#, python-format
+msgid "Your template \"%(object1)s\" has been disapproved."
+msgstr "您的模板\"%(object1)s\"已被拒绝通过！"
+
+#: apps/account/models/notifications.py:24
+msgid "Your data has been approved. "
+msgstr "您的数据已通过审核"
+
+#: apps/account/models/notifications.py:25
+msgid "Your data has been disapproved. "
+msgstr "您的数据未通过审核"
+
+#: apps/account/models/notifications.py:27
+#, python-format
+msgid ""
+"You have been assigned to evaluate %(object1)s \"%(object2)s\". Please "
+"finish evaluating before %(object3)s. "
+msgstr ""
+"您被分配参与%(object1)s\"%(object2)s\"的验收评价，请于%(object3)s之前完成评"
+"价。"
+
+#: apps/account/models/notifications.py:28
+#, python-format
+msgid "Your %(object1)s \"%(object2)s\" has been accepted!"
+msgstr "您的%(object1)s\"%(object2)s\"验收通过！"
+
+#: apps/account/models/notifications.py:29
+#, python-format
+msgid "Your %(object1)s \"%(object2)s\" has failed. "
+msgstr ""
+"您的%(object1)s\"%(object2)s\"验收未通过！请前往\"我的验收申请\"查看详细结"
+"果。"
+
+#: apps/account/models/notifications.py:31
+#, python-format
+msgid ""
+"All experts have evaluated %(object1)s \"%(object2)s\". Please give your "
+"evaluation. "
+msgstr "验收专家已完成%(object1)s\"%(object2)s\"的评价，请您尽快完成组长评价。"
+
+#: apps/account/models/notifications.py:33
+msgid ""
+"You have been assigned as the expert leader of a new acceptance request. "
+"Please assign experts and make your evaluation."
+msgstr "您已被指定为验收评价组长，请及时分配验收专家并做出评价"
+
+#: apps/account/models/notifications.py:35
+#, fuzzy, python-format
+#| msgid "Your data uploaded at \"%(object1)\" has been revoked. "
+msgid "Your data uploaded at %(object1)s has been retracted. "
+msgstr "您于%(object1)s上传的数据已被删除。"
+
+#: apps/account/models/notifications.py:36
+#, python-format
+msgid "Your data uploaded at %(object1)s has been set to pending review. "
+msgstr "您于%(object1)s上传的数据已被撤回审核通过。"
+
+#: apps/account/models/notifications.py:45
+#, python-format
+msgid "Click <a href=\"%(url)s\">here</a> for details."
+msgstr "点击<a href=\"%(url)s\">这里</a>查看详情"
+
+#: apps/account/models/users.py:35
+msgid "Super Admin"
+msgstr "超级管理员"
+
+#: apps/account/models/users.py:35
+msgid "Verified User"
+msgstr "认证用户"
+
+#: apps/account/models/users.py:35
+msgid "Template Uploader"
+msgstr "模板上传"
+
+#: apps/account/models/users.py:35
+msgid "Template Admin"
+msgstr "模板管理"
+
+#: apps/account/models/users.py:36
+msgid "Data Uploader"
+msgstr "数据上传"
+
+#: apps/account/models/users.py:36
+msgid "Data Admin"
+msgstr "数据管理"
+
+#: apps/account/models/users.py:36
+msgid "DOI Admin"
+msgstr "DOI管理"
+
+#: apps/account/models/users.py:36
+msgid "User Admin"
+msgstr "用户管理"
+
+#: apps/account/models/users.py:36
+msgid "Third Application"
+msgstr "第三方应用"
+
+#: apps/account/models/users.py:114 templates/account/me.html:27
+#: templates/account/user_list.html:46
+#: templates/account/user_permissions.html:29
+msgid "Username"
+msgstr "用户名"
+
+#: apps/account/models/users.py:116 templates/account/me.html:48
+msgid "Real name"
+msgstr "姓名"
+
+#: apps/account/models/users.py:117 templates/account/me.html:61
+msgid "Email address"
+msgstr "邮箱地址"
+
+#: apps/account/models/users.py:118
+msgid "Email verified"
+msgstr "邮箱已验证"
+
+#: apps/account/models/users.py:119 templates/account/me.html:54
+#: templates/account/user_list.html:48
+#: templates/account/user_permissions.html:83
+#: templates/storage/show_data.html:168
+msgid "Institution"
+msgstr "数据生产机构"
+
+#: apps/account/models/users.py:120
+msgid "Register IP"
+msgstr "注册IP"
+
+#: apps/account/models/users.py:121 templates/account/me.html:33
+msgid "Roles"
+msgstr "角色"
+
+#: apps/account/models/users.py:122 templates/account/user_permissions.html:76
+msgid "Telephone"
+msgstr "手机号码"
+
+#: apps/account/notify.py:36 apps/account/tests/v1/test_user.py:50
+#: apps/account/tests/v1/test_user.py:89 apps/account/tests/v1/test_user.py:123
+msgid "Activate Your Account"
+msgstr "激活您的账号"
+
+#: apps/account/notify.py:37
+msgid "Please click the following link to verify your email address."
+msgstr "请点击下面的链接验证您的邮箱"
+
+#: apps/account/notify.py:55 apps/account/tests/v1/test_user.py:98
+msgid "Reset Your Password"
+msgstr "重置密码"
+
+#: apps/account/notify.py:56
+msgid "Please click the following link to reset your password."
+msgstr "激活邮件已经发送到您的邮箱：%(object1)s，请点击连接进行认证。"
+
+#: apps/account/views.py:27
+msgid "Oops"
+msgstr "出错了"
+
+#: apps/account/views.py:108 apps/account/views.py:112
+#: apps/account/views.py:189
+msgid "Invalid link"
+msgstr "无效的链接"
+
+#: apps/account/views.py:109 apps/account/views.py:190
+msgid "The link is invalid or your email address is already verified."
+msgstr "此链接无效或您的邮箱已经验证"
+
+#: apps/account/views.py:198 apps/task/models.py:132
+#: mgedata/errors/models.py:117 templates/account/user_permissions.html:260
+#: templates/task/my_tasks.html:40
+msgid "Success"
+msgstr "成功"
+
+#: apps/account/views.py:199
+msgid "Your email address is verified."
+msgstr "您的邮箱已验证通过"
+
+#: apps/mge/models.py:30
+msgid "Database Backup File"
+msgstr "数据库备份文件"
+
+#: apps/mge/models.py:31
+msgid "Database Backup Files"
+msgstr "数据库备份文件"
+
+#: apps/storage/models/data.py:52 templates/account/my-templates.html:95
+#: templates/account/upload_history.html:100
+#: templates/storage/review_data.html:110
+msgid "Reviewing Pending"
+msgstr "等待审核"
+
+#: apps/storage/models/data.py:54 templates/account/my-templates.html:56
+#: templates/account/my-templates.html:97
+#: templates/account/upload_history.html:56
+#: templates/account/upload_history.html:102 templates/storage/doi_list.html:22
+#: templates/storage/review_data.html:58 templates/storage/review_data.html:112
+#: templates/storage/show_data.html:88
+#: templates/storage/show_template_review.html:38
+msgid "Approved"
+msgstr "审核通过"
+
+#: apps/storage/models/data.py:56 templates/account/my-templates.html:59
+#: templates/account/my-templates.html:99
+#: templates/account/upload_history.html:59
+#: templates/account/upload_history.html:104 templates/storage/doi_list.html:23
+#: templates/storage/review_data.html:61 templates/storage/review_data.html:114
+#: templates/storage/show_template_review.html:40
+msgid "Disapproved"
+msgstr "未通过审核"
+
+#: apps/storage/models/data.py:72
+msgid "Other"
+msgstr "其它"
+
+#: apps/storage/models/data.py:74
+msgid "Missing some meta fields"
+msgstr "缺少元数据"
+
+#: apps/storage/models/data.py:76
+msgid "Missing conditions of computation/experiment"
+msgstr "缺少计算或实验条件"
+
+#: apps/storage/models/data.py:78
+msgid "Missing information of performance"
+msgstr "缺少性能信息"
+
+#: apps/storage/models/data.py:80
+msgid "Missing component"
+msgstr "缺少组成成分"
+
+#: apps/storage/models/data.py:82
+msgid "Title lacks standardization"
+msgstr "标题不规范"
+
+#: apps/storage/models/data.py:84
+msgid "Missing references"
+msgstr "缺少引用信息"
+
+#: apps/storage/models/data.py:86
+msgid "Missing collector/contributor/reviewer"
+msgstr "数据收集、审核人信息不全"
+
+#: apps/storage/models/data.py:538
+msgid "Data Meta"
+msgstr "数据描述信息"
+
+#: apps/storage/models/data.py:539
+msgid "Data Metas"
+msgstr "数据描述信息"
+
+#: apps/storage/models/data.py:554
+msgid "self-production"
+msgstr "自产"
+
+#: apps/storage/models/data.py:554
+msgid "reference"
+msgstr "引用"
+
+# TODO 改为摘录
+#: apps/storage/models/data.py:556
+msgid "computation"
+msgstr "计算"
+
+#: apps/storage/models/data.py:556
+msgid "experiment"
+msgstr "实验"
+
+#: apps/storage/models/data.py:556
+msgid "production"
+msgstr "生产"
+
+#: apps/storage/models/data.py:556
+msgid "other"
+msgstr "其它"
+
+#: apps/storage/models/data.py:571
+msgid "Source must be single choice with exact 0 and 1 in the representation"
+msgstr "数据来源必须是单选，用01或者10来表示"
+
+#: apps/storage/models/data.py:608
+msgid "Can not get the source version"
+msgstr "不能获取到数据来源的版本"
+
+#: apps/storage/models/data.py:612
+msgid "Wrong Segments in the source representation"
+msgstr "数据来源表示错误"
+
+#: apps/storage/models/data.py:617
+msgid "Wrong Format for the multi choice"
+msgstr "多选表示格式错误，正确格式如：001"
+
+#: apps/storage/models/data.py:619
+msgid "Wrong Format for the single choice"
+msgstr "单选格式错误，正确格式如：01"
+
+#: apps/storage/models/data.py:631
+msgid "Wrong source version in Source representation"
+msgstr "数据来源版本错误"
+
+#: apps/storage/models/data.py:634
+#, python-format
+msgid "Source must be start with '%(header)s' and end with '%(end)s'"
+msgstr "数据来源必须以%(header)s开始，以%(end)s结尾"
+
+#: apps/storage/models/data.py:640 apps/storage/models/data.py:1195
+msgid "project"
+msgstr "项目"
+
+#: apps/storage/models/data.py:640 apps/storage/models/data.py:1195
+msgid "subject"
+msgstr "课题"
+
+#: apps/storage/models/data.py:853 apps/storage/models/data.py:1100
+#: apps/storage/models/data.py:1104 apps/storage/models/template.py:746
+#: apps/storage/models/template.py:760
+msgid "User Deleted"
+msgstr "用户已删除"
+
+#: apps/storage/models/data.py:985
+#, fuzzy
+#| msgid "Source Reference  with no Reference"
+msgid "Source Reference with no Reference"
+msgstr "数据来源为应用，但是引用字段确缺失"
+
+#: apps/storage/models/data.py:1192
+msgid "public_date"
+msgstr "公开时间"
+
+#: apps/storage/models/data.py:1193
+msgid "public_range"
+msgstr "公开范围"
+
+#: apps/storage/models/data.py:1195
+msgid "public"
+msgstr "公开"
+
+#: apps/storage/models/data.py:1195
+msgid "person"
+msgstr "个人"
+
+#: apps/storage/models/data_helper.py:123
+#, python-format
+msgid "Cannot find file \"%(file)s\""
+msgstr "找不到文件\"%(file)s\""
+
+#: apps/storage/models/data_helper.py:154 mgedata/utils/general.py:107
+#: mgedata/utils/general.py:152 mgedata/utils/general.py:194
+#, python-format
+msgid "field \"%(field_name)s\" is missing"
+msgstr "字段%(field_name)s 缺失"
+
+#: apps/storage/models/material.py:100 apps/storage/models/material.py:221
+#, python-format
+msgid "Category does not exist. (ID=%s)"
+msgstr "分类不存在（ID=%s）"
+
+#: apps/storage/models/material.py:111 apps/storage/models/material.py:142
+#: apps/storage/models/material.py:167
+msgid "Some other user has edited the page. Please refresh and try again."
+msgstr "其他用户修改了本页面上的数据，请刷新后重新修改"
+
+#: apps/storage/models/material.py:134
+#, python-format
+msgid "Parent category does not exist. (ID=%s)"
+msgstr "父分类不存在（ID=%s）"
+
+#: apps/storage/models/material.py:193
+#, python-format
+msgid ""
+"The following category(ies) has templates: %s. Please delete the templates "
+"first."
+msgstr "以下分类已经拥有模板：%s。请先删除模板再删除分类。"
+
+#: apps/storage/models/material.py:222
+#, python-format
+msgid "Category \"%s\" appears multiple times. )"
+msgstr "分类\"%s\"拥有多个父分类（每个分类只能有一个父分类）"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:44
+msgid "String"
+msgstr "字符串型"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:47
+msgid "Number"
+msgstr "数值型"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:50
+msgid "Range"
+msgstr "范围型"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:58
+msgid "Image"
+msgstr "图片型"
+
+#: apps/storage/models/template.py:107 templates/account/upload_history.html:88
+#: templates/storage/review_data.html:92 templates/storage/show_data.html:140
+#: templates/storage/template.html:61
+msgid "File"
+msgstr "文件"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:53
+msgid "Choice"
+msgstr "候选型"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:66
+msgid "Array"
+msgstr "数组型"
+
+#: apps/storage/models/template.py:107 templates/storage/template.html:69
+msgid "Table"
+msgstr "表格型"
+
+#: apps/storage/models/template.py:108 templates/storage/template.html:72
+msgid "Container"
+msgstr "容器型"
+
+#: apps/storage/models/template.py:108 templates/storage/template.html:75
+msgid "Generator"
+msgstr "生成器型"
+
+#: apps/storage/models/template.py:1101
+#, python-format
+msgid ""
+"Wrong field type: field \"%(field)s\" should be %(should)s, not "
+"%(should_not)s."
+msgstr ""
+"错误的字段类型: 字段 \"%(field)s\" 应该是 %(should)s, 而不是%(should_not)s."
+
+#: apps/storage/models/template.py:1124
+#, python-format
+msgid "Cannot find field(s): \"%(field_list)s\" in the new template."
+msgstr "旧模板中的字段 \"%(field_list)s\" 缺失"
+
+#: apps/storage/tasks.py:217 apps/storage/utils/serializers/xml.py:218
+#, python-format
+msgid " (line %(line_number)s)"
+msgstr "（第%(line_number)s行）"
+
+#: apps/storage/tasks.py:349
+msgid "Multiple templates involved"
+msgstr ""
+
+#: apps/storage/utils/serializers/common.py:40
+#, fuzzy, python-format
+#| msgid "Meta ID \"%(o1)s\"already exists."
+msgid "Meta ID \"%(o1)s\"already exists."
+msgstr "数据ID\"%(os)s\"已存在"
+
+#: apps/storage/utils/serializers/common.py:41
+#, python-format
+msgid "Meta field \"%(o1)s\" is missing. "
+msgstr "元数据字段\"%(o1)s\"缺失"
+
+#: apps/storage/utils/serializers/common.py:42
+#, python-format
+msgid "Meta field \"%(o1)s\" is blank. "
+msgstr "元数据字段\"%(o1)s\"为空"
+
+#: apps/storage/utils/serializers/common.py:43
+#, python-format
+msgid "Field \"%(o1)s\" is missing. "
+msgstr "字段%(o1)s 缺失"
+
+#: apps/storage/utils/serializers/common.py:44
+#, python-format
+msgid "Unknown field \"%(o1)s\"."
+msgstr "未知字段: %(o1)s"
+
+#: apps/storage/utils/serializers/common.py:45
+#, python-format
+msgid "Value for field \"%(o1)s\" is required but is missing."
+msgstr "\"%(o1)s\" 是必填项"
+
+#: apps/storage/utils/serializers/common.py:46
+#, python-format
+msgid "Value \"%(o1)s\" is invalid for type \"%(o2)s\". (Field \"%(o3)s\")"
+msgstr "类型错误：\"%(o1)s\" 不是 \"%(o2)s\" 类型的合法值。（字段\"%(o3)s\"）"
+
+#: apps/storage/utils/serializers/common.py:47
+#, python-format
+msgid "No elements found in array \"%(o1)s\"."
+msgstr "数组 \"%(o1)s 没有元素"
+
+#: apps/storage/utils/serializers/common.py:48
+#, python-format
+msgid "Data \"%(o1)s\" has no metadata."
+msgstr "数据 \"%(o1)s\" 没有元数据"
+
+#: apps/storage/utils/serializers/common.py:49
+#, python-format
+msgid "Data \"%(o1)s\" has metadata but no data content."
+msgstr "数据 \"%(o1)s\" 有元数据但没有内容"
+
+#: apps/storage/utils/serializers/common.py:50
+#, python-format
+msgid "Template \"%(o1)s\" not found."
+msgstr "没有找到模板 \"%(o1)s\""
+
+#: apps/storage/utils/serializers/common.py:52
+#, python-format
+msgid ""
+"File \"%(o1)s\" does not exist in the archive file. Please consider using "
+"only English characters."
+msgstr "没有在压缩包中找到 \"%(o1)s\"。请尝试使用英文命名文件。"
+
+#: apps/storage/utils/serializers/common.py:54
+msgid "Template file is corrupted. Please re-generate a template. "
+msgstr "模板损坏，请重新生成数据填写模板并再次填写上传"
+
+#: apps/storage/utils/serializers/common.py:56
+#, python-format
+msgid "Value \"%(o1)s\" is not a valid choice. Allowed choices are %(o2)s."
+msgstr "\"%(o1)s\"不是有效选项。可选选项有: %(o2)s"
+
+#: apps/storage/utils/serializers/common.py:57
+#, python-format
+msgid "Bad XML Syntax: %(o1)s."
+msgstr "XML语法错误：%(o1)s"
+
+#: apps/storage/utils/serializers/common.py:58
+#, python-format
+msgid "Bad JSON Syntax: %(o1)s."
+msgstr "JSON语法错误：%(o1)s"
+
+#: apps/storage/utils/serializers/common.py:59
+#, python-format
+msgid "Node \"%(o1)s\" is missing from node \"%(o2)s\"."
+msgstr "XML结点\"%(o2)s\"缺少结点\"%(o1)s\""
+
+#: apps/storage/utils/serializers/common.py:60
+#, python-format
+msgid "Attribute \"%(o1)s\" is missing from node \"%(o2)s\"."
+msgstr "XML结点\"%(o2)s\"缺少属性\"%(o1)s\""
+
+#: apps/storage/utils/serializers/common.py:61
+#, python-format
+msgid "Template (id=%(o1)s) does not exist."
+msgstr "没有找到ID为\"%(o1)s\"的模板"
+
+#: apps/storage/utils/serializers/common.py:62
+#, python-format
+msgid "Field \"%(o1)s\" does not allow multiple files (images)."
+msgstr "字段\"%(o1)s\"不允许多个文件或图片"
+
+#: apps/storage/utils/serializers/common.py:64
+#, python-format
+msgid ""
+"The subject name \"%(o1)s\" does not match the subject number \"%(o2)s\".The "
+"correct subject number is \"%(o3)s\"."
+msgstr ""
+"数据信息中课题名\"%(o1)s\"与课题编号号\"%(o2)s\"不符，正确的课题号为"
+"\"%(o3)s\""
+
+#: apps/storage/utils/serializers/common.py:67
+msgid ""
+"The subject information is in the wrong format or the corresponding subject "
+"was not found (please select the subject information in the drop down box)"
+msgstr "课题信息格式错误或未找到对应课题（请在excel下拉框中选择课题信息）"
+
+#: apps/storage/utils/serializers/common.py:69
+#, python-format
+msgid "Uploading images with the suffix \"%(o1)s\" is not supported."
+msgstr "不支持上传后缀名为\"%(o1)s\"的图片"
+
+#: apps/storage/utils/serializers/common.py:71
+#, fuzzy
+#| msgid ""
+#| "The first row of data data cannot be empty.(cell A2 of the table \"data "
+#| "information\")"
+msgid ""
+"The first row of data cannot be empty.(cell A2 of the table \"data "
+"information\")"
+msgstr "第一行数据id不能为空(\"数据信息\"表中的A2单元格)"
+
+#: apps/storage/utils/serializers/common.py:72
+#, fuzzy
+#| msgid "This field cannot be null"
+msgid "The data content cannot be empty."
+msgstr "数据内容不能为空或未找到"
+
+#: apps/storage/utils/serializers/dummy.py:14
+#, python-format
+msgid "Fill %(name)s here. (eg: %(value)s)"
+msgstr "在这里填写%(name)s。(例如：%(value)s)"
+
+#: apps/storage/utils/serializers/dummy.py:19
+msgid "Type"
+msgstr "类型"
+
+#: apps/storage/utils/serializers/dummy.py:20
+msgid "Required"
+msgstr "必填"
+
+#: apps/storage/utils/serializers/dummy.py:21
+msgid "Unit"
+msgstr "单位"
+
+#: apps/storage/utils/serializers/dummy.py:22
+msgid "Range Type"
+msgstr "范围类型"
+
+#: apps/storage/utils/serializers/dummy.py:23
+#: apps/storage/utils/serializers/excel.py:136
+#: apps/storage/utils/serializers/json.py:201
+#: apps/storage/utils/serializers/xml.py:88
+msgid "Interval Type"
+msgstr "区间型"
+
+#: apps/storage/utils/serializers/dummy.py:24
+#: apps/storage/utils/serializers/dummy.py:28
+#: apps/storage/utils/serializers/excel.py:128
+#: apps/storage/utils/serializers/json.py:193
+#: apps/storage/utils/serializers/xml.py:80
+msgid "Error Type"
+msgstr "误差型"
+
+#: apps/storage/utils/serializers/dummy.py:25
+msgid "Lower bound"
+msgstr "下界"
+
+#: apps/storage/utils/serializers/dummy.py:26
+msgid "Upper bound"
+msgstr "上界"
+
+#: apps/storage/utils/serializers/dummy.py:27
+msgid "Value"
+msgstr "值"
+
+#: apps/storage/utils/serializers/dummy.py:29
+msgid "Multiple"
+msgstr "允许多个"
+
+#: apps/storage/utils/serializers/dummy.py:30
+msgid "Image Path"
+msgstr "图片路径"
+
+#: apps/storage/utils/serializers/dummy.py:31
+msgid "File Path"
+msgstr "文件路径"
+
+#: apps/storage/utils/serializers/dummy.py:32
+msgid "Options"
+msgstr "选项"
+
+#: apps/storage/utils/serializers/dummy.py:33
+msgid "Groups"
+msgstr "选项组"
+
+#: apps/storage/utils/serializers/dummy.py:34
+msgid "Array Type"
+msgstr "数组型"
+
+#: apps/storage/utils/serializers/dummy.py:35
+msgid "Heads"
+msgstr "表头"
+
+#: apps/storage/utils/serializers/dummy.py:36
+msgid "Fields"
+msgstr "字段"
+
+#: apps/storage/utils/serializers/dummy.py:37
+msgid "Selected"
+msgstr "选中的"
+
+#: apps/storage/utils/serializers/dummy.py:39
+msgid "Data Title"
+msgstr "数据标题"
+
+#: apps/storage/utils/serializers/dummy.py:40
+msgid "Fe3O4"
+msgstr "四氧化三铁"
+
+#: apps/storage/utils/serializers/dummy.py:41
+#: templates/storage/add_data.html:170 templates/storage/show_data.html:116
+msgid "Keywords"
+msgstr "关键词"
+
+#: apps/storage/utils/serializers/dummy.py:42
+msgid "Metal"
+msgstr "金属"
+
+#: apps/storage/utils/serializers/dummy.py:45
+#: templates/account/upload_history_data.html:55
+#: templates/search/results.html:147 templates/storage/add_data.html:187
+#: templates/storage/doi_data_detail.html:63
+#: templates/storage/show_data.html:114 templates/storage/template.html:129
+msgid "Abstract"
+msgstr "数据摘要"
+
+#: apps/storage/utils/serializers/dummy.py:46
+msgid "Calculated through Bond energy"
+msgstr "通过键能计算"
+
+#: apps/storage/utils/serializers/dummy.py:47
+#: templates/account/upload_history_data.html:64
+#: templates/search/results.html:156 templates/storage/add_data.html:180
+#: templates/storage/doi_data_detail.html:72
+msgid "Purpose"
+msgstr "目的"
+
+#: apps/storage/utils/serializers/dummy.py:48
+msgid "Graduation Project"
+msgstr "毕业设计"
+
+#: apps/storage/utils/serializers/dummy.py:49
+#: templates/account/upload_history_data.html:73
+#: templates/search/results.html:165 templates/storage/add_data.html:197
+#: templates/storage/doi_data_detail.html:81
+#: templates/storage/show_data.html:214
+msgid "Source"
+msgstr "来源"
+
+#: apps/storage/utils/serializers/dummy.py:50
+msgid "Experiment"
+msgstr "实验数据"
+
+#: apps/storage/utils/serializers/dummy.py:51
+#: templates/account/upload_history_data.html:81
+#: templates/search/results.html:173 templates/storage/add_data.html:206
+#: templates/storage/doi_data_detail.html:89
+#: templates/storage/show_data.html:216
+msgid "Reference"
+msgstr "引用"
+
+#: apps/storage/utils/serializers/dummy.py:53
+#: templates/account/upload_history_data.html:77
+#: templates/search/results.html:169 templates/storage/add_data.html:213
+#: templates/storage/doi_data_detail.html:85
+msgid "Project"
+msgstr "项目"
+
+#: apps/storage/utils/serializers/dummy.py:54
+msgid "National Key R&D Program of China (2016YFB0700500)"
+msgstr "国家重点研发计划资助(2016YFB0700500)"
+
+#: apps/storage/utils/serializers/dummy.py:55
+#: templates/storage/add_data.html:227 templates/storage/register_doi.html:52
+msgid "Others"
+msgstr "其它"
+
+#: apps/storage/utils/serializers/dummy.py:56
+msgid "Material area..."
+msgstr "材料领域数据"
+
+#: apps/storage/utils/serializers/excel.py:329
+msgid "Data Info"
+msgstr "数据信息"
+
+#: apps/storage/utils/serializers/excel.py:400
+#: apps/storage/utils/serializers/excel.py:402
+#: apps/storage/utils/serializers/excel.py:543
+msgid "Data ID"
+msgstr "数据 ID"
+
+#: apps/storage/utils/serializers/excel.py:469
+#: apps/storage/utils/serializers/excel.py:494
+msgid "Item Index"
+msgstr "数据项序号"
+
+#: apps/storage/utils/serializers/excel.py:496
+msgid "Items"
+msgstr "数据项"
+
+#: apps/storage/utils/serializers/excel.py:547
+msgid " (DO NOT EDIT OR DELETE THIS CELL !!!!!!!!)"
+msgstr "(不要修改或删除此单元格！！！！！！)"
+
+#: apps/storage/utils/serializers/excel.py:568
+#: apps/storage/utils/serializers/excel.py:737
+#: apps/storage/utils/serializers/excel.py:978
+msgid "Yes"
+msgstr "是"
+
+#: apps/storage/utils/serializers/excel.py:568
+#: apps/storage/utils/serializers/excel.py:739
+#: apps/storage/utils/serializers/excel.py:980
+#: apps/storage/utils/serializers/excel.py:1188
+msgid "No"
+msgstr "否"
+
+#: apps/storage/utils/serializers/excel.py:613
+msgid "Sheet Info"
+msgstr "工作表目录"
+
+#: apps/storage/utils/serializers/excel.py:614
+msgid "Sheet Name"
+msgstr "工作表名"
+
+#: apps/storage/utils/serializers/excel.py:615
+msgid "Sheet Content"
+msgstr "工作表内容"
+
+#: apps/storage/utils/serializers/excel.py:617
+msgid "Root Data"
+msgstr "第一级数据"
+
+#: apps/storage/utils/serializers/excel.py:623
+#, python-format
+msgid "Data of '%(field_name)s'"
+msgstr "表格 '%(field_name)s' 的数据"
+
+#: apps/storage/utils/serializers/excel.py:785
+#: apps/storage/utils/serializers/excel.py:805
+msgid "Click to view"
+msgstr "点击查看"
+
+#: apps/storage/utils/serializers/excel.py:1153
+#, python-format
+msgid " (Cell %(column_letter)s%(row)s in sheet \"%(sheet_name)s\")"
+msgstr "(工作表\"%(sheet_name)s\"中的%(column_letter)s%(row)s单元格)"
+
+#: apps/storage/utils/serializers/excel.py:1175
+#, python-format
+msgid "Data ID of data NO.%(number)s"
+msgstr "第 %(number)s 条数据的ID"
+
+#: apps/storage/utils/serializers/excel.py:1182
+#: apps/storage/utils/serializers/excel.py:1196
+#, python-format
+msgid "Enter %(field_name)s here"
+msgstr "在这里填写 %(field_name)s"
+
+#: apps/storage/utils/serializers/excel.py:1213
+msgid "Enter table id here"
+msgstr "在这里填写表格ID"
+
+#: apps/storage/utils/serializers/excel.py:1217
+#: apps/storage/utils/serializers/excel.py:1230
+#, python-format
+msgid ""
+"=HYPERLINK(\"#%(sheet_name)s!A1\", \"Fill sheet \"\"%(sheet_name)s\"\" "
+"instead of this sheet\")"
+msgstr ""
+"=HYPERLINK(\"#%(sheet_name)s!A1\", \"请填写 \"\"%(sheet_name)s\"\"，此处留空 "
+"\")"
+
+#: apps/storage/utils/serializers/excel.py:1235
+#, python-format
+msgid "Select %(field_name)s from the drop-down list."
+msgstr "从下拉列表中选择%(field_name)s的值"
+
+#: apps/storage/utils/serializers/excel.py:1243
+msgid "(Eg. a ± b)"
+msgstr "(例如a ± b)"
+
+#: apps/storage/utils/serializers/excel.py:1245
+msgid "(Eg. (a, b) Parentheses are required.)"
+msgstr "(例如(a, b)，括号不能省略)"
+
+#: apps/storage/utils/serializers/excel.py:1247
+#, python-format
+msgid "Enter %(field_name)s (%(field_type)s) here. "
+msgstr "在这里填写 %(field_name)s(%(field_type)s)"
+
+#: apps/storage/utils/serializers/flat_excel.py:52
+msgid "Index"
+msgstr "序号"
+
+#: apps/storage/utils/serializers/json.py:561
+#: apps/storage/utils/serializers/xml.py:449
+#, python-format
+msgid "***Fill %(type_name)s %(file_number)s's path here***"
+msgstr "***此处填写第%(file_number)s个%(type_name)s的路径***"
+
+#: apps/storage/utils/serializers/json.py:572
+#: apps/storage/utils/serializers/xml.py:457
+#, python-format
+msgid ""
+"***Fill %(field_name)s (%(field_type)s) here. Choices are %(choices)s ***"
+msgstr "在这里填写 %(field_name)s(%(field_type)s)，可选值为 %(choices)s 之一"
+
+#: apps/storage/utils/serializers/json.py:574
+#: apps/storage/utils/serializers/xml.py:462
+#, python-format
+msgid "***Fill %(field_name)s (%(field_type)s) here***"
+msgstr "在这里填写 %(field_name)s (%(field_type)s)"
+
+#: apps/storage/utils/serializers/json.py:583
+#: apps/storage/utils/serializers/xml.py:472
+#, python-format
+msgid "***Data %(data_number)s's ID***"
+msgstr "***第%(data_number)s个数据的ID***"
+
+#: apps/storage/utils/serializers/json.py:589
+#: apps/storage/utils/serializers/xml.py:479
+#, python-format
+msgid "***Fill %(field_name)s here***"
+msgstr "在这里填写 %(field_name)s"
+
+#: apps/storage/utils/serializers/xml.py:430
+#, python-format
+msgid "***Fill row %(row_number)s below and remove this line***"
+msgstr "***在下方填写第%(row_number)s行数据，并删除此行***"
+
+#: apps/storage/utils/serializers/xml.py:434
+msgid "***Keep only ONE of the following fields and remove this line***"
+msgstr "***只能保留以下字段中一个，完成后删除本行***"
+
+#: apps/storage/utils/serializers/xml.py:442
+#, python-format
+msgid "***Fill element %(element_number)s below and remove this line***"
+msgstr "在下方填写第%(element_number)s个元素并删除本行***"
+
+#: apps/storage/utils/serializers/xml.py:460
+#, python-format
+msgid "***Fill array element (%(field_type)s) here***"
+msgstr "在这里填写数组元素(%(field_type)s) "
+
+#: apps/task/api_v1_views.py:47
+#, fuzzy, python-format
+#| msgid "Unknown task state"
+msgid "Unknown task state: %s"
+msgstr "未知的任务状态"
+
+#: apps/task/models.py:53
+msgid "Data Export"
+msgstr "数据导出"
+
+#: apps/task/models.py:55
+msgid "Data Import"
+msgstr "数据汇交"
+
+#: apps/task/models.py:57
+msgid "Data Export to OCPMDM"
+msgstr "数据导出至OCPMDM"
+
+#: apps/task/models.py:59
+msgid "Images' Features Generating"
+msgstr ""
+
+#: apps/task/models.py:61
+msgid "ElasticSearch Importing"
+msgstr ""
+
+#: apps/task/models.py:63
+msgid "Certificate Issuing"
+msgstr "开具汇交证明"
+
+#: apps/task/models.py:65
+msgid "Certificate Data Check"
+msgstr "汇交验收数据检查"
+
+#: apps/task/models.py:67
+msgid "Dataset Review Withdrawn"
+msgstr "数据集审核撤回"
+
+#: apps/task/models.py:69
+#, fuzzy
+#| msgid "dataset title"
+msgid "Dataset Withdrawn"
+msgstr "数据集撤回"
+
+#: apps/task/models.py:71
+#, fuzzy
+#| msgid "Data Import"
+msgid "Data Import Verify"
+msgstr "数据校验"
+
+#: apps/task/models.py:77 apps/task/models.py:86
+msgid "Click To Download"
+msgstr "点击下载"
+
+#: apps/task/models.py:84
+#, python-format
+msgid "%(data_count)s data"
+msgstr "%(data_count)s条数据"
+
+#: apps/task/models.py:94
+#, python-format
+msgid ""
+"Successfully exported data to OCPMDM. Please go to <a "
+"href=\"%(url)s\">OCPMDM</a> to proceed. (Filename: %(filename)s)"
+msgstr ""
+"数据成功导出至OCPMDM，请前往<a href=\"%(url)s\">OCPMDM</a>继续操作。（文件"
+"名: %(filename)s)"
+
+#: apps/task/models.py:99
+#, python-format
+msgid "<a href=\"%(url)s\">Click to view the certificate</a>"
+msgstr "<a href=\"%(url)s\">点击查看汇交证明</a>"
+
+#: apps/task/models.py:103
+#, fuzzy, python-format
+msgid ""
+"The data uploaded by user %(upload_user)s at %(time)s has been set to "
+"pending review. "
+msgstr "用户%(upload_user)s于%(time)s上传的数据已被撤销审核通过"
+
+#: apps/task/models.py:106
+#, fuzzy, python-format
+#| msgid "%(data_count)s data"
+msgid "%(data_count)s data "
+msgstr "%(data_count)s条数据"
+
+#: apps/task/models.py:128
+msgid "Waiting"
+msgstr "排队中"
+
+#: apps/task/models.py:130 templates/task/my_tasks.html:38
+msgid "Running"
+msgstr "正在运行"
+
+#: apps/task/models.py:134 templates/task/my_tasks.html:42
+msgid "Failed"
+msgstr "失败"
+
+#: apps/task/models.py:136 templates/task/my_tasks.html:44
+msgid "Cancelled"
+msgstr "已取消"
+
+#: apps/task/models.py:138
+msgid "Deleted"
+msgstr "已删除"
+
+#: apps/task/models.py:173
+msgid "Server is busy at the moment"
+msgstr "服务器正忙"
+
+#: apps/task/models.py:174
+#, python-format
+msgid "%(count)s tasks ahead"
+msgstr "（前面有%(count)s个任务）"
+
+#: docker/local_settings.py:141 mgedata/ci_settings.py:117
+#: mgedata/settings.py:137
+msgid "English"
+msgstr "英语"
+
+#: docker/local_settings.py:142 mgedata/ci_settings.py:118
+#: mgedata/settings.py:138
+msgid "简体中文"
+msgstr "Chinese"
+
+#: mgedata/errors/models.py:118
+msgid "Internal server error"
+msgstr ""
+
+#: mgedata/errors/models.py:119
+#, fuzzy
+#| msgid "Bad query syntax"
+msgid "Bad request"
+msgstr "错误的查询语句"
+
+#: mgedata/errors/models.py:120
+msgid "Permission denied"
+msgstr "无效的操作"
+
+#: mgedata/errors/models.py:121
+msgid "Method not allowed"
+msgstr "不合法的请求方法"
+
+#: mgedata/errors/models.py:122
+msgid "Unauthorized"
+msgstr "未认证"
+
+#: mgedata/errors/models.py:123
+msgid "Not found"
+msgstr "资源未找到"
+
+#: mgedata/errors/models.py:124
+msgid "Invalid token"
+msgstr "无效的口令"
+
+#: mgedata/errors/models.py:125
+msgid "User not found"
+msgstr "用户不存在"
+
+#: mgedata/errors/models.py:126
+msgid "Wrong password"
+msgstr "密码错误"
+
+#: mgedata/errors/models.py:127
+msgid "Username already exists."
+msgstr "用户名已存在"
+
+#: mgedata/errors/models.py:128
+msgid "Email address already exists"
+msgstr "邮箱地址已存在"
+
+#: mgedata/errors/models.py:129
+msgid "Invalid email address"
+msgstr "邮箱地址格式错误"
+
+#: mgedata/errors/models.py:130
+#, fuzzy
+#| msgid "Email address already verified"
+msgid "Email address not verified"
+msgstr "邮箱地址已验证"
+
+#: mgedata/errors/models.py:131
+msgid "Email address already verified"
+msgstr "邮箱地址已验证"
+
+#: mgedata/errors/models.py:132
+msgid "Invalid username"
+msgstr "无效的用户名"
+
+#: mgedata/errors/models.py:133
+msgid "Wrong captcha"
+msgstr "验证码错误"
+
+#: mgedata/errors/models.py:134
+msgid "Bad template"
+msgstr "模板格式错误"
+
+#: mgedata/errors/models.py:135
+msgid "Bad data"
+msgstr "数据格式错误"
+
+#: mgedata/errors/models.py:136
+msgid "Bad JSON"
+msgstr "JSON文档格式错误"
+
+#: mgedata/errors/models.py:137
+msgid "Bad XML"
+msgstr "XML文档格式错误"
+
+#: mgedata/errors/models.py:138
+msgid "Bad URL parameter"
+msgstr "URL参数错误"
+
+#: mgedata/errors/models.py:139
+msgid "Bad Excel"
+msgstr "Excel文档格式错误"
+
+#: mgedata/errors/models.py:140
+msgid "Bad archive file"
+msgstr "压缩文件损坏"
+
+#: mgedata/errors/models.py:141
+msgid "Cannot find any xlsx, json or xml file."
+msgstr "找不到任何Excel，JSON或者XML文件"
+
+#: mgedata/errors/models.py:142
+msgid "Cannot find uploaded file"
+msgstr "找不到上传文件"
+
+#: mgedata/errors/models.py:143
+msgid "The validate file is too large, please split the original validate file"
+msgstr "校验文件过大，请将校验文件拆分成较小文件"
+
+#: mgedata/errors/models.py:145
+msgid "Field missing"
+msgstr "字段缺失"
+
+#: mgedata/errors/models.py:146
+msgid "Wrong field type"
+msgstr "字段类型错误"
+
+#: mgedata/errors/models.py:147
+#, fuzzy
+#| msgid "Wrong content-type(JSON required)"
+msgid "Wrong content-type (JSON required)"
+msgstr "数据内容类型错误（应使用JSON格式）"
+
+#: mgedata/errors/models.py:148
+msgid "Field not unique"
+msgstr "字段不唯一"
+
+#: mgedata/errors/models.py:149
+msgid "Invalid field value"
+msgstr "无效的值"
+
+#: mgedata/errors/models.py:150
+msgid "T"
+msgstr ""
+
+#: mgedata/errors/models.py:151
+msgid "No available data."
+msgstr ""
+
+#: mgedata/errors/models.py:152
+#, fuzzy
+#| msgid "Data Score"
+msgid "Data corrupted"
+msgstr "数据评价分数"
+
+#: mgedata/errors/models.py:153
+#, fuzzy
+#| msgid "Template Id"
+msgid "Template corrupted"
+msgstr "模板 ID"
+
+#: mgedata/errors/models.py:154
+msgid "Cannot filter fields"
+msgstr ""
+
+#: mgedata/errors/models.py:155
+msgid "Cannot edit template."
+msgstr "无法修改模板"
+
+#: mgedata/errors/models.py:156
+msgid "Invalid template identifier."
+msgstr "无效的模版标识符"
+
+#: mgedata/errors/models.py:157
+msgid "Bad query syntax"
+msgstr "错误的查询语句"
+
+#: mgedata/errors/models.py:158
+#, fuzzy
+#| msgid "Unknown field \"%(o1)s\"."
+msgid "Unknown meta field"
+msgstr "未知字段: %(o1)s"
+
+#: mgedata/errors/models.py:159
+msgid "Unknown template field"
+msgstr ""
+
+#: mgedata/errors/models.py:160
+msgid "Invalid query"
+msgstr "无效的查询"
+
+#: mgedata/errors/models.py:161
+msgid "Task is still running"
+msgstr "任务仍在运行"
+
+#: mgedata/errors/models.py:162
+msgid "The File(s) that the task needs expired. Please re-submit the task"
+msgstr "执行任务所需的文件已过期，请重新提交任务"
+
+#: mgedata/errors/models.py:163
+msgid "Task aborted"
+msgstr ""
+
+#: mgedata/errors/models.py:164
+msgid "Invalid Certificate"
+msgstr "无效的证明"
+
+#: mgedata/errors/models.py:165
+msgid "Certificate is already up-to-date"
+msgstr ""
+
+#: mgedata/errors/models.py:166
+msgid "Project or subject not found"
+msgstr "项目或课题不存在"
+
+#: mgedata/errors/models.py:167
+#, fuzzy
+#| msgid "Not yet finished viewing all templates"
+msgid "Not yet finished scoring all templates"
+msgstr "还有没打分的模板"
+
+#: mgedata/errors/models.py:168
+msgid "Project id format wrong"
+msgstr ""
+
+#: mgedata/errors/models.py:169
+msgid "DOI file verification failed"
+msgstr "DOI文件验证失败"
+
+#: mgedata/errors/models.py:170
+msgid "DOI file unqualified"
+msgstr "DOI注册信息不合格"
+
+#: mgedata/errors/models.py:171
+msgid "DOI already exists"
+msgstr "已经存在DOI号"
+
+#: mgedata/errors/models.py:172
+#, fuzzy
+#| msgid "doi application has already been passed or rejected."
+msgid "DOI application has already been passed or rejected."
+msgstr "DOI申请信息已经被审核"
+
+#: mgedata/errors/models.py:173
+msgid "data DOI is not null, and can not be deleted"
+msgstr ""
+
+#: mgedata/errors/models.py:174
+msgid "Dataset already exists"
+msgstr "此数据的已有数据集"
+
+#: mgedata/errors/models.py:175
+msgid "Dataset are referenced repeatedly"
+msgstr ""
+
+#: mgedata/errors/models.py:176
+msgid "Doi is not correct"
+msgstr ""
+
+#: mgedata/errors/models.py:177
+msgid "Email sent failed"
+msgstr "发送邮件失败"
+
+#: mgedata/errors/models.py:178
+msgid "Failed to connect to third party."
+msgstr ""
+
+#: mgedata/errors/models.py:179
+msgid "Failed to request to third party."
+msgstr ""
+
+#: mgedata/errors/models.py:180
+#, fuzzy
+#| msgid "Permission denied"
+msgid "Open API Permission denied"
+msgstr "Open API - 无效的操作"
+
+#: mgedata/errors/models.py:181
+msgid "Open API Invalid request"
+msgstr "Open API - 非法请求"
+
+#: mgedata/errors/models.py:182
+#, fuzzy
+#| msgid "Resource Not Found."
+msgid "Resource not found"
+msgstr "资源未找到"
+
+#: mgedata/errors/models.py:183
+#, fuzzy
+#| msgid "Analytics"
+msgid "Category conflict"
+msgstr "数据统计"
+
+#: mgedata/errors/models.py:184
+msgid "Malformed category tree"
+msgstr ""
+
+#: mgedata/errors/models.py:185
+#, fuzzy
+#| msgid "Deleted"
+msgid "Delete forbidden"
+msgstr "已删除"
+
+#: mgedata/utils/general.py:114 mgedata/utils/general.py:160
+#: mgedata/utils/general.py:202
+#, python-format
+msgid "Value of field \"%(field)s\" should be one of [%(allowed_values)s]."
+msgstr "字段%(field)s的值只能为[%(allowed_values)s]之一"
+
+#: mgedata/utils/general.py:118 mgedata/utils/general.py:164
+#: mgedata/utils/general.py:205 mgedata/utils/general.py:228
+#, python-format
+msgid "Field \"%(field)s\" should be %(required_type)s."
+msgstr "字段%(field)s类型只能为%(required_type)s"
+
+#: mgedata/utils/general.py:240
+#, python-format
+msgid "Value of field \"%(field)s\" should be one of %(allowed_values)s."
+msgstr "字段%(field)s的值只能为[%(allowed_values)s]之一"
+
+#: templates/_component/footer.html:5
+msgid "About"
+msgstr "关于"
+
+#: templates/_component/footer.html:6
+msgid "Team"
+msgstr ""
+
+#: templates/_component/header.html:21 templates/_component/header_old2.html:35
+#: templates/storage/add_data.html:283
+msgid "Upload"
+msgstr "上传"
+
+#: templates/_component/header.html:24 templates/_component/header.html:30
+#: templates/_component/header_old2.html:39 templates/account/my-data.html:11
+msgid "Data"
+msgstr "数据"
+
+#: templates/_component/header.html:27 templates/_component/header.html:33
+#: templates/_component/header_old2.html:40 templates/storage/add_data.html:106
+#: templates/storage/template.html:34
+msgid "Template"
+msgstr "模板"
+
+#: templates/_component/header.html:38 templates/_component/header.html:41
+#: templates/_component/header_old2.html:46 templates/storage/show_data.html:68
+msgid "Export"
+msgstr "导出"
+
+#: templates/_component/header.html:44 templates/_component/header.html:86
+msgid "Dashboard"
+msgstr "控制面板"
+
+#: templates/_component/header.html:49 templates/_component/header_old2.html:47
+#: templates/analytics/index.html:6
+msgid "Analytics"
+msgstr "数据统计"
+
+#: templates/_component/header.html:52
+#, fuzzy
+#| msgid "Analytics"
+msgid "Category Analytics"
+msgstr "数据统计"
+
+#: templates/_component/header.html:55
+#, fuzzy
+#| msgid "Analytics"
+msgid "Project Analytics"
+msgstr "数据统计"
+
+#: templates/_component/header.html:60 templates/_component/header.html:63
+#: templates/_component/header_old2.html:48 templates/_page/help/en.html:6
+#: templates/_page/help/en.html:25 templates/_page/help/zh.html:6
+#: templates/_page/help/zh.html:25
+msgid "Help"
+msgstr "帮助"
+
+#: templates/_component/header.html:66
+msgid "Customer Service"
+msgstr "智能客服"
+
+#: templates/_component/header.html:74 templates/_component/header_old2.html:45
+#: templates/account/user_list.html:35 templates/search/expr.html:6
+#: templates/search/index.html:6 templates/search/results.html:40
+msgid "Search"
+msgstr "搜索"
+
+#: templates/_component/header.html:90 templates/_component/header_old2.html:85
+#: templates/storage/show_template_review.html:27
+msgid "Review Templates"
+msgstr "审核模板"
+
+#: templates/_component/header.html:95 templates/_component/header_old2.html:89
+#: templates/storage/review_data.html:6 templates/storage/review_data.html:43
+msgid "Review Data"
+msgstr "审核数据"
+
+#: templates/_component/header.html:100
+#, fuzzy
+#| msgid "Review Data"
+msgid "Review DOI"
+msgstr "审核数据"
+
+#: templates/_component/header.html:105
+#: templates/_component/header_old2.html:92 templates/account/user_list.html:26
+msgid "Manage Users"
+msgstr "管理用户"
+
+#: templates/_component/header.html:109
+msgid "Feedback"
+msgstr "反馈"
+
+#: templates/_component/header.html:112
+#: templates/_component/header_old2.html:94
+msgid "Messages"
+msgstr "消息"
+
+#: templates/_component/header.html:115 templates/task/index.html:6
+#: templates/task/index.html:25 templates/task/my_tasks.html:27
+msgid "Task"
+msgstr "我的任务"
+
+#: templates/_component/header.html:119
+#: templates/_component/header_old2.html:96
+msgid "Upload History"
+msgstr "上传历史"
+
+#: templates/_component/header.html:122
+#: templates/_component/header_old2.html:98 templates/_layout/profile.html:54
+#: templates/account/my-data.html:5
+msgid "My Data"
+msgstr "我的数据"
+
+#: templates/_component/header.html:127
+#: templates/_component/header_old2.html:101 templates/_layout/profile.html:52
+#: templates/account/my-templates.html:6 templates/account/my-templates.html:42
+msgid "My Templates"
+msgstr "我的模板"
+
+# msgid "Register DOI"
+# msgstr "注册DOI"
+#: templates/_component/header.html:132 templates/storage/register_doi.html:5
+#: templates/storage/register_doi.html:24
+#: templates/storage/register_doi.html:28
+msgid "Register DOI"
+msgstr "注册DOI"
+
+#: templates/_component/header.html:136
+msgid "Sign out"
+msgstr "注销"
+
+#: templates/_component/header.html:145
+#: templates/_component/header_old2.html:111
+msgid "Sign In"
+msgstr "登录"
+
+#: templates/_component/header.html:145
+#: templates/_component/header_old2.html:111
+msgid "Sign Up"
+msgstr "注册"
+
+#: templates/_component/header_old2.html:17
+msgid "Toggle navigation"
+msgstr "切换导航"
+
+#: templates/_component/header_old2.html:30
+msgid "Home"
+msgstr "首页"
+
+#: templates/_component/header_old2.html:83
+msgid "Settings"
+msgstr "设置"
+
+#: templates/_component/header_old2.html:95
+msgid "My Tasks"
+msgstr "我的任务"
+
+#: templates/_component/header_old2.html:103
+msgid "Sign Out"
+msgstr "注销"
+
+#: templates/_layout/profile.html:55 templates/service/recommend.html:5
+#: templates/service/recommend.html:15 templates/service/sub.html:5
+#: templates/service/sub.html:16
+msgid "My Subscription"
+msgstr "我的订阅"
+
+#: templates/_layout/profile.html:80
+msgid "doi_application_list"
+msgstr "DOi申请列表"
+
+#: templates/_page/help/en.html:17 templates/_page/help/zh.html:17
+#: templates/account/my-templates.html:34
+#: templates/account/upload_history.html:34 templates/account/user_list.html:22
+#: templates/app_entrance.html:16 templates/search/expr.html:17
+#: templates/storage/add_data.html:23 templates/storage/doi_data_detail.html:20
+#: templates/storage/register_doi.html:16 templates/storage/review_data.html:35
+#: templates/storage/show_data.html:19
+#: templates/storage/show_template_review.html:19
+#: templates/storage/template.html:26 templates/task/index.html:17
+#: templates/task/my_tasks.html:19 templates/ticketing/create_ticket.html:18
+#: templates/ticketing/list_tickets.html:17
+#: templates/ticketing/show_ticket.html:18
+msgid "Materials Genome Engineering DataBases"
+msgstr "材料基因工程专用数据库"
+
+#: templates/_page/help/en.html:21 templates/_page/help/zh.html:21
+#: templates/account/my-templates.html:38
+#: templates/account/upload_history.html:38 templates/search/expr.html:21
+#: templates/storage/add_data.html:27 templates/storage/doi_data_detail.html:24
+#: templates/storage/register_doi.html:20 templates/storage/review_data.html:39
+#: templates/storage/show_data.html:23
+#: templates/storage/show_template_review.html:23
+#: templates/storage/template.html:30 templates/task/index.html:21
+#: templates/task/my_tasks.html:23 templates/ticketing/create_ticket.html:22
+#: templates/ticketing/list_tickets.html:21
+#: templates/ticketing/show_ticket.html:22
+msgid "Material Database"
+msgstr "材料数据库"
+
+#: templates/account/login2.html:5 templates/account/register2.html:5
+msgid "Login"
+msgstr "登录"
+
+#: templates/account/me.html:5
+msgid "Personal Infos"
+msgstr "个人信息"
+
+#: templates/account/me.html:15
+msgid "My information"
+msgstr "个人信息设置"
+
+#: templates/account/me.html:19
+msgid "My Avatar"
+msgstr "我的头像"
+
+#: templates/account/me.html:67 templates/account/user_permissions.html:49
+msgid "Verified"
+msgstr "已认证"
+
+#: templates/account/me.html:70 templates/account/user_permissions.html:51
+msgid "Not Verified"
+msgstr "未认证"
+
+#: templates/account/me.html:75
+msgid "Send verification email"
+msgstr "重新发送验证邮件"
+
+#: templates/account/me.html:82
+msgid "Old Password"
+msgstr "原密码"
+
+#: templates/account/me.html:85
+msgid "Needed when changing password"
+msgstr "修改密码时才需填写"
+
+#: templates/account/me.html:89
+msgid "New Password"
+msgstr "新密码"
+
+#: templates/account/me.html:95
+msgid "Password Confirmation"
+msgstr "确认密码"
+
+#: templates/account/me.html:105 templates/account/user_permissions.html:174
+#: templates/storage/template.html:140
+msgid "Save"
+msgstr "保存"
+
+#: templates/account/me.html:117
+msgid "Preview"
+msgstr "预览"
+
+#: templates/account/me.html:122
+msgid "Choose Image"
+msgstr "选择图片"
+
+#: templates/account/me.html:135
+msgid "Set Avatar"
+msgstr "设置头像"
+
+#: templates/account/my-data.html:21
+#: templates/account/upload_history_data.html:6
+#: templates/account/user_list.html:6 templates/account/user_permissions.html:6
+#: templates/search/results.html:6
+msgid "Explore"
+msgstr "查看"
+
+#: templates/account/my-data.html:24 templates/account/my-data.html:40
+msgid "Add New"
+msgstr "添加新项"
+
+#: templates/account/my-data.html:27
+msgid "Apply For DOI"
+msgstr "申请DOI"
+
+#: templates/account/my-templates.html:53
+#: templates/account/upload_history.html:53
+#: templates/storage/review_data.html:55
+#: templates/storage/show_template_review.html:35
+msgid "Pending"
+msgstr "等待审核"
+
+#: templates/account/my-templates.html:61
+#: templates/account/upload_history.html:61
+#: templates/storage/review_data.html:63
+#: templates/storage/show_template_review.html:42
+msgid "All"
+msgstr ""
+
+#: templates/account/my-templates.html:73 templates/search/results.html:64
+#: templates/storage/add_data.html:145 templates/storage/doi_list.html:32
+#: templates/storage/template.html:110 templates/storage/template_check.html:66
+msgid "Title"
+msgstr "标题"
+
+#: templates/account/my-templates.html:74
+#: templates/account/upload_history.html:73
+#: templates/storage/review_data.html:75
+msgid "Upload Time"
+msgstr "上传时间"
+
+#: templates/account/my-templates.html:75
+#: templates/account/upload_history.html:74
+#: templates/storage/review_data.html:76
+msgid "Data Count"
+msgstr "数据量"
+
+#: templates/account/my-templates.html:76
+#: templates/account/upload_history.html:76
+#: templates/storage/review_data.html:79 templates/storage/show_data.html:164
+#: templates/storage/show_template_review.html:74
+msgid "Reviewer"
+msgstr "审核人"
+
+#: templates/account/my-templates.html:77
+#: templates/account/upload_history.html:77 templates/storage/doi_list.html:36
+#: templates/storage/review_data.html:80
+#: templates/ticketing/list_tickets.html:59
+msgid "Status"
+msgstr "状态"
+
+#: templates/account/my-templates.html:78
+#: templates/account/upload_history.html:78 templates/account/user_list.html:51
+#: templates/account/user_permissions.html:171
+#: templates/storage/review_data.html:81 templates/task/my_tasks.html:59
+msgid "Action"
+msgstr "操作"
+
+#: templates/account/my-templates.html:109
+#: templates/storage/show_template_review.html:92
+msgid "View"
+msgstr "查看"
+
+#: templates/account/my-templates.html:111 templates/search/results.html:118
+#: templates/storage/show_data.html:49
+msgid "Edit"
+msgstr "编辑"
+
+#: templates/account/my-templates.html:114 templates/storage/show_data.html:54
+#: templates/task/my_tasks.html:109 templates/task/my_tasks.html:117
+#: templates/task/my_tasks.html:120
+msgid "Delete"
+msgstr "删除"
+
+#: templates/account/notifications.html:5
+msgid "Notifications"
+msgstr "系统通知"
+
+#: templates/account/notifications.html:11
+msgid "All Notifications"
+msgstr "所有通知"
+
+#: templates/account/reset_password.html:12
+#: templates/account/reset_password.html:27
+#: templates/account/reset_password_request.html:12
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: templates/account/reset_password.html:18
+msgid "new password"
+msgstr "新密码"
+
+#: templates/account/reset_password.html:23
+msgid "password confirmation"
+msgstr "确认密码"
+
+#: templates/account/reset_password_request.html:18
+msgid "email address"
+msgstr "邮箱地址"
+
+#: templates/account/reset_password_request.html:23
+msgid "Next Step"
+msgstr "下一步"
+
+#: templates/account/upload_history.html:6
+msgid "Data Importing Histories"
+msgstr "数据导入记录"
+
+#: templates/account/upload_history.html:42
+msgid "History"
+msgstr ""
+
+#: templates/account/upload_history.html:75
+#: templates/storage/review_data.html:77 templates/storage/show_data.html:136
+msgid "Uploaded Via"
+msgstr "上传方式"
+
+#: templates/account/upload_history.html:90
+#: templates/storage/review_data.html:94 templates/storage/show_data.html:143
+msgid "Web Form"
+msgstr "网页表单"
+
+#: templates/account/upload_history.html:114
+#: templates/storage/review_data.html:124
+msgid "View Data"
+msgstr "查看数据"
+
+#: templates/account/upload_history.html:118
+msgid "Retract"
+msgstr "撤回数据"
+
+#: templates/account/upload_history_data.html:42
+#: templates/search/results.html:70 templates/search/results.html:134
+#: templates/storage/doi_data_detail.html:50
+#: templates/storage/show_data.html:129
+#: templates/storage/show_template_review.html:69
+msgid "Author"
+msgstr "提交者"
+
+#: templates/account/upload_history_data.html:44
+#: templates/search/results.html:136 templates/storage/doi_data_detail.html:52
+msgid "Add Time"
+msgstr "添加时间"
+
+#: templates/account/upload_history_data.html:51
+#: templates/search/results.html:143 templates/storage/doi_data_detail.html:59
+#: templates/storage/show_template_review.html:61
+#: templates/storage/template.html:119 templates/storage/template_check.html:75
+msgid "Material Category"
+msgstr "材料类别"
+
+#: templates/account/upload_history_data.html:90
+#: templates/search/results.html:186 templates/storage/doi_data_detail.html:98
+msgid "Views"
+msgstr "查看量"
+
+#: templates/account/upload_history_data.html:94
+#: templates/search/results.html:190 templates/storage/doi_data_detail.html:102
+msgid "Downloads"
+msgstr "下载量"
+
+#: templates/account/upload_history_data.html:98
+#: templates/search/results.html:82 templates/search/results.html:194
+#: templates/storage/doi_data_detail.html:106
+msgid "Score"
+msgstr "评价分数"
+
+#: templates/account/user_list.html:47
+#: templates/account/user_permissions.html:36
+#: templates/storage/show_data.html:166
+msgid "Real Name"
+msgstr "姓名"
+
+#: templates/account/user_list.html:49
+#: templates/account/user_permissions.html:44
+msgid "Email Address"
+msgstr "邮箱地址"
+
+#: templates/account/user_list.html:50
+msgid "Registered at"
+msgstr "注册时间"
+
+#: templates/account/user_permissions.html:26
+msgid "Edit User"
+msgstr "编辑用户"
+
+#: templates/account/user_permissions.html:57
+msgid "Date Joined"
+msgstr "注册时间"
+
+#: templates/account/user_permissions.html:63
+msgid "Last Login"
+msgstr "上次登陆时间"
+
+#: templates/account/user_permissions.html:69
+msgid "IP Used When Registered"
+msgstr "注册时的IP地址"
+
+#: templates/account/user_permissions.html:79
+#: templates/storage/show_data.html:16
+msgid "N/A"
+msgstr "无"
+
+#: templates/account/user_permissions.html:104
+msgid "Cannot set permissions until email is verified!"
+msgstr "Email验证后才能设置权限"
+
+#: templates/account/user_permissions.html:134
+msgid "Root User"
+msgstr "超级用户"
+
+#: templates/account/user_permissions.html:143
+msgid "Managed Categories"
+msgstr "管理的材料分类"
+
+#: templates/account/user_permissions.html:150
+msgid "Select All"
+msgstr "全部选中"
+
+#: templates/account/user_permissions.html:176
+msgid "Go Back"
+msgstr "返回"
+
+#: templates/account/user_permissions.html:261
+msgid "Permissions are set successfully!"
+msgstr "成功设置权限"
+
+#: templates/app_entrance.html:5
+msgid "Secondary Entrance"
+msgstr "二级入口"
+
+#: templates/app_entrance.html:21
+msgid "High-throughput Experimental Data Processing Software"
+msgstr ""
+
+#: templates/error.html:17
+msgid "Go back"
+msgstr "返回上一页"
+
+#: templates/index_old.html:5
+msgid "Material Genetic Engineering Database"
+msgstr "材料基因工程专用数据库"
+
+#: templates/introductions.html:5 templates/microscope.html:5
+msgid "introductions & download"
+msgstr "软件说明与下载"
+
+#: templates/microscope.html:34
+msgid "Microscopic analysis software"
+msgstr "材料显微组织图像分析软件"
+
+#: templates/microscope.html:47
+msgid "Introduction"
+msgstr "说明"
+
+#: templates/microscope.html:49
+msgid ""
+"In order to assist materials researchers to quickly process and analyze the "
+"image of material microstructures, we develop a software for processing and "
+"analyzing typical microscopic images. The functions of this software are "
+"shown follows:"
+msgstr ""
+"为辅助材料科学人员快速处理和分析材料显微组织图像，开发一套面向典型显微组织图"
+"像的处理和分析软件，本软件目前具有的功能如下："
+
+#: templates/microscope.html:51
+msgid ""
+"Sequential images stitching: by integrating GPU acceleration and incremental "
+"searching strategy, we achieve the state-of-art performance both on speed "
+"and accuracy aspects"
+msgstr ""
+"图像序列拼接；融合GPU加速和增长搜索的拼接策略，在速度和稳定性上达到世界领先水"
+"平"
+
+#: templates/microscope.html:53
+msgid "Still in development"
+msgstr "尚在开发中"
+
+#: templates/microscope.html:55 templates/storage/add_data.html:303
+msgid "Download"
+msgstr "下载"
+
+#: templates/microscope.html:57
+msgid ""
+"Please use the account of MGE to log in. The first use could get 10 freely "
+"use-rights. The software encourages users to upload the analyzed image data. "
+"Besides, 10 data could exchange 1 use-right."
+msgstr ""
+"请使用MGE系统账号登录使用，初次使用者可免费获得10次使用权，本软件鼓励用户上传"
+"分析后的图像数据，每向MGE系统上传10条数据，可获得1次使用权。"
+
+#: templates/microscope.html:59
+msgid "Download（lastest V1.4）"
+msgstr "软件下载（最新版V1.4）"
+
+#: templates/microscope.html:62
+msgid "*Only supporting Windows 64 bit"
+msgstr "*本软件目前仅支持Windows 64位系统"
+
+#: templates/microscope.html:64
+msgid "Citation"
+msgstr "引用"
+
+#: templates/microscope.html:66
+msgid "If you use our code, please consider citing relevant papers："
+msgstr "如果我们的软件帮助到您的开发工作，请引用我们的相关文章："
+
+#: templates/microscope.html:71
+msgid "Acknowledgement"
+msgstr "致谢"
+
+#: templates/microscope.html:73
+msgid ""
+"The authors acknowledge the financial support from the National Key Research "
+"and Development Program of China (No. 2016YFB0700500). Beside, we "
+"acknowledge freely code implementation from python, numpy, opencv and "
+"tensorflow."
+msgstr ""
+"本项工作由国家重点研发计划(No. 2016YFB0700500)提供资金支持；本项工作感谢"
+"Python, Numpy, Opencv，Tensorflow等开源软件提供技术支持。"
+
+#: templates/microscope.html:74
+msgid "Developed by team of Prof. Xiaojuan Ban at USTB"
+msgstr "本软件由北京科技大学班晓娟团队开发"
+
+#: templates/search/expr.html:25
+msgid "Advanced Search"
+msgstr "高级搜索"
+
+#: templates/search/results.html:27
+msgid "Search With Image"
+msgstr "搜索图片"
+
+#: templates/search/results.html:36
+msgid "Browse"
+msgstr "浏览"
+
+#: templates/search/results.html:54
+msgid "Results"
+msgstr "结果"
+
+#: templates/search/results.html:58
+msgid "Sort by"
+msgstr "排序方式"
+
+#: templates/search/results.html:61
+msgid "Created Time"
+msgstr "创建时间"
+
+#: templates/search/results.html:67 templates/storage/show_data.html:127
+msgid "DOI"
+msgstr "DOI"
+
+#: templates/search/results.html:73
+msgid "Category"
+msgstr "材料分类"
+
+#: templates/search/results.html:76
+msgid "Views Count"
+msgstr "查看次数"
+
+#: templates/search/results.html:79
+msgid "Downloads Count"
+msgstr "下载次数"
+
+#: templates/search/results.html:88
+msgid "Descending"
+msgstr "降序"
+
+#: templates/search/results.html:91
+msgid "Ascending"
+msgstr "升序"
+
+#: templates/search/results.html:94
+msgid "Sort"
+msgstr "排序"
+
+#: templates/search/results.html:125 templates/storage/show_data.html:60
+msgid "Add to download list"
+msgstr "添加至下载列表"
+
+#: templates/service/recommend.html:19 templates/service/sub.html:20
+msgid "Subscription News"
+msgstr "订阅新闻"
+
+#: templates/service/sub.html:26
+msgid "Material Classes"
+msgstr "材料分类"
+
+#: templates/service/sub.html:31
+msgid "Tags"
+msgstr "标签"
+
+#: templates/service/sub.html:36
+msgid "Users"
+msgstr "用户"
+
+#: templates/storage/add_data.html:7 templates/storage/add_data.html:38
+msgid "Modify Data"
+msgstr "修改数据"
+
+#: templates/storage/add_data.html:9 templates/storage/add_data.html:40
+msgid "Commit Data"
+msgstr "提交数据"
+
+#: templates/storage/add_data.html:31 templates/storage/upload_data.html:6
+msgid "Upload data"
+msgstr "上传数据"
+
+#: templates/storage/add_data.html:46
+msgid "Step 1"
+msgstr "第 1 步"
+
+#: templates/storage/add_data.html:52
+msgid "Choose a material class your target template belongs to"
+msgstr "选择你想要添加的数据所属的分类"
+
+#: templates/storage/add_data.html:57
+msgid "Step 2"
+msgstr "第 2 步"
+
+#: templates/storage/add_data.html:63
+msgid "Choose a template you want commit data to"
+msgstr "为你的数据选择一个合适的模板"
+
+#: templates/storage/add_data.html:68
+msgid "Step 3"
+msgstr "第 3 步"
+
+#: templates/storage/add_data.html:74
+msgid "Choose a way(By form or by file) you like"
+msgstr "选择一种你喜欢的提交方式<br/>（网页表单提交或通过文件提交）"
+
+#: templates/storage/add_data.html:79
+msgid "Step 4"
+msgstr "第 4 步"
+
+#: templates/storage/add_data.html:85
+msgid "Fill your data form or file generated and then, commit it"
+msgstr "填写生成的表单或者生成的文件，<br/>然后提交或上传"
+
+#: templates/storage/add_data.html:92
+msgid "Select class and template"
+msgstr "选择分类和模板"
+
+#: templates/storage/add_data.html:98
+msgid "Material Class"
+msgstr "材料分类"
+
+#: templates/storage/add_data.html:100 templates/storage/template.html:122
+#: templates/storage/template.html:123 templates/storage/template_check.html:78
+#: templates/storage/template_check.html:79
+msgid "Please select material category"
+msgstr "请选择材料分类"
+
+#: templates/storage/add_data.html:108
+msgid "Please select template"
+msgstr "请选择模板"
+
+#: templates/storage/add_data.html:119
+msgid "Fill your data and commit it"
+msgstr "填写数据后提交"
+
+#: templates/storage/add_data.html:125
+msgid "By Form"
+msgstr "通过网页提交"
+
+#: templates/storage/add_data.html:131
+msgid "By File"
+msgstr "通过文件提交"
+
+#: templates/storage/add_data.html:147
+msgid "Data title(required)"
+msgstr "数据标题（必填）"
+
+#: templates/storage/add_data.html:149
+msgid "This field cannot be null"
+msgstr "此字段不能为空"
+
+#: templates/storage/add_data.html:155
+msgid "Toggle Extra Information"
+msgstr "展开/收起更多信息"
+
+#: templates/storage/add_data.html:164
+msgid "DOI of data"
+msgstr "数据 DOI"
+
+#: templates/storage/add_data.html:172
+msgid "Keywords of data(Separated by commas)"
+msgstr "数据关键词（按逗号分割）"
+
+#: templates/storage/add_data.html:182
+msgid "Purpose(Usage) of this data"
+msgstr "数据目的（使用）"
+
+#: templates/storage/add_data.html:189
+msgid "Abstract of this data"
+msgstr "简短的描述信息"
+
+#: templates/storage/add_data.html:208
+msgid "Reference of data"
+msgstr "数据引用"
+
+#: templates/storage/add_data.html:215
+msgid "Project support data"
+msgstr "支撑项目"
+
+#: templates/storage/add_data.html:220 templates/storage/show_data.html:218
+msgid "Methods"
+msgstr ""
+
+#: templates/storage/add_data.html:229
+msgid "Other details of this data"
+msgstr "其它与数据相关的信息"
+
+#: templates/storage/add_data.html:237
+msgid "Generate form"
+msgstr "生成数据表单"
+
+#: templates/storage/add_data.html:244
+msgid "Select a file type"
+msgstr "选择一种文件类型"
+
+#: templates/storage/add_data.html:249
+msgid "Generate EXCEL"
+msgstr "生成 EXCEL"
+
+#: templates/storage/add_data.html:255
+msgid "Generate JSON"
+msgstr "生成 JSON"
+
+#: templates/storage/add_data.html:261
+msgid "Generate XML"
+msgstr "生成 XML"
+
+#: templates/storage/add_data.html:265
+msgid "Upload your file"
+msgstr "上传您的文件"
+
+#: templates/storage/add_data.html:271
+msgid "Choose your data file then upload it"
+msgstr "选择文件并上传"
+
+#: templates/storage/add_data.html:275
+msgid "Choose File"
+msgstr "选择文件"
+
+#: templates/storage/add_data.html:295
+msgid "Note: "
+msgstr "提示："
+
+#: templates/storage/add_data.html:296
+msgid ""
+"Follow steps above, and after you click \"Generate\" button, template file "
+"will show below.(except excel)"
+msgstr ""
+"依照上面的步骤操作，在点击“生成”按钮之后，模板文件内容将会显示在下方（excel文"
+"件除外）"
+
+#: templates/storage/add_data.html:299
+msgid "Well done!"
+msgstr "非常好！"
+
+#: templates/storage/add_data.html:300
+msgid "Template file successfully generated."
+msgstr "模板文件已成功生成。"
+
+#: templates/storage/add_data.html:301
+msgid "You can"
+msgstr "您可以"
+
+#: templates/storage/add_data.html:303
+msgid "Click here"
+msgstr "点击此处"
+
+#: templates/storage/add_data.html:304
+msgid "to download it, then, upload this file after you fill your data."
+msgstr "下载文件，然后在填写好数据后提交测试文件。"
+
+#: templates/storage/data_score.html:5 templates/storage/data_score.html:16
+msgid "Data Score"
+msgstr "数据评价分数"
+
+#: templates/storage/data_score.html:21
+msgid "Total number of currently evaluated"
+msgstr "已评价分数的用户数量"
+
+#: templates/storage/data_score.html:26
+msgid "Current data score"
+msgstr "当前得分"
+
+#: templates/storage/data_score.html:33
+msgid "Your score"
+msgstr "您的评价分数"
+
+#: templates/storage/data_score.html:44
+msgid "Submit score"
+msgstr "提交"
+
+#: templates/storage/doi_data_detail.html:6
+#: templates/storage/doi_data_detail.html:28
+msgid "DOI Data Detail"
+msgstr "数据详情"
+
+#: templates/storage/doi_list.html:5
+msgid "DOI Application List"
+msgstr "DOI申请列表"
+
+#: templates/storage/doi_list.html:20
+msgid "All application"
+msgstr "所有申请"
+
+#: templates/storage/doi_list.html:21
+msgid "Unaudited"
+msgstr "未审核"
+
+#: templates/storage/doi_list.html:33
+msgid "Application Time"
+msgstr "申请时间"
+
+#: templates/storage/doi_list.html:34
+msgid "Applicant"
+msgstr "申请人"
+
+#: templates/storage/doi_list.html:35 templates/storage/show_data.html:191
+msgid "Content"
+msgstr "数据内容"
+
+#: templates/storage/doi_list.html:45
+msgid "Data Content"
+msgstr "数据详情"
+
+#: templates/storage/doi_list.html:66
+msgid "Submit Review"
+msgstr "提交审核结果"
+
+#: templates/storage/export_data.html:6 templates/storage/show_data2.html:6
+msgid "Export Data"
+msgstr "导出数据"
+
+#: templates/storage/register_doi.html:33
+msgid "doi_title"
+msgstr "数据集标题"
+
+#: templates/storage/register_doi.html:34
+msgid "dataset title"
+msgstr "数据标题"
+
+#: templates/storage/register_doi.html:37
+msgid "doi_contributor"
+msgstr "DOI责任者"
+
+#: templates/storage/register_doi.html:38
+msgid "Name of the responsible person"
+msgstr "DOI责任者姓名"
+
+#: templates/storage/register_doi.html:41
+msgid "doi_project"
+msgstr "所属项目"
+
+#: templates/storage/register_doi.html:43
+msgid "973 subject"
+msgstr "973课题"
+
+#: templates/storage/register_doi.html:44
+msgid "863 project"
+msgstr "863项目"
+
+#: templates/storage/register_doi.html:45
+msgid "National Natural Science Foundation"
+msgstr "国家自然科学基金"
+
+#: templates/storage/register_doi.html:46
+msgid "National Science and Technology major projects"
+msgstr "国家科技重大专项"
+
+#: templates/storage/register_doi.html:47
+msgid "National key research and development plan"
+msgstr "国家重点研发计划"
+
+#: templates/storage/register_doi.html:48
+msgid "Technology Innovation Guide Program"
+msgstr "技术创新引导计划"
+
+#: templates/storage/register_doi.html:49
+msgid "Base and talent special"
+msgstr "基地和人才专项"
+
+#: templates/storage/register_doi.html:50
+msgid "Provincial and ministerial level and local projects"
+msgstr "省部级项目和地方项目"
+
+#: templates/storage/register_doi.html:51
+msgid "Factory Association Project"
+msgstr "厂协项目"
+
+#: templates/storage/register_doi.html:60
+msgid "register doi"
+msgstr "申请注册DOI"
+
+#: templates/storage/review_data.html:78
+msgid "Uploader"
+msgstr "上传人"
+
+#: templates/storage/review_data.html:128 templates/storage/show_data.html:39
+#: templates/storage/show_data.html:40
+#: templates/storage/show_template_review.html:94
+msgid "Approve"
+msgstr "通过"
+
+#: templates/storage/review_data.html:130 templates/storage/show_data.html:43
+#: templates/storage/show_data.html:44 templates/storage/show_data.html:93
+#: templates/storage/show_template_review.html:95
+msgid "Disapprove"
+msgstr "不通过"
+
+#: templates/storage/review_data.html:137
+msgid "No Data"
+msgstr "暂无数据"
+
+#: templates/storage/show_data.html:5
+#: templates/storage/show_template_review.html:6
+msgid "Data details"
+msgstr "数据详情"
+
+#: templates/storage/show_data.html:27
+msgid "Data detail"
+msgstr "数据详情"
+
+#: templates/storage/show_data.html:98
+msgid "Pending Review"
+msgstr "等待审核"
+
+#: templates/storage/show_data.html:112
+#: templates/storage/show_template_review.html:52
+#: templates/task/my_tasks.html:56 templates/ticketing/list_tickets.html:62
+msgid "Created at"
+msgstr "创建时间"
+
+#: templates/storage/show_data.html:131
+msgid "Contributor"
+msgstr "数据生产者"
+
+#: templates/storage/show_data.html:133
+msgid "Responsible Institution"
+msgstr "负责单位"
+
+#: templates/storage/show_data.html:141
+msgid "Download Here"
+msgstr "点此下载"
+
+#: templates/storage/show_data.html:148
+msgid "Template ID"
+msgstr "模板 ID"
+
+#: templates/storage/show_data.html:153
+msgid "Template Name"
+msgstr "模板名"
+
+#: templates/storage/show_data.html:171
+msgid "Tel"
+msgstr "电话"
+
+#: templates/storage/show_data.html:174
+msgid "Email"
+msgstr "电子邮箱"
+
+#: templates/storage/show_data.html:177
+#: templates/storage/show_template_review.html:80
+msgid "Reasons of Disapproval"
+msgstr "不通过理由"
+
+#: templates/storage/show_data.html:212
+msgid "Other Info"
+msgstr "其他信息"
+
+#: templates/storage/show_template_review.html:50
+msgid "Review State"
+msgstr "审核状态"
+
+#: templates/storage/show_template_review.html:65
+msgid "Template Abstract"
+msgstr "模板摘要"
+
+#: templates/storage/template.html:7 templates/storage/template_check.html:8
+msgid "Modify Template"
+msgstr "修改模板"
+
+#: templates/storage/template.html:9 templates/storage/template_check.html:10
+msgid "View Template"
+msgstr "查看模板"
+
+#: templates/storage/template.html:11 templates/storage/template_check.html:12
+msgid "Create Template"
+msgstr "创建模板"
+
+#: templates/storage/template.html:43
+msgid ""
+"A string is traditionally a sequence of characters, either as a literal "
+"constant or as some kind of variable."
+msgstr "一个字符串是一个字符序列，可以是字面常量，也可以是某种变量。"
+
+#: templates/storage/template.html:46
+msgid ""
+"Any number value, including integer, floating point, you can set the value "
+"unit."
+msgstr "任意数值，包括整型，浮点数，可以设定单位。"
+
+#: templates/storage/template.html:49
+msgid ""
+"Numeric interval such as (a, b), or error type like a ± b. a, b are numeric "
+"data."
+msgstr "数值区间如（a,b），或者误差表示 a±b，a，b都是数值型数据。"
+
+#: templates/storage/template.html:52
+msgid ""
+"A series of candidates, the options can be grouped(only allow one level), "
+"click Add Option, add one directly, click Add Group, the equivalent of "
+"adding a first level title, the group can continue to add a number of "
+"options."
+msgstr ""
+"一系列候选项，选项可以分组，暂时只能允许一级，点击添加选项，直接增加一项，点"
+"击添加分组，相当于添加一个一级标题，在该分组下可继续添加若干选项。"
+
+#: templates/storage/template.html:57
+msgid ""
+"Common image types, such as jpg, png and other formats, you can check the "
+"option \"Multiple Images\" to allow multiple images."
+msgstr ""
+"常见的图片类型，例如jpg,png等等格式，可以勾选选项“允许多张图片”，允许上传多张"
+"图片。"
+
+#: templates/storage/template.html:60
+msgid ""
+"Common file types, such as pdf, word, excel, json, xml, etc. you can check "
+"the option \"Multiple Files\" to allow multiple files to be uploaded."
+msgstr ""
+"常见的文件类型，例如pdf,word,excel,json,xml等等格式，可以勾选选项“允许多文"
+"件”，允许上传多个文件。"
+
+#: templates/storage/template.html:65
+msgid ""
+"One-dimensional array, by selecting the array type, fill in the field name, "
+"then, click set button set type."
+msgstr "一维数组，通过选择数组类型，填写字段名，点击设置为这种类型即可。"
+
+#: templates/storage/template.html:68
+msgid ""
+"Table can add string, numeric, range, picture, file and candidate types. "
+"Every time add a column, first select the column type, then click \"Add "
+"Columns\" button to add."
+msgstr ""
+"表格可以添加字符串型、数值型、范围型、图片型、文件型、候选型这六种类型数据，"
+"不能添加数组型，每添一列，先选择列类型，点击按钮“添加列”，即可添加成功。"
+
+#: templates/storage/template.html:71
+msgid ""
+"Container can contain all the types, and arbitrarily nest, you can drag any "
+"type of field into the container box."
+msgstr ""
+"容器可以包含所有的类型，可以任意嵌套，将任意类型字段拖入容器型所在框内，即可"
+"嵌套成功。"
+
+#: templates/storage/template.html:74
+msgid ""
+"Name and type of the corresponding key combination, after the combination, "
+"select a class to generate the corresponding form."
+msgstr "名称和类型对应的键值对组合，组合之后，通过选择某一类来生成对应的表单。"
+
+#: templates/storage/template.html:82 templates/storage/template_check.html:32
+msgid "Warning!"
+msgstr "警告！"
+
+#: templates/storage/template.html:83 templates/storage/template_check.html:33
+msgid ""
+"Your screen is too small and the control will not display, which means you "
+"can not create a template on this device. Please try again after changing "
+"your device."
+msgstr ""
+"您的屏幕过小，控件将不会显示，这意味着您无法正常创建模板。请更换设备后重试"
+
+#: templates/storage/template.html:111 templates/storage/template_check.html:67
+msgid "Title(required)"
+msgstr "模板标题（必填）"
+
+#: templates/storage/template.html:113 templates/storage/template.html:132
+#: templates/storage/template_check.html:69
+msgid "This field cannot be empty or start with `_` or contains `.`"
+msgstr "此字段不能为空、包含`.`或以下划线开头"
+
+#: templates/storage/template.html:130
+msgid "Abstract(required)"
+msgstr "摘要信息（必填）"
+
+#: templates/storage/template.html:142 templates/storage/template_check.html:99
+msgid "Add new template based on this"
+msgstr "基于此模板添加新模板"
+
+#: templates/storage/template_check.html:45
+msgid "Enable Modify"
+msgstr "启用编辑"
+
+#: templates/storage/template_check.html:45
+msgid "OFF"
+msgstr "关"
+
+#: templates/storage/template_check.html:45
+msgid "Click to turn on"
+msgstr "点击开启"
+
+#: templates/storage/template_check.html:50 templates/task/my_tasks.html:57
+msgid "State"
+msgstr "状态"
+
+#: templates/storage/template_check.html:50
+msgid "Unpublished"
+msgstr "未发布"
+
+#: templates/storage/template_check.html:54
+msgid "AutoSave"
+msgstr "自动保存"
+
+#: templates/storage/template_check.html:54
+msgid "ON"
+msgstr "开"
+
+#: templates/storage/template_check.html:54
+msgid "Click to turn off"
+msgstr "点击关闭"
+
+#: templates/storage/template_check.html:96
+msgid "Save and Continue"
+msgstr "保存并继续编辑"
+
+#: templates/storage/template_check.html:97
+msgid "Publish Template"
+msgstr "发布模板"
+
+#: templates/success.html:18
+msgid "Go to index page"
+msgstr "返回首页"
+
+#: templates/task/my_tasks.html:6
+msgid "Task List"
+msgstr "任务列表"
+
+#: templates/task/my_tasks.html:36
+msgid "All Tasks"
+msgstr "全部任务"
+
+#: templates/task/my_tasks.html:55
+msgid "Task Type"
+msgstr "任务类型"
+
+#: templates/task/my_tasks.html:58
+msgid "Result"
+msgstr "结果"
+
+#: templates/task/my_tasks.html:84
+msgid "ETA: "
+msgstr "预计时间："
+
+#: templates/task/my_tasks.html:107 templates/task/my_tasks.html:124
+msgid "Re-run"
+msgstr "重新运行"
+
+#: templates/task/my_tasks.html:112
+msgid "Cancel"
+msgstr "取消"
+
+#: templates/task/my_tasks.html:115
+msgid "Import"
+msgstr "导入"
+
+#: templates/ticketing/create_ticket.html:6
+msgid "Create Ticket"
+msgstr "创建模板"
+
+#: templates/ticketing/create_ticket.html:26
+msgid "Create ticket"
+msgstr "提交反馈"
+
+#: templates/ticketing/create_ticket.html:35
+msgid "Go back to tickets"
+msgstr "返回列表页面"
+
+#: templates/ticketing/create_ticket.html:46
+msgid "Ticket Topic"
+msgstr "反馈单主题"
+
+#: templates/ticketing/create_ticket.html:56
+#: templates/ticketing/list_tickets.html:61
+msgid "Subject"
+msgstr "主题"
+
+#: templates/ticketing/create_ticket.html:57
+msgid "Enter Subject Here"
+msgstr "在这里填写主题"
+
+#: templates/ticketing/create_ticket.html:73
+msgid "Submit"
+msgstr "提交"
+
+#: templates/ticketing/list_tickets.html:6
+msgid "Ticket List"
+msgstr "反馈单列表"
+
+#: templates/ticketing/list_tickets.html:25
+msgid "Tickets"
+msgstr "反馈单列表"
+
+#: templates/ticketing/list_tickets.html:35
+msgid "New Replies"
+msgstr "新的回复"
+
+#: templates/ticketing/list_tickets.html:37
+#: templates/ticketing/list_tickets.html:73
+#: templates/ticketing/show_ticket.html:37
+msgid "Open"
+msgstr "处理中"
+
+#: templates/ticketing/list_tickets.html:39
+#: templates/ticketing/list_tickets.html:81
+#: templates/ticketing/show_ticket.html:47
+msgid "Ended"
+msgstr "已完成"
+
+#: templates/ticketing/list_tickets.html:41
+#: templates/ticketing/list_tickets.html:77
+#: templates/ticketing/show_ticket.html:42
+msgid "Closed"
+msgstr "已关闭"
+
+#: templates/ticketing/list_tickets.html:47
+msgid "Create New Ticket"
+msgstr "创建新的反馈单"
+
+#: templates/ticketing/list_tickets.html:60
+msgid "Topic"
+msgstr "话题"
+
+#: templates/ticketing/show_ticket.html:6
+msgid "TIcket"
+msgstr "问题反馈单"
+
+#: templates/ticketing/show_ticket.html:26
+msgid "Ticket detail"
+msgstr "查看详情"
+
+#: templates/ticketing/show_ticket.html:64
+msgid "End Ticket"
+msgstr "设置为已解决"
+
+#: templates/ticketing/show_ticket.html:67
+msgid "Close Ticket"
+msgstr "关闭问题"
+
+#: templates/ticketing/show_ticket.html:77
+#, python-format
+msgid ""
+"\n"
+"            %(created_by)s opened this ticket at %(created_at)s\n"
+"          "
+msgstr ""
+"\n"
+"            %(created_by)s于%(created_at)s创建\n"
+"          "
+
+#: templates/ticketing/show_ticket.html:82
+#, python-format
+msgid ""
+"Closed by admin at\n"
+"              %(time)s\n"
+"            "
+msgstr "在 %(time)s 被管理员关闭"
+
+#: templates/ticketing/show_ticket.html:86
+#, python-format
+msgid ""
+"Ended at\n"
+"              %(time)s\n"
+"            "
+msgstr "在 %(time)s 结束"
+
+#: templates/ticketing/show_ticket.html:124
+msgid "Me"
+msgstr "我"
+
+#: templates/ticketing/show_ticket.html:161
+msgid "Reply"
+msgstr "回复"
+
+#, python-format
+#~ msgid "Project \"%(pid)s\" does not exist."
+#~ msgstr "项目\"%(pid)s\"不存在"
+
+#, python-format
+#~ msgid "Subject \"%(pid)s\" does not exist."
+#~ msgstr "课题\"%(pid)s\"不存在"
+
+#~ msgid "Update the data in ES by template(s)"
+#~ msgstr "以模板为单位更新es数据"
+
+#~ msgid "Delete template(s)"
+#~ msgstr "创建模板"
+
+#~ msgid "Clear template(s)"
+#~ msgstr "清空模板"
+
+#~ msgid "delete all data under template(s)"
+#~ msgstr "删除模版下所有数据"
+
+#~ msgid "Template Id"
+#~ msgstr "模板 ID"
+
+#~ msgid "Delete data"
+#~ msgstr "删除"
+
+#~ msgid "Update the data in ES by meta(s)"
+#~ msgstr "以元数据为单位更新es数据"
+
+#~ msgid "Batch update project data"
+#~ msgstr "批量更改课题信息"
+
+#~ msgid "Unapproved"
+#~ msgstr "审核失败"
+
+#~ msgid "DOI Register Info"
+#~ msgstr "DOI注册信息"
+
+#~ msgid "Failed to connect to OCPMDM."
+#~ msgstr "连接OCPMDM失败"
+
+#~ msgid "Permissions Request"
+#~ msgstr "权限申请"
+
+#~ msgid "Suggestion"
+#~ msgstr "建议"
+
+#, python-format
+#~ msgid ""
+#~ "Value of operator \"%(op)s\" on field \"%(field)s\" must be a list of "
+#~ "string"
+#~ msgstr "对于字段\"%(field)s\"，操作符\"%(op)s\"的值必须是字符串数组"
+
+#, python-format
+#~ msgid "Value of operator \"%(op)s\" on field \"%(field)s\" must be a string"
+#~ msgstr "对于字段\"%(field)s\"，操作符\"%(op)s\"的值必须是字符串"
+
+#, python-format
+#~ msgid "Value of operator \"%(op)s\" on field \"%(field)s\" must be a number"
+#~ msgstr "对于字段\"%(field)s\"，操作符\"%(op)s\"的值必须是数字"
+
+#, python-format
+#~ msgid ""
+#~ "Value of operator \"%(op)s\" on field \"%(field_type)s\" must be a list "
+#~ "of string"
+#~ msgstr "对于\"%(field_type)s\"字段，操作符\"%(op)s\"的值必须是字符串数组"
+
+#, python-format
+#~ msgid ""
+#~ "Value of operator \"%(op)s\" on field \"%(field_type)s\" must be a number"
+#~ msgstr "操作符\"%(op)s\"的值必须是数字（\"%(field_type)s\"字段）"
+
+#, python-format
+#~ msgid "Cannot use operator \"%(op)s\" on field \"%(field_type)s\""
+#~ msgstr "操作符\"%(op)s\"无法使用在\"%(field_type)s\"类型的字段上"
+
+#, python-format
+#~ msgid "Unknown logic \"%(logic)s\""
+#~ msgstr "未知搜索逻辑: %(logic)s"
+
+#, python-format
+#~ msgid "Field \"%(field)s\" is missing"
+#~ msgstr "字段\"%(field)s\"缺失"
+
+#, python-format
+#~ msgid "Path \"%(path)s\" does not exist in template \"%(template_name)s\""
+#~ msgstr "模板\"%(template_name)s\"中不存在字段\"%(path)s\""
+
+#~ msgid "Field \"op\" is missing"
+#~ msgstr "字段%(o1)s 缺失"
+
+#, python-format
+#~ msgid "Unknown operator \"%(op)s\""
+#~ msgstr "未知的操作符：\"%(op)s\""
+
+#~ msgid "Field \"val\" is missing"
+#~ msgstr "字段 \"val\"缺失"
+
+#, fuzzy
+#~| msgid "Batch update project data"
+#~ msgid "Batch update pending review state"
+#~ msgstr "批量更改课题信息"
+
+#~ msgid "Reviewer's Institution"
+#~ msgstr "审核人机构"
+
+#~ msgid "Please check your input files and parameters."
+#~ msgstr "请检查您的输入文件和参数设置"
+
+#~ msgid "Data corrupted. Please contact admin"
+#~ msgstr "数据损坏，请联系管理员"
+
+#~ msgid "Internal server error. Please contact admin or try again later."
+#~ msgstr "系统繁忙，请联系技术支持"
+
+#~ msgid "Email address not verified. Please contact admin"
+#~ msgstr "邮箱尚未激活，请联系管理员"
+
+#~ msgid "This Template has data linked to it, thus cannot be deleted."
+#~ msgstr "此模板已有数据，无法删除！"
+
+#~ msgid "The template with the title %(title) already exists"
+#~ msgstr "标题为%(title)的模版已存在"
+
+#~ msgid "X-ray diffraction data clustering and deconstruction"
+#~ msgstr "X射线衍射数据聚类与解构分析"
+
+#~ msgid ""
+#~ "A cluster analysis algorithm for high-throughput X-ray diffraction data "
+#~ "was developed based on Delaunay tessellation, fast peak searching "
+#~ "algorithm, and graph-based segmentation algorithm. The classification of "
+#~ "X-ray diffraction data was performed, from which the composition-phase "
+#~ "constituent diagram was constructed. The research referred to the work of "
+#~ "Professor Hu Jianjun's research group [ACS Comb. Sci., 2017, 19, pp "
+#~ "137-144] of the University of Southern California and many other "
+#~ "contributions. This algorithm was written by Wang Lin and Li Jingbo of "
+#~ "Beijing Institute of Technology.A cluster analysis algorithm for high-"
+#~ "throughput X-ray diffraction data was developed based on Delaunay "
+#~ "tessellation, fast peak searching algorithm, and graph-based segmentation "
+#~ "algorithm. The classification of X-ray diffraction data was performed, "
+#~ "from which the composition-phase constituent diagram was constructed. The "
+#~ "research referred to the work of Professor Hu Jianjun's research group "
+#~ "[ACS Comb. Sci., 2017, 19, pp 137-144] of the University of Southern "
+#~ "California and many other contributions. This algorithm was written by "
+#~ "Wang Lin and Li Jingbo of Beijing Institute of Technology."
+#~ msgstr ""
+#~ "针对高通量X射线衍射实验获得的批量化数据，采用德洛内（Delaunay）快速三角剖"
+#~ "析算法、快速寻峰算法和基于图像的影像分割技术，形成X射线衍射数据的聚类分析"
+#~ "算法，实现X射线衍射数据的归类，获得所研究材料体系的成分-物相分区图。所开展"
+#~ "的研究参考了南加州大学Hu Jianjun教授课题组[ACS Comb. Sci., 2017, 19, pp "
+#~ "137–144]的工作和很多相关研究，在此表示感谢。软件由北京理工大学的王林和李静"
+#~ "波编写。"
+
+#~ msgid "Input Data"
+#~ msgstr "输入数据"
+
+#~ msgid "XRD Data"
+#~ msgstr "X射线衍射数据"
+
+#~ msgid "Composition"
+#~ msgstr "组成"
+
+#~ msgid "Threshold"
+#~ msgstr "阈值"
+
+#~ msgid "BG_Sub"
+#~ msgstr "去除背景"
+
+#~ msgid "Calculating"
+#~ msgstr "计算中"
+
+#~ msgid "Analysis Results"
+#~ msgstr "分析结果"
+
+#~ msgid "Your browser does not support the canvas element"
+#~ msgstr "您的浏览器不支持显示结果"
+
+#~ msgid "Download Results"
+#~ msgstr "下载结果"
+
+#~ msgid "Entry System"
+#~ msgstr "录入系统"
+
+#~ msgid "XRD DATA ITEM"
+#~ msgstr "XRD数据项"
+
+#~ msgid "System Name"
+#~ msgstr "体系名称"
+
+#~ msgid "Please enter the system name"
+#~ msgstr "请填写体系名称"
+
+#~ msgid "title"
+#~ msgstr "标题"
+
+# msgid "DOI"
+# msgstr "DOI"
+#~ msgid "abstract"
+#~ msgstr "摘要信息"
+
+#~ msgid "KeyWords"
+#~ msgstr "关键词"
+
+#~ msgid "keywords"
+#~ msgstr "关键词"
+
+#~ msgid "source"
+#~ msgstr "来源"
+
+#~ msgid "close"
+#~ msgstr "已关闭"
+
+#~ msgid "submit"
+#~ msgstr "提交"

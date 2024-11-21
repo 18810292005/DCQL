@@ -1,0 +1,189 @@
+{
+    "template": {
+        "_id": "1",
+        "材料牌号": {
+            "_type": "String"
+        },
+        "化学成分": {
+            "_type": "Table",
+            "化学元素": {
+                "_type": "String"
+            },
+            "含量": {
+                "_type": "Range",
+                "_unit": "w.t.%"
+            }
+        },
+        "热处理": {
+            "_type": "Container",
+            "样品信息": {
+                "_type": "Container",
+                "样品形状": {
+                    "_type": "String"
+                },
+                "样品尺寸": {
+                    "_type": "String"
+                }
+            },
+            "工艺": {
+                "_type": "Array",
+                "工艺": {
+                    "_type": "Generator",
+                    "固溶处理": {
+                        "_type": "Container",
+                        "固溶温度": {
+                            "_type": "String"
+                        },
+                        "固溶时间": {
+                            "_type": "String"
+                        },
+                        "冷却方式": {
+                            "_type": "String"
+                        }
+                    },
+                    "时效处理": {
+                        "_type": "Container",
+                        "时效温度": {
+                            "_type": "String"
+                        },
+                        "时效时间": {
+                            "_type": "String"
+                        },
+                        "冷却方式": {
+                            "_type": "String"
+                        }
+                    }
+                }
+            }
+        },
+        "性能": {
+            "_type": "Table",
+            "性能名": {
+                "_type": "Choice"
+            },
+            "性能值": {
+                "_type": "Number"
+            }
+        }
+    },
+    "data": [
+        {
+            "meta": {
+                "Data ID": "113",
+                "Title": "***Fill Title here***",
+                "DOI": "***Fill DOI here***",
+                "Abstract": "***Fill Abstract here***",
+                "Keywords": "***Fill Keywords here***",
+                "Source": "MGE-SOURCE_HEADER v1 000 10 #",
+                "Reference": "***Fill Reference here***",
+                "Other Info": "project: 2016YFB0700500；subject: 2016YFB0700503",
+                "public_date": 2,
+                "public_range": 1
+            },
+            "content": {
+                "材料牌号": "***Fill 材料牌号 (String) here***",
+                "化学成分": [
+                    {
+                        "化学元素": "***Fill 化学元素 (String) here***",
+                        "含量": "(1,2)"
+                    },
+                    {
+                        "化学元素": "***Fill 化学元素 (String) here***",
+                        "含量": "(1,2)"
+                    }
+                ],
+                "热处理": {
+                    "样品信息": {
+                        "样品形状": "***Fill 样品形状 (String) here***",
+                        "样品尺寸": "***Fill 样品尺寸 (String) here***"
+                    },
+                    "工艺": [
+                        {
+                            "固溶处理": {
+                                "固溶温度": "***Fill 固溶温度 (String) here***",
+                                "固溶时间": "***Fill 固溶时间 (String) here***",
+                                "冷却方式": "***Fill 冷却方式 (String) here***"
+                            }
+                        },
+                        {
+                            "时效处理": {
+                                "时效温度": "***Fill 时效温度 (String) here***",
+                                "时效时间": "***Fill 时效时间 (String) here***",
+                                "冷却方式": "***Fill 冷却方式 (String) here***"
+                            }
+                        }
+                    ]
+                },
+                "性能": [
+                    {
+                        "性能名": "晶粒尺寸",
+                        "性能值": "123"
+                    },
+                    {
+                        "性能名": "晶粒尺寸",
+                        "性能值": "123"
+                    }
+                ]
+            }
+        },
+        {
+            "meta": {
+                "Data ID": "112",
+                "Title": "***Fill Title here2***",
+                "DOI": "***Fill DOI here***",
+                "Abstract": "***Fill Abstract here***",
+                "Keywords": "***Fill Keywords here***",
+                "Source": "MGE-SOURCE_HEADER v1 000 10 #",
+                "Reference": "***Fill Reference here***",
+                "Other Info": "project: 2016YFB0700500；subject: 2016YFB0700503",
+                "public_date": 1,
+                "public_range": 2
+            },
+            "content": {
+                "材料牌号": "***Fill 材料牌号 (String) here***",
+                "化学成分": [
+                    {
+                        "化学元素": "***Fill 化学元素 (String) here***",
+                        "含量": "(1,2)"
+                    },
+                    {
+                        "化学元素": "***Fill 化学元素 (String) here***",
+                        "含量": "(1,2)"
+                    }
+                ],
+                "热处理": {
+                    "样品信息": {
+                        "样品形状": "***Fill 样品形状 (String) here***",
+                        "样品尺寸": "***Fill 样品尺寸 (String) here***"
+                    },
+                    "工艺": [
+                        {
+                            "固溶处理": {
+                                "固溶温度": "***Fill 固溶温度 (String) here***",
+                                "固溶时间": "***Fill 固溶时间 (String) here***",
+                                "冷却方式": "***Fill 冷却方式 (String) here***"
+                            }
+                        },
+                        {
+                            "时效处理": {
+                                "时效温度": "***Fill 时效温度 (String) here***",
+                                "时效时间": "***Fill 时效时间 (String) here***",
+                                "冷却方式": "***Fill 冷却方式 (String) here***"
+                            }
+                        }
+                    ]
+                },
+                "性能": [
+                    {
+                        "性能名": "晶粒尺寸",
+                        "性能值": "123"
+                    },
+                    {
+                        "性能名": "晶粒尺寸",
+                        "性能值": "123"
+                    }
+                ]
+            }
+        }
+    ]
+}

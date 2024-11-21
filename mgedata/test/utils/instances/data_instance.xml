@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root tid="1">
+  <data>
+    <meta>
+      <field name="Data ID">1111</field>
+      <field name="Title">***Fill Title here***</field>
+      <field name="DOI">***Fill DOI here***</field>
+      <field name="Abstract">***Fill Abstract here***</field>
+      <field name="Keywords">***Fill Keywords here***</field>
+      <field name="Source">MGE-SOURCE_HEADER v1 000 10 #</field>
+      <field name="Reference">***Fill Reference here***</field>
+      <field name="Other Info">project: 2016YFB0700500；subject: 2016YFB0700503</field>
+      <field name="public_date">2</field>
+      <field name="public_range">1</field>
+    </meta>
+    <content>
+      <field name="材料牌号">***Fill 材料牌号 (String) here***</field>
+      <field name="化学成分">
+        <row>
+          <!--***Fill row 1 below and remove this line***-->
+          <field name="化学元素">***Fill 化学元素 (String) here***</field>
+          <field name="含量">2,3</field>
+        </row>
+        <row>
+          <!--***Fill row 2 below and remove this line***-->
+          <field name="化学元素">***Fill 化学元素 (String) here***</field>
+          <field name="含量">2,3</field>
+        </row>
+      </field>
+      <field name="热处理">
+        <field name="样品信息">
+          <field name="样品形状">***Fill 样品形状 (String) here***</field>
+          <field name="样品尺寸">***Fill 样品尺寸 (String) here***</field>
+        </field>
+        <field name="工艺">
+          <!--***Fill element 1 below and remove this line***-->
+          <element>
+            <!--***Keep only ONE of the following fields and remove this line***-->
+            <field name="时效处理">
+              <field name="时效温度">***Fill 时效温度 (String) here***</field>
+              <field name="时效时间">***Fill 时效时间 (String) here***</field>
+              <field name="冷却方式">***Fill 冷却方式 (String) here***</field>
+            </field>
+          </element>
+          <!--***Fill element 2 below and remove this line***-->
+          <element>
+            <!--***Keep only ONE of the following fields and remove this line***-->
+            <field name="固溶处理">
+              <field name="固溶温度">***Fill 固溶温度 (String) here***</field>
+              <field name="固溶时间">***Fill 固溶时间 (String) here***</field>
+              <field name="冷却方式">***Fill 冷却方式 (String) here***</field>
+            </field>
+          </element>
+        </field>
+      </field>
+      <field name="性能">
+        <row>
+          <!--***Fill row 1 below and remove this line***-->
+          <field name="性能名">屈服强度</field>
+          <field name="性能值">78</field>
+        </row>
+        <row>
+          <!--***Fill row 2 below and remove this line***-->
+          <field name="性能名">屈服强度</field>
+          <field name="性能值">78</field>
+        </row>
+      </field>
+    </content>
+  </data>
+  <data>
+    <meta>
+      <field name="Data ID">1112</field>
+      <field name="Title">***Fill Title here***</field>
+      <field name="DOI">***Fill DOI here***</field>
+      <field name="Abstract">***Fill Abstract here***</field>
+      <field name="Keywords">***Fill Keywords here***</field>
+      <field name="Source">MGE-SOURCE_HEADER v1 000 10 #</field>
+      <field name="Reference">***Fill Reference here***</field>
+      <field name="Other Info">project: 2016YFB0700500；subject: 2016YFB0700503</field>
+      <field name="public_date">2</field>
+      <field name="public_range">1</field>
+    </meta>
+    <content>
+      <field name="材料牌号">***Fill 材料牌号 (String) here***</field>
+      <field name="化学成分">
+        <row>
+          <!--***Fill row 1 below and remove this line***-->
+          <field name="化学元素">***Fill 化学元素 (String) here***</field>
+          <field name="含量">2,3</field>
+        </row>
+        <row>
+          <!--***Fill row 2 below and remove this line***-->
+          <field name="化学元素">***Fill 化学元素 (String) here***</field>
+          <field name="含量">2,3</field>
+        </row>
+      </field>
+      <field name="热处理">
+        <field name="样品信息">
+          <field name="样品形状">***Fill 样品形状 (String) here***</field>
+          <field name="样品尺寸">***Fill 样品尺寸 (String) here***</field>
+        </field>
+        <field name="工艺">
+          <!--***Fill element 1 below and remove this line***-->
+          <element>
+            <!--***Keep only ONE of the following fields and remove this line***-->
+            <field name="时效处理">
+              <field name="时效温度">***Fill 时效温度 (String) here***</field>
+              <field name="时效时间">***Fill 时效时间 (String) here***</field>
+              <field name="冷却方式">***Fill 冷却方式 (String) here***</field>
+            </field>
+          </element>
+          <!--***Fill element 2 below and remove this line***-->
+          <element>
+            <!--***Keep only ONE of the following fields and remove this line***-->
+            <field name="固溶处理">
+              <field name="固溶温度">***Fill 固溶温度 (String) here***</field>
+              <field name="固溶时间">***Fill 固溶时间 (String) here***</field>
+              <field name="冷却方式">***Fill 冷却方式 (String) here***</field>
+            </field>
+          </element>
+        </field>
+      </field>
+      <field name="性能">
+        <row>
+          <!--***Fill row 1 below and remove this line***-->
+          <field name="性能名">屈服强度</field>
+          <field name="性能值">78</field>
+        </row>
+        <row>
+          <!--***Fill row 2 below and remove this line***-->
+          <field name="性能名">屈服强度</field>
+          <field name="性能值">78</field>
+        </row>
+      </field>
+    </content>
+  </data>
+</root>
