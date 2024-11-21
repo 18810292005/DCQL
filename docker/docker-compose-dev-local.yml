@@ -1,0 +1,137 @@
+version: "3"
+
+services:
+
+  mongodb:
+    image: mongo:4.4.0
+    container_name: mge-dev-mongodb
+    restart: always
+    volumes:
+      - mongodb-dev-local:/data/db
+    ports:
+      - "27017:27017"
+
+  postgres:
+    image: postgres:14
+    container_name: mge-dev-postgres
+    restart: always
+    volumes:
+      - postgres-dev-local-local:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: micl
+      POSTGRES_PASSWORD: micl
+      POSTGRES_DB: mgedata
+    ports:
+      - "5432:5432"
+
+
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+      - ./ik-8.12.2:/usr/share/elasticsearch/plugins/ik-8.12.2
+    ports:
+      - ${ES_PORT}:9200
+    environment:
+      - node.name=es01
+      - cluster.name=${CLUSTER_NAME}
+      - cluster.initial_master_nodes=es01,es02
+      - discovery.seed_hosts=es02
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+    mem_limit: ${MEM_LIMIT}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -I http://localhost:9200 | grep -q 'HTTP/1.1 200 OK'",
+        ]
+      interval: 1s
+      timeout: 2s
+      retries: 120
+
+  es02:
+    depends_on:
+      - es01
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    volumes:
+      - esdata02:/usr/share/elasticsearch/data
+      - ./ik-8.12.2:/usr/share/elasticsearch/plugins/ik-8.12.2
+    environment:
+      - node.name=es02
+      - cluster.name=${CLUSTER_NAME}
+      - cluster.initial_master_nodes=es01,es02
+      - discovery.seed_hosts=es01
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+    mem_limit: ${MEM_LIMIT}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -I http://localhost:9200 | grep -q 'HTTP/1.1 200 OK'",
+        ]
+      interval: 1s
+      timeout: 2s
+      retries: 120
+
+
+  kibana:
+    depends_on:
+      es01:
+        condition: service_healthy
+      es02:
+        condition: service_healthy
+    image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
+    volumes:
+      - kibanadata:/usr/share/kibana/data
+    ports:
+      - ${KIBANA_PORT}:5601
+    environment:
+      - SERVERNAME=kibana
+      - ELASTICSEARCH_HOSTS=http://es01:9200
+    mem_limit: ${MEM_LIMIT}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -I http://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
+        ]
+      interval: 1s
+      timeout: 2s
+      retries: 120
+
+
+  rabbitmq:
+    image: rabbitmq:3.10-management
+    container_name: mge-dev-rabbitmq
+    restart: always
+    volumes:
+      - rabbitmq-dev-local:/var/lib/rabbitmq
+    ports:
+      - "5672:5672"
+
+  memcached:
+    image: memcached:latest
+    command: [ "-m", "4096",'-I','128M' ]
+    container_name: mge-dev-memcached
+    ports:
+      - "11211:11211"
+
+
+volumes:
+  mongodb-dev-local:
+  postgres-dev-local-local:
+  rabbitmq-dev-local:
+  es-dev-local:
+  esdata01:
+  esdata02:
+  kibanadata:
