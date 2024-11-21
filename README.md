@@ -1,50 +1,50 @@
-# MGEDATA DCQL 使用说明
+# MGEDATA DCQL User Manual
 
-### DCQL相关文件存放在 'mgedata/apps/nql' 目录下，包含四个文件夹和一个query.py文件
+### DCQL related files are stored in the 'mgedata/apps/nql' directory, which contains four folders and a query.py file
 
 
-### 使用时在pycharm的终端依次输入以下命令进入python环境并调用输入语句的函数
+### When using, enter the following commands in the pycharm terminal in sequence to enter the python environment and call the function of the input statement
 ```shell
 python manage.py shell
 from apps.nql.query import input_test
 input_test()
 ```
-### 其中默认pycharm终端目录为根目录mgedata，若不一致需要更改第二条命令函数的索引
+### The default pycharm terminal directory is the root directory mgedata. If it is inconsistent, you need to change the index of the second command function.
 ### 
-### 之后进行语句的输入，输入一条并回车代表接受指令，下面进行一个简单示例的演示
-#### 1.查看模板信息，可以同时用来检查模板是否存在，需注意不可以出现两条重名模板
+### Then enter the statement. Enter a line and press Enter to accept the command. The following is a simple example demonstration.
+#### 1.View template information. You can also use it to check whether the template exists. Please note that there cannot be two templates with the same name.
 ```shell
-describe 测试
+describe Test
 ```
-#### 2.根据需求创建模板，这里展示一个包含数值型’num‘的模板
+#### 2.Create a template according to your needs. Here is a template containing the numeric type 'num'
 ```shell
 create template test number (num,unit=kg)
 ```
-#### 3.如果模板第一次创建且之前没有同名模板存在过此时模板下没有数据，进行数据的插入（此处为三条）
+#### 3.If the template is created for the first time and there is no template with the same name before, there is no data under the template, so insert data (here are three items)
 ```shell
 insert into test (num) values (number 3.3)
 insert into test (num) values (number 4.0)
 insert into test (num) values (number 4.8)
 ```
-#### 4.之后需要再开一个终端页面进行数据库的更新，根据模板的id号进行更新（这里5051为id号）
+#### 4.After that, you need to open another terminal page to update the database according to the template ID number (here 5051 is the ID number)
 ```shell
 python manage.py es update_templates --template_ids 5051
 ```
-#### 5.在原窗口进行数据的检索，得到结果为json格式，在终端可见
+#### 5.Retrieve data in the original window and get the result in json format, which can be seen in the terminal
 ```shell
 select * from test
-## 可以进行条件检索，例如
+## You can perform conditional searches, such as
 ## select * from easy where num>4
 ```
-#### 6.数据的更改，对特定字段数据进行更改，此处也需要对数据库进行更新
+#### 6.Changes to data: Changes to specific field data also require updates to the database
 ```shell
 update test set num = 3.3 where num=6.0
 ```
-#### 7.清空数据（不会删除模板）
+#### 7.Clear data (will not delete templates)
 ```shell
 delete from test
 ```
-#### 8.删除模板
+#### 8.Deleting a template
 ```shell
 drop template test
 ```
