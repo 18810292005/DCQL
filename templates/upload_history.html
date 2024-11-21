@@ -1,0 +1,11 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/upload_history.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/upload_history.js' %}"></script>
+{% endblock %}

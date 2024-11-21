@@ -1,0 +1,48 @@
+{% extends '_layout/profile.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'My Subscription' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'css/account/settings.css' %}">
+  <link rel="stylesheet" href="{% static 'css/service/sub.css' %}">
+{% endblock %}
+
+
+{% block navList %}
+  <li class="active">
+    <a>{% trans 'My Subscription' %}</a>
+  </li>
+
+  <li>
+    <a href="{% url 'service:service_recommend' %}">{% trans 'Subscription News' %}</a>
+  </li>
+{% endblock %}
+
+{% block mainContent %}
+  <div class="sub-title">
+    <h3><i class="fa fa-cubes"></i>{% trans 'Material Classes' %}</h3>
+  </div>
+  <div class="sub-content" id="sub-classes">
+  </div>
+  <div class="sub-title">
+    <h3><i class="fa fa-tags"></i>{% trans 'Tags' %}</h3>
+  </div>
+  <div class="sub-content" id="sub-tags">
+  </div>
+  <div class="sub-title">
+    <h3><i class="fa fa-users"></i>{% trans 'Users' %}</h3>
+  </div>
+  <div class="sub-content" id="sub-users">
+  </div>
+
+{% endblock %}
+
+{% block pageFootExtra %}
+
+  <script src="{% static 'js/service/sub.js' %}"></script>
+
+{% endblock %}
+

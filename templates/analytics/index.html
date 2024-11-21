@@ -1,0 +1,17 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans '数据统计' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/analytics.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/analytics.js' %}"></script>
+{% endblock %}

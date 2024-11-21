@@ -1,0 +1,32 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="media-url-prefix" content="{{ media_url }}">
+    <title>{% block pageTitle %} {% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <link rel="bookmark" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/vendor/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/material-icons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webpack/vendors.css' %}" rel="stylesheet">
+    {% block pageHeadExtra %} {% endblock %}
+</head>
+<body class="noscrollbar">
+<div id="wrap">
+    {% block pageBody %} {% endblock %}
+</div>
+
+<script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+<script src="{% static 'webpack/dll/dll.js' %}"></script>
+<script src="{% static 'webpack/vendors.js' %}"></script>
+
+{% block pageFootExtra %} {% endblock %}
+
+</body>
+</html>

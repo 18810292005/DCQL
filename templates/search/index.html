@@ -1,0 +1,18 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Search' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/search.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/search.js' %}"></script>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% load i18n %}
+<footer id="footer">
+  <div class="container">
+    <ul class="footer-intro">
+      <li><a href="http://60.205.217.38:8080/#/home/connectus">{% trans 'About' %}</a></li>
+      <!-- <li><a href="#">{% trans 'Team' %}</a></li> -->
+      <li><a href="/docs/">API</a></li>
+      <li><a href="/update">Log</a></li>
+    </ul>
+    <div class="brand">
+      <div>
+        {% get_current_language as LANGUAGE_CODE %}
+        {% if LANGUAGE_CODE  == 'zh-hans' %}
+          <p> Copyright&copy;<a href="http://60.205.217.38:8080/"> 2020 国家材料基因工程数据汇交与管理服务技术平台</a> </p>
+        {% else %}
+          <p> 2018 Copyright&copy; <a href="{% url 'site_index' %}">Materials Genome Engineering DataBases</a></p>
+        {% endif %}
+
+      </div>
+    </div>
+    <div>
+      <span id="online_count">在线人数：</span>&nbsp;&nbsp;
+      <span id="visits_count">累计访问量：</span>
+    </div>
+  </div>
+</footer>

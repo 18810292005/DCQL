@@ -1,0 +1,37 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Search' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/expr_search.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search/expr" style="cursor: pointer;"><span>{% trans 'Advanced Search' %}</span></a>
+      </div>
+  </div>
+  <div class="container">
+    
+  </div>
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/expr_search.js' %}"></script>
+{% endblock %}
+

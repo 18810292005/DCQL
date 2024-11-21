@@ -1,0 +1,92 @@
+{% extends "_layout/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %}
+  {% trans 'Create Ticket' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/summernote/0.8.9/summernote.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="javascript:void(0)" style="cursor: default;"><span>{% trans 'Create ticket' %}</span></a>
+      </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="{% url 'ticketing:list_tickets' %}" role="button" class="btn btn-primary">
+          <i class="fa fa-angle-double-left"></i>{% trans 'Go back to tickets' %}
+        </a>
+      </div>
+    </div>
+
+    <div class="dividing"></div>
+
+    <div class="row">
+      <form role="form">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label class="control-label">{% trans 'Ticket Topic' %}</label>
+            <select id="ticket-type" class="form-control input-xlarge">
+              {% for item in topic_choices %}
+                <option value="{{ item.value }}">{{ item.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="form-group">
+            <label class="control-label">{% trans 'Subject' %}</label>
+            <input id="ticket-title" class="form-control" type="text" placeholder="{% trans 'Enter Subject Here' %}">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="dividing-small"></div>
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-1">
+        <img class="avatar img-circle img-responsive" src="{{ request.user.get_normal_avatar_uri }}">
+      </div>
+      <div class="col-sm-10">
+        <textarea id="my-editor"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-10 text-right">
+        <button id="submit-btn" class="btn btn-lg btn-primary" >{% trans 'Submit' %}</button>
+      </div>
+    </div>
+  </div>
+
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="https://cdn.bootcss.com/summernote/0.8.9/summernote.min.js"></script>
+  {% get_current_language as LANG %}
+  {% with LANG|slice:'2' as LANG_START %}
+  {% if LANG_START == 'zh' %}
+  <script src="https://cdn.bootcss.com/summernote/0.8.9/lang/summernote-zh-CN.min.js"></script>
+  {% endif %}
+  {% endwith %}
+  <link href="{% static 'css/ticketing/common.css' %}" rel="stylesheet">
+  <script src="{% static 'js/ticketing/init_editor.js' %}"></script>
+  <script src="{% static 'js/ticketing/create-ticket.js' %}"></script>
+{% endblock %}

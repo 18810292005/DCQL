@@ -1,0 +1,35 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+    {% trans 'Task' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+    <link href="{% static 'webpack/task.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+    {% include '_component/header.html' %}
+    <div class="Breadcrumb">
+        <div class="Breadcrumb__item">
+            <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+        </div>
+        <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+        <div class="Breadcrumb__item">
+            <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+        </div>
+        <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+        <div class="Breadcrumb__item">
+            <a href="/task/" style="cursor: pointer;"><span>{% trans 'Task' %}</span></a>
+        </div>
+    </div>
+
+    {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+    <script src="{% static 'webpack/task.js' %}"></script>
+{% endblock %}
+

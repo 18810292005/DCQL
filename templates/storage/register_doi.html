@@ -1,0 +1,72 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+    {% trans 'Register DOI' %}
+{% endblock %}
+{% block pageHeadExtra %}
+  <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="{% static 'css/storage/data.css' %}" rel="stylesheet">
+{% endblock %}
+{% block pageBody %}
+    {% include '_component/header.html' %}
+    <div class="Breadcrumb">
+            <div class="Breadcrumb__item">
+                <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+            </div>
+            <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+            <div class="Breadcrumb__item">
+                <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+            </div>
+            <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+            <div class="Breadcrumb__item">
+                <a href="javascript:void(0)" style="cursor: pointer;"><span>{% trans 'Register DOI' %}</span></a>
+            </div>
+        </div>
+    <div class="page container">
+      <h1>{% trans 'Register DOI' %}</h1>
+        <div class="dividing dividing-fix"></div>
+        <div style="margin: 0 50px 0 50px">
+            <form role="form">
+          <div class="form-group">
+                   <label for="title" class="col-sm-2 control-label">{% trans 'doi_title' %}</label>
+                  <input type="text" class="form-control" id="doi-title" placeholder="{% trans 'dataset title' %}">
+          </div>
+          <div class="form-group">
+                   <label for="contributor" class="col-sm-2">{% trans 'doi_contributor' %}</label>
+                  <input type="text" class="form-control" id="doi-contributor" placeholder="{% trans 'Name of the responsible person' %}">
+          </div>
+          <div class="form-group">
+              <label for="doi-project-modify" class="col-sm-2">{% trans 'doi_project' %}</label>
+              <select id="doi-project-modify" class="form-control">
+                  <option value="973">{% trans '973 subject' %}</option>
+                  <option value="863">{% trans '863 project' %}</option>
+                  <option value="NSFC">{% trans 'National Natural Science Foundation' %}</option>
+                  <option value="NSTMP">{% trans 'National Science and Technology major projects' %}</option>
+                  <option value="NKRDP">{% trans 'National key research and development plan' %}</option>
+                  <option value="TIGP">{% trans 'Technology Innovation Guide Program' %}</option>
+                  <option value="BTMP">{% trans 'Base and talent special' %}</option>
+                  <option value="LOCAL">{% trans 'Provincial and ministerial level and local projects' %}</option>
+                  <option value="PARTNER">{% trans 'Factory Association Project' %}</option>
+                  <option value="OTHERS">{% trans 'Others' %}</option>
+              </select>
+          </div>
+{#          <div class="form-group">#}
+{#                   <label for="project" class="col-sm-2">{% trans 'doi_project' %}</label>#}
+{#                   <input type="text" class="form-control" id="doi-project" placeholder="所属项目">#}
+{#          </div>#}
+          <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-primary" style="margin-left: 50%" id="registerdoi-button">{% trans 'register doi' %}</button>
+          </div>
+      </form>
+        </div>
+    </div>
+    {% include '_component/footer.html' %}
+  {% include '_component/modal-dialog-overlay.html' %}
+
+{% endblock %}
+{% block pageFootExtra %}
+     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/js/perfect-scrollbar.jquery.min.js"></script>
+     <script src="{% static 'js/storage/register_doi.js' %}"></script>
+{% endblock %}

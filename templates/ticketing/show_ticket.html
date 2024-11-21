@@ -1,0 +1,183 @@
+{% extends "_layout/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %}
+  {% trans 'TIcket' %} | {{ ticket.title|safe }}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/summernote/0.8.9/summernote.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="javascript:void(0)" style="cursor: default;"><span>{% trans 'Ticket detail' %}</span></a>
+      </div>
+  </div>
+  <div class="container">
+
+    <div id="ticket-subject" class="row" data-ticket-id="{{ ticket.id }}">
+      <div class="col-sm-1">
+        <div class="state">
+          {% if ticket.status == 1 %}
+            <span class="label label-success">
+            <i class="fa fa-info-circle"></i>
+            {% trans 'Open' %}
+          </span>
+          {% elif ticket.status == 2 %}
+            <span class="label label-danger">
+            <i class="fa fa-check-circle"></i>
+            {% trans 'Closed' %}
+          </span>
+          {% else %}
+            <span class="label label-warning">
+            <i class="fa fa-warning"></i>
+            {% trans 'Ended' %}
+          </span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <h1>
+          {{ ticket.title|safe }}
+          <small># {{ ticket.id }}</small>
+        </h1>
+      </div>
+
+      {% if ticket.status == 1 %}
+        <div class="col-sm-2">
+          <div class="pull-right">
+            {% if request.user.username == ticket.created_by.username %}
+              <button id="end-ticket-btn" type="button"
+                      class="btn btn-warning pull-right">{% trans 'End Ticket' %}</button>
+            {% else %}
+              <button id="close-ticket-btn" type="button"
+                      class="btn btn-danger pull-right">{% trans 'Close Ticket' %}</button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+        <p class="text-muted">
+          {% blocktrans with created_at=ticket.created_at created_by=ticket.created_by %}
+            {{ created_by }} opened this ticket at {{ created_at }}
+          {% endblocktrans %}
+
+          {% if ticket.status == 2 %}
+            {% blocktrans with time=ticket.ended_at %}Closed by admin at
+              {{ time }}
+            {% endblocktrans %}
+          {% elif ticket.status == 3 %}
+            {% blocktrans with time=ticket.ended_at %}Ended at
+              {{ time }}
+            {% endblocktrans %}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <div class="ticket-content row">
+      <div class="col-sm-1">
+        <img class="avatar img-circle img-responsive" src="{{ ticket.created_by.get_normal_avatar_uri }}">
+      </div>
+      <div class="col-sm-10">
+        <div class="panel panel-default">
+          <div class="panel-heading pointer-left">
+            <strong>{{ ticket.created_by }}</strong>
+            commented at
+            <span class="text-muted">&nbsp;{{ ticket.created_at }}</span>
+          </div>
+          <div data-ticket-content="{{ ticket.content }}" id="ticket-content" class="panel-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="replies">
+      {% for reply in reply_list %}
+        <div class="row reply">
+          <div class="col-sm-1">
+            {% if reply.from_user.username == ticket.created_by.username %}
+            <img class="avatar img-circle img-responsive" src="{{ reply.from_user.get_normal_avatar_uri }}">
+            {% endif %}
+          </div>
+          <div class="col-sm-10">
+            <div class="panel panel-default">
+              <div class="panel-heading {% if reply.from_user.username != ticket.created_by.username %}pointer-right{% else %}pointer-left{% endif %}">
+                {% if reply.from_user.username == request.user.username %}
+                  <strong>{% trans 'Me' %}</strong>
+                {% else %}
+                  <strong>{{ reply.from_user.username }}</strong>
+                {% endif %}
+                <span class="text-muted">&nbsp;{{ reply.created_at }}</span>
+              </div>
+              <div data-content="{{ reply.content }}" class="panel-body">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            {% if reply.from_user.username != ticket.created_by.username %}
+            <img class="avatar img-circle img-responsive" src="{{ reply.from_user.get_normal_avatar_uri }}">
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if ticket.status == 1 %}
+      <div class="reply-panel row">
+        <div class="col-sm-1">
+          {% if ticket.created_by.username == request.user.username %}
+          <img class="avatar img-circle img-responsive" src="{{ request.user.get_normal_avatar_uri }}">
+          {% endif %}
+        </div>
+        <div class="col-sm-10">
+          <textarea id="my-editor">
+          </textarea>
+        </div>
+        <div class="col-sm-1">
+          {% if ticket.created_by.username != request.user.username %}
+          <img class="avatar img-circle img-responsive" src="{{ request.user.get_normal_avatar_uri }}">
+          {% endif %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 text-right">
+          <button id="reply-btn" class="btn btn-lg btn-primary">{% trans 'Reply' %}</button>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+<script src="https://cdn.bootcss.com/summernote/0.8.9/summernote.min.js"></script>
+  {% get_current_language as LANG %}
+  {% with LANG|slice:'2' as LANG_START %}
+  {% if LANG_START == 'zh' %}
+  <script src="https://cdn.bootcss.com/summernote/0.8.9/lang/summernote-zh-CN.min.js"></script>
+  {% endif %}
+  {% endwith %}
+  <link href="{% static 'css/ticketing/common.css' %}" rel="stylesheet">
+  <script src="{% static 'js/ticketing/show_ticket.js' %}"></script>
+  {% if ticket.status == 1 %}
+    <script src="{% static 'js/ticketing/init_editor.js' %}"></script>
+  {% endif %}
+{% endblock %}

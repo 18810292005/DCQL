@@ -1,0 +1,148 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Explore' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="{% static 'css/search/results.css' %}">
+{% endblock %}
+
+{% block pageBody %}
+
+  {% include '_component/header.html' %}
+
+  <div class="container">
+
+    <div class="horizontal statistic small">
+
+    </div>
+    <div id="dm-scope" style="clear: both;">
+      {% for meta in meta_list %}
+        <div class="row">
+          <div class="data-meta panel" data-id="{{ meta.id }}" onclick="dataOnClick(this)">
+            <div class="panel-heading">
+              <span class="d-title">{{ meta.title }}</span>
+              {% if meta.keywords %}
+                {% for keyword in meta.keywords %}
+                  {% if keyword|length != 0 %}
+                    <span class="d-labels">
+                  <span class="label label-primary"><i class="fa fa-tag"></i>{{ keyword }} </span>
+                </span>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="panel-body">
+              <p>
+                <span class="dm dt"> {% trans 'Author' %}</span>
+                <span class="dm dd author">{{ meta.user_real_name }}</span>
+                <span class="dm dt"> {% trans 'Add Time' %}</span>
+                <span class="dm dd date">{{ meta.add_time }}</span>
+              </p>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <ul class="list-unstyled">
+                    <li>
+                      <span class="dt"> {% trans 'Material Category' %}</span>
+                      <span class="dd">{{ meta.category|default:"N/A" }}</span>
+                    </li>
+                    <li>
+                      <span class="dt"> {% trans 'Abstract' %}</span>
+                      <span class="dd">{{ meta.abstract|default:"N/A" }}</span>
+                    </li>
+                    <li>
+                      <span class="dt">DOI</span>
+                      <span class="dd">{{ meta.doi|default:"N/A" }}</span>
+                    </li>
+                    {% if meta.purpose %}
+                      <li>
+                        <span class="dt"> {% trans 'Purpose' %}</span>
+                        <span class="dd">{{ meta.purpose|default:"N/A" }}</span>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <ul class="list-unstyled">
+                    <li>
+                      <span class="dt"> {% trans 'Source' %}</span>
+                      <span class="dd">{{ meta.source|default:'N/A' }}</span>
+                    </li>
+                    <li>
+                      <span class="dt"> {% trans 'Project' %}</span>
+                      <span class="dd">{% with_default obj=meta.other_info key='project' default='N/A' %}</span>
+                    </li>
+                    <li>
+                      <span class="dt"> {% trans 'Reference' %}</span>
+                      <span class="dd">{{ meta.reference|default:'N/A' }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <div class="pull-right">
+                    <div class="statistic tiny">
+                      <div class="value">{{ meta.views|default:"0" }}</div>
+                      <div class="label">{% trans 'Views' %}</div>
+                    </div>
+                    <div class="statistic tiny">
+                      <div class="value">{{ meta.downloads|default:"0" }}</div>
+                      <div class="label">{% trans 'Downloads' %}</div>
+                    </div>
+                    <div class="statistic tiny">
+                      <div class="value">{{ meta.score|default:"0" }}</div>
+                      <div class="label"> {% trans 'Score' %}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+
+
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
+      <ul id="paginator" data-page-count="{{ page_count }}" data-current-page="{{ current_page }}">
+      </ul>
+    </div>
+  </div>
+
+  {% include '_component/footer.html' %}
+  {% include '_component/modal-dialog-overlay.html' %}
+
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script>
+    function dataOnClick(view) {
+      window.open(Urls.resolve('storage:show_data', {did: $(view).attr('data-id')}));
+    }
+
+    $(function () {
+      var paginator = $('#paginator');
+      var options = {
+        bootstrapMajorVersion: 3,
+        currentPage: paginator.data('current-page'),
+        numberOfPages: 15,
+        totalPages: paginator.data('page-count'),
+        onPageClicked: function (e, originalEvent, type, page) {
+          window.location = Urls.resolve('account:upload_history_data', {history_id: {{history_id}}}) + '?page=' + page;
+          e.stopImmediatePropagation();
+
+        }
+      };
+      if (options.totalPages > 1) {
+        paginator.bootstrapPaginator(options);  // 仅大于一页时分页
+      }
+    });
+
+  </script>
+{% endblock %}

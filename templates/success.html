@@ -1,0 +1,22 @@
+{% extends '_layout/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block pageBody %}
+  <link rel="stylesheet" href="{% static 'css/success_page.css' %}">
+  {% include '_component/header.html' %}
+  <div class="successbox">
+    <div class="successpage">
+
+      <img class="successpage" src="{% static 'img/logo.png' %}">
+      <h1>
+        {{ title }}
+      </h1>
+      <h3 class="successpage">{{ message }}</h3>
+      <hr/>
+      <p class="successpage">{{ detail }}</p>
+      <a onclick="window.location = '{% url "site_index" %}'"
+         class="go-back successpage">{% trans 'Go to index page' %}</a>
+    </div>
+
+  </div>
+{% endblock %}

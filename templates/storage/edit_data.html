@@ -1,0 +1,15 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans '修改数据' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/edit_data.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/edit_data.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends '_layout/profile.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'My Data' %}
+{% endblock %}
+
+
+{% block navList %}
+  <li class="active">
+    <a href="#data" data-toggle="tab">{% trans 'Data' %}</a>
+  </li>
+
+{% endblock %}
+
+{% block mainContent %}
+  <div id="data" class="tab-pane active">
+    <p class="text-right">
+      <span class="btn-group">
+        <a role="button" class="btn btn-default" href="{% url 'search:index' %}">
+          <i class="fa fa-wpexplorer"></i>{% trans 'Explore' %}
+        </a>
+        <a role="button" class="btn btn-default" href="{% url 'storage:add_data' %}">
+          <i class="fa fa-plus"></i>{% trans 'Add New' %}
+        </a>
+        <a role="button" class="btn btn-default" id="apply-for-doi" href="{% url 'storage:register_doi' %}">
+          <i class="fa fa-registered"></i>{% trans 'Apply For DOI' %}
+        </a>
+      </span>
+    </p>
+    <div id="dm-scope"></div>
+    <div id="dm-pagination-scope" class="text-center"></div>
+  </div>
+
+  {% if request.user.roles_for_template.TEMPLAET_UPLOADER %}
+    <div id="templates" class="tab-pane">
+      <p class="text-right">
+        <span class="btn-group">
+          <a role="button" class="btn btn-default" href="{% url 'storage:add_template' %}">
+            <i class="fa fa-plus"></i>{% trans 'Add New' %}
+          </a>
+        </span>
+      </p>
+      <div id="t-scope"></div>
+      <div id="t-pagination-scope" class="text-center"></div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'js/storage/apply_doi.js' %}"></script>
+  <script src="{% static 'js/account/my-data.js' %}"></script>
+{% endblock %}
+

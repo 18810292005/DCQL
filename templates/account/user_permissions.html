@@ -1,0 +1,368 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Explore' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="{% static 'css/vendor/multiple-select.css' %}">
+
+{% endblock %}
+
+{% block pageBody %}
+
+  {% include '_component/header.html' %}
+
+  <div class="container">
+
+    <form class="form-horizontal">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>{% trans 'Edit User' %}</legend>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="username">{% trans 'Username' %}</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="username" value="{{ user.username }}">
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="real-name">{% trans 'Real Name' %}</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="real-name" value="{{ user.real_name }}">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">{% trans 'Email Address' %}</label>
+          <div class="col-md-4">
+            <div class="input-group">
+              <input id="email" name="email" readonly class="form-control" type="text" value="{{ user.email }}">
+              {% if user.email_verified %}
+                <span class="input-group-addon verified-status">{% trans 'Verified' %}</span>
+              {% else %}
+                <span class="input-group-addon unverified-status">{% trans 'Not Verified' %}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="date_joined">{% trans 'Date Joined' %}</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="date_joined" value="{{ user.date_joined }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="last_login">{% trans 'Last Login' %}</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="last_login" value="{{ user.last_login }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="register_ip">{% trans 'IP Used When Registered' %}</label>
+          <div class="col-md-4">
+            <input type="text" readonly class="form-control" id="register_ip" value="{{ user.register_ip }}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="tel">{% trans 'Telephone' %}</label>
+          <div class="col-md-4">
+            <input id="tel" name="tel" type="text" readonly class="form-control input-md"
+                   value="{% if user.tel %}{{ user.tel }}{% else %}{% trans 'N/A' %}{% endif %}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="ins">{% trans 'Institution' %}</label>
+          <div class="col-md-4">
+            <input id="tel" type="text" readonly class="form-control input-md" value="{{ user.institution }}">
+          </div>
+        </div>
+        {#        <div class="form-group">#}
+        {#          <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>#}
+        {#          <div class="col-md-4">#}
+        {#            <select id="selectbasic" name="selectbasic" class="form-control">#}
+        {#              <option value="1">Option one</option>#}
+        {#              <option value="2">Option two</option>#}
+        {#            </select>#}
+        {#          </div>#}
+        {#        </div>#}
+        {% if request.user.username != user.username or request.user.is_root %}
+          {% if not user.is_root %}
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="permissions">{% trans 'Permissions' %}</label>
+              <div class="col-md-4">
+                {% if not user.email_verified %}
+                  <input type="text" readonly class="form-control" id="username"
+                         value="{% trans 'Cannot set permissions until email is verified!' %}">
+                {% else %}
+                  <div class="panel panel-default">
+                    <div id="permissions-panel" data-current-roles="{{ current_roles }}" disabled="true"
+                         class="panel-body">
+                      {% for role in roles %}
+                        <div class="form-group">
+                          <div class="checkbox checkbox-switch switch-success">
+                            <label>
+                              <input data-role-value="{{ role.role_value }}" class="my-role" type="checkbox" name=""
+                                     {% if role.has_role %}checked{% endif %}/>
+                              <span></span>
+                              {{ role.role_name }}
+                            </label>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% else %}
+            <div id="permissions-panel" data-current-roles="{{ current_roles }}" disabled="true"
+                 class="panel-body" style="display: none">
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="permissions">{% trans 'Permissions' %}</label>
+              <div class="col-md-4">
+                <input type="text" readonly class="form-control" id="username"
+                       value="{% trans 'Root User' %}">
+              </div>
+            </div>
+          {% endif %}
+
+        {% endif %}
+
+
+        <div class="form-group" id="category-div" data-shown="{{ show_categories }}">
+          <label class="col-md-4 control-label" for="category-select">{% trans 'Managed Categories' %}</label>
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div id="category-panel" class="panel-body">
+                <div class="checkbox">
+                  <label>
+                    <input id="select-all" type="checkbox">
+                    {% trans 'Select All' %}
+                  </label>
+                </div>
+                {% for category in categories %}
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" class="category-checkbox"
+                        {% if category.id in granted_categories %}
+                             checked="checked" {% endif %}
+                             value="{{ category.id }}">
+                      {{ category.name }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="save-btn">{% trans 'Action' %}</label>
+          <div class="col-md-4">
+            {% if request.user.username != user.username and user.email_verified or request.user.is_root %}
+              <button id="save-btn" type="button" class="btn btn-success">{% trans 'Save' %}</button>
+            {% endif %}
+            <button id="back-btn" type="button" class="btn btn-primary">{% trans 'Go Back' %}</button>
+          </div>
+        </div>
+      </fieldset>
+
+    </form>
+
+
+  </div>
+
+
+  {% include '_component/footer.html' %}
+  {% include '_component/modal-dialog-overlay.html' %}
+
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script>
+
+    $(function () {
+      $("#back-btn").on('click', function () {
+        window.close();
+      });
+
+      function toggleCategoryDiv(show) {
+        if (show) {
+          $("#category-div").css('display', 'block');
+        } else {
+          $("#category-div").css('display', 'none');
+        }
+      }
+
+      $("#select-all").on('click', function () {
+        $(".category-checkbox").prop('checked', $(this).prop('checked'));
+      });
+
+
+      var roles = parseInt($("#permissions-panel").data('currentRoles'));
+      {% if user.roles_for_template.DATA_ADMIN %}
+        var isDataAdmin = true;
+      {% else %}
+        var isDataAdmin = false;
+      {% endif %}
+      {% if user.roles_for_template.TEMPLATE_ADMIN %}
+        var isTemplateAdmin = true;
+      {% else %}
+        var isTemplateAdmin = false;
+      {% endif %}
+      $(".my-role").on('click', function () {
+        var cur_role = parseInt($(this).data('roleValue'));
+        var checked = $(this).prop("checked");
+        if (checked) {
+          roles |= cur_role;
+        } else {
+          roles &= ~cur_role;
+        }
+        if (cur_role === {{ UserRole.DATA_ADMIN.value }}) {
+          isDataAdmin = checked;
+        } else if (cur_role === {{ UserRole.TEMPLATE_ADMIN.value }}) {
+          isTemplateAdmin = checked;
+        }
+        toggleCategoryDiv(isTemplateAdmin || isDataAdmin);
+        //$("#permissions-panel").data('currentRoles', roles);
+      });
+      var checkedCategories = [];
+
+      function getCategories() {
+        checkedCategories = [];
+        $(".category-checkbox").each(function () {
+          if ($(this).prop("checked")) {
+            checkedCategories.push(parseInt($(this).val()));
+          }
+        });
+      }
+
+      toggleCategoryDiv(isTemplateAdmin || isDataAdmin);
+      $("#save-btn").on('click', function () {
+        getCategories();
+        $.requestJSON({
+          url: Urls.resolve('api_v1_account:user_permissions', {username: $("#username").val()}),
+          method: 'PATCH',
+          data: {roles: roles, 'categories': checkedCategories},
+          onSuccess: function () {
+            $.showModal({
+              title: "{% trans  "Success"%}",
+              message: "{% trans "Permissions are set successfully!" %}"
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+
+
+    .checkbox.checkbox-switch label,
+    .checkbox-inline.checkbox-switch {
+      padding-left: 10px;
+    }
+
+    .checkbox.checkbox-switch label input,
+    .checkbox-inline.checkbox-switch input {
+      display: none;
+    }
+
+    .checkbox.checkbox-switch label span,
+    .checkbox-inline.checkbox-switch span {
+      width: 35px;
+      border-radius: 20px;
+      height: 18px;
+      border: 1px solid #dbdbdb;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
+      transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .checkbox.checkbox-switch label span:before,
+    .checkbox-inline.checkbox-switch span:before {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgb(255, 255, 255);
+      content: " ";
+      top: 0;
+      position: relative;
+      left: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .checkbox.checkbox-switch label > input:checked + span:before,
+    .checkbox-inline.checkbox-switch > input:checked + span:before {
+      left: 17px;
+    }
+
+
+    /* Switch Success */
+    .checkbox.checkbox-switch.switch-success label > input:checked + span,
+    .checkbox-inline.checkbox-switch.switch-success > input:checked + span {
+      background-color: rgb(40, 167, 69);
+      border-color: rgb(40, 167, 69);
+      box-shadow: rgb(40, 167, 69) 0 0 0 8px inset;
+      transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+    }
+
+    .checkbox.checkbox-switch.switch-success label > input:checked:disabled + span,
+    .checkbox-inline.checkbox-switch.switch-success > input:checked:disabled + span {
+      background-color: rgb(153, 217, 168);
+      border-color: rgb(153, 217, 168);
+      box-shadow: rgb(153, 217, 168) 0 0 0 8px inset;
+    }
+
+
+    /* Switch Primary */
+    .checkbox.checkbox-switch.switch-primary label > input:checked + span,
+    .checkbox-inline.checkbox-switch.switch-primary > input:checked + span {
+      background-color: rgb(0, 105, 217);
+      border-color: rgb(0, 105, 217);
+      box-shadow: rgb(0, 105, 217) 0 0 0 8px inset;
+      transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+    }
+
+    .checkbox.checkbox-switch.switch-primary label > input:checked:disabled + span,
+    .checkbox-inline.checkbox-switch.switch-primary > input:checked:disabled + span {
+      background-color: rgb(109, 163, 221);
+      border-color: rgb(109, 163, 221);
+      box-shadow: rgb(109, 163, 221) 0 0 0 8px inset;
+      transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+    }
+
+    .verified-status {
+      color: #50a627
+    }
+
+    .unverified-status {
+      color: #CA3C3C
+    }
+
+    #category-panel {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+  </style>
+  <script src="{% static 'js/vendor/multiple-select.js' %}"></script>
+  <script>
+  </script>
+{% endblock %}

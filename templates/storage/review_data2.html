@@ -1,0 +1,11 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/review_data.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/review_data.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends '_layout/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block pageTitle %}
+  {% trans 'Secondary Entrance' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+
+  <div class="Breadcrumb">
+    <div class="Breadcrumb__item">
+      <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+    </div>
+    <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+    <div class="Breadcrumb__item">
+      <a href="/app_entrance/"
+         style="cursor: pointer;"><span>{% trans 'High-throughput Experimental Data Processing Software' %}</span></a>
+    </div>
+  </div>
+
+  <div class="container" style="flex-grow: 1">
+
+    <div id="entrance" class="row">
+      <div class="row">
+        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1"
+             style="height: 200px; width: 400px; margin-top: 50px; box-shadow: 0 0 10px #C0C0C0; display: table-cell; text-align: center; vertical-align: middle">
+          <a href="{% url "Gphase:index" %}">
+            <img class="logo" width="74px" height="53px" src="{% static "img/xrd_icon.png" %}" style="margin: 30px">
+            <div class="title">
+              <p class="chn"><font size="4" face="微软雅黑" color="black">X射线聚类与解构分析软件</font></p>
+              <p class="eng"><font size="2" face="arial" color="#a9a9a9">X-ray diffraction data clustering and
+                deconstruction</font></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-2 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1"
+             style="height: 200px; width: 400px; margin-top: 50px; box-shadow: 0 0 10px #C0C0C0; display: table-cell; text-align: center; vertical-align: middle">
+          <a href="{% url 'microscope' %}">
+            <img class="logo" width="61px" height="59px" src="{% static "img/ips_icon.png" %}" style="margin: 30px">
+            <div class="title">
+              <p class="chn"><font size="4" face="微软雅黑" color="black">材料图像分析软件</font></p>
+              <p class="eng"><font size="2" face="arial" color="#a9a9a9">Microscopic image analysis</font></p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+
+{% endblock %}

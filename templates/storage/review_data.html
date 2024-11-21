@@ -1,0 +1,279 @@
+{% extends "_layout/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %}
+  {% trans 'Review Data' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <style>
+    th {
+      text-align: center;
+    }
+
+    .table > tbody > tr > td {
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .btn-primary-outline {
+      color: #2e6da4;
+      border-color: #2e6da4;
+    }
+
+
+  </style>
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/storage/data/review" style="cursor: pointer;"><span>{% trans 'Review Data' %}</span></a>
+      </div>
+  </div>
+
+  <div class="container">
+    <div id="history-panel">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="btn-group" role="group">
+
+            <a
+              class="btn btn-sm {% if state == 'pending' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'storage:review_data_state' state='pending' page=1 %}">{% trans 'Pending' %}</a>
+            <a
+              class="btn btn-sm {% if state == 'approved' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'storage:review_data_state' state='approved' page=1 %}">{% trans 'Approved' %}</a>
+            <a
+              class="btn btn-sm {% if state == 'disapproved' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+              href="{% url 'storage:review_data_state' state='disapproved' page=1 %}">{% trans 'Disapproved' %}</a>
+            <a class="btn btn-sm {% if state == 'all' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+               href="{% url 'storage:review_data_state' state='all' page=1 %}">{% trans 'All' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div id="history-table" data-state="{{ state }}" class="col-sm-12">
+        <table class="table table-striped table-hover">
+          <thead>
+          <tr>
+            <th class="col-sm-2">{% trans 'Upload Time' %}</th>
+            <th class="col-sm-1">{% trans 'Data Count' %}</th>
+            <th class="col-sm-1">{% trans 'Uploaded Via' %}</th>
+            <th class="col-sm-1">{% trans 'Uploader' %}</th>
+            <th class="col-sm-1">{% trans 'Reviewer' %}</th>
+            <th class="col-sm-2">{% trans 'Status' %}</th>
+            <th class="col-sm-3">{% trans 'Action' %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% if history_list %}
+            {% for history in history_list %}
+              <tr class="history-row" data-history-id="{{ history.id }}">
+                <td class="col-sm-2">{{ history.time }}</td>
+                <td class="col-sm-1">{{ history.count }}</td>
+                <td class="col-sm-1">
+                  {% if history.via_file %}
+                    {% trans 'File' %}
+                  {% else %}
+                    {% trans 'Web Form' %}
+                  {% endif %}
+                </td>
+                <td class="col-sm-1">
+                  {{ history.uploaded_by_real_name }}
+                </td>
+
+                <td class="col-sm-1">
+                  {% if not history.pending %}
+                    {{ history.reviewer_real_name }}
+                  {% endif %}
+                </td>
+
+
+                <td class="col-sm-2">
+                  {% if history.pending %}
+                    <span>{% trans 'Reviewing Pending' %}</span>
+                  {% elif history.approved %}
+                    <span>{% trans 'Approved' %}</span>
+                  {% elif history.disapproved %}
+                    <div style="color: red">{% trans 'Disapproved' %}</div>
+                    {% if history.reason_list %}
+                      {% for reason in history.reason_list %}
+                        <div>{{ reason }}</div>
+                      {% endfor %}
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="col-sm-3">
+                  <button class="view-button btn btn-sm btn-primary"
+                          data-history-id="{{ history.id }}">{% trans 'View Data' %} </button>
+
+                  {% if history.pending %}
+                    <button class="approve-button btn btn-sm btn-success"
+                            data-history-id="{{ history.id }}">{% trans 'Approve' %} </button>
+                    <button class="disapprove-button btn btn-sm btn-danger"
+                            data-history-id="{{ history.id }}">{% trans 'Disapprove' %} </button>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <th colspan="7"><span class="text-muted">{% trans 'No Data' %}</span></th>
+            </tr>
+          {% endif %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-12 paginator-wrapper text-center">
+      <ul id="paginator" data-page-count="{{ page_count }}"
+          data-current-page="{{ current_page }}">
+      </ul>
+    </div>
+    <div id="reason-div" style="display: none">
+      <form style="margin-left: 20px">
+        {% for reason in reasons %}
+          <div class="checkbox"><input id="{{ reason.value }}" type="checkbox"
+                                       data-reason-id="{{ reason.value }}"><label
+            for="{{ reason.value }}">{% trans reason.text %}</label>
+          </div>
+        {% endfor %}
+      </form>
+    </div>
+  </div>
+
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script src="{% static 'js/vendor/jquery.base64.js' %}"></script>
+  <script>
+    $(function () {
+
+
+      function disapprove(history_id) {
+        var reasons = [];
+        var cloned = $("#reason-div").clone();
+        cloned.attr('id', 'real-reason-div');
+        cloned.children().attr('id', 'real-reason-form');
+        $.showModal({
+          title: gettext("Please choose reasons of disapproval:"),
+          message: cloned.html(),
+          onOk: function (e) {
+            $("#real-reason-form").find('input').each(function () {
+              if ($(this).prop('checked')) {
+                reasons.push(parseInt($(this).data('reasonId')));
+              }
+            });
+
+            if (reasons.length === 0) {
+              alert(gettext("Please choose at least one reason."));
+              e.stopImmediatePropagation();
+              return;
+            }
+            $.requestJSON({
+              url: Urls.resolve('api_v2_storage:review_data_history', {history_id: history_id}),
+              data: {approved: false, reasons: reasons},
+              method: "PATCH",
+              onSuccess: function () {
+                $.showModal({
+                  title: gettext("Success"),
+                  message: gettext("Data disapproved."),
+                  onHide: function () {
+                    window.location.reload();
+                  }
+                })
+              },
+              onHide: function () {
+                window.location.reload();
+              },
+            })
+          }
+        });
+
+      }
+
+
+      function approve(history_id) {
+        var msg = "";
+        if (approved) {
+          msg = gettext("Data Approved!");
+        } else {
+          msg = gettext("Data Disapproved!");
+        }
+        $.requestJSON({
+          url: Urls.resolve('api_v2_storage:review_data_history', {history_id: history_id}),
+          data: {approved: true},
+          method: "PATCH",
+          onSuccess: function () {
+            $.showModal({
+              title: gettext("Success"),
+              message: msg,
+              onOk: function () {
+                window.location.reload();
+              }
+            })
+          }
+        })
+      }
+
+
+      $(".approve-button").each(function () {
+        $(this).on('click', function () {
+          approve($(this).data('historyId'));
+        })
+      });
+      $(".disapprove-button").each(function () {
+        $(this).on('click', function () {
+          disapprove($(this).data('historyId'));
+        })
+      });
+
+      $(".view-button").each(function () {
+        $(this).on('click', function () {
+          window.open(Urls.resolve('account:upload_history_data', {history_id: $(this).data('historyId')}));
+        })
+      });
+
+
+      var paginator = $('#paginator');
+      var options = {
+        bootstrapMajorVersion: 3,
+        currentPage: paginator.data('currentPage'),
+        numberOfPages: 15,
+        totalPages: paginator.data('pageCount'),
+        onPageClicked: function (e, originalEvent, type, page) {
+          window.location = Urls.resolve('storage:review_data_state', {
+            page: page,
+            state: $("#history-table").data('state')
+          });
+          e.stopImmediatePropagation();
+
+        }
+      };
+      if (options.totalPages > 1) {
+        paginator.bootstrapPaginator(options);  // 仅大于一页时分页
+      }
+    });
+
+  </script>
+
+{% endblock %}

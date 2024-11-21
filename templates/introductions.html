@@ -1,0 +1,149 @@
+{% extends '_layout/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block pageTitle %}
+{% trans 'introductions & download' %}
+{% endblock %}
+{% block pageHeadExtra %}
+<link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+
+<style type="text/css">
+  h1 {
+    font-family: 'PingFangSC-Semibold';
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 70px;
+  }
+
+  p,
+  li {
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 38px;
+  }
+
+  .download-btn {
+    border-radius: 24px;
+    background: #F29220;
+    text-align: center;
+    width: 240px;
+    height: 50px;
+    display: block;
+    margin-left: 150px;
+    margin-top: 40px;
+  }
+
+  .download-btn>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 5px;
+    text-decoration: none;
+  }
+
+  .warning {
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    letter-spacing: 5px;
+    display: block;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .paper-title {
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  .software {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  .software-img {
+    /* 这里添加背景图片路径 */
+    background: url({% static 'img/software.png' %}) no-repeat center;
+    width: 100%;
+    height: 749px;
+    background-size: 100% auto;
+  }
+
+  .software-img-introduce {
+    height: 533px;
+    width: 520px;
+    align-self: flex-start;
+    margin-left: 6.9%;
+  }
+
+  .software-img-readme {
+    background: rgba(216, 216, 216, 0.36);
+    height: 216px;
+    padding-left: 6.9%;
+    padding-top: 2%;
+  }
+
+  .software-thanks {
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .software-thanks>p {
+    font-family: PingFangSC-Light;
+    font-size: 12px;
+    color: #0A2D47;
+    padding-top: 12px;
+  }
+</style>
+{% endblock %}
+{% block pageBody %}
+{% include '_component/header.html' %}
+
+
+
+<div class="software">
+  <div class="software-img">
+    <div class="software-img-introduce">
+      <h1>材料显微组织图像分析软件</h1>
+      <!-- 这里添加下载路径 -->
+      <div class="download-btn"><a href="http://ima.mgedata.cn/static/software/ImageAnalysis_V_1.4_Setup.exe" download="ImageAnalysis_V_1.4_Setup.exe">立即下载 (V.14)</a></div>
+      <div class="warning">* 本软件目前仅支持Windows 64位系统</p>
+      </div>
+      <p>为辅助材料科学人员快速处理和分析材料显微组织图像，开发一套面向典型显微组织图像的处理和分析软件，本软件目前具有的功能如下：</p>
+      <ul>
+        <li>图像序列拼接；融合GPU加速和增长搜索的拼接策略，在速度和稳定性上达到世界领先水平！[1]</li>
+        <li>尚在开发中[2]</li>
+      </ul>
+    </div>
+    <div class="software-img-readme">
+      <p>请使用MGE系统账号登录使用，初次使用者可免费获得10次使用权，本软件鼓励用户上传分析后的图像数据，每向MGE系统上传10条数据，可获得1次使用权。</p>
+      <p>如果我们的软件帮助到您的开发工作，请引用我们的相关文章：</p>
+      <p class="paper-title">[1] Boyuan Ma, Xiaojuan Ban, Haiyou Huang, Ya Su, Wanbo Liu. VFSMS：Very fast sequential
+        micrograph stitching.Still in submission.</p>
+      <p class="paper-title">[2] Ma, B.; Ban, X.; Huang, H.; Chen, Y.; Liu, W.; Zhi, Y. Deep Learning-Based Image
+        Segmentation for Al-La Alloy Microscopic Images. Symmetry 2018, 10, 107.</p>
+    </div>
+
+  </div>
+  <div class="software-thanks">
+    <p>致谢：本项工作由国家重点研发计划(No. 2016YFB0700500)提供资金支持；本项工作感谢Python, Numpy, Opencv，Tensorflow等开源软件提供技术支持</p>
+  </div>
+
+</div>
+
+{% include '_component/footer.html' %}
+{% endblock %}

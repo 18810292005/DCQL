@@ -1,0 +1,13 @@
+{% extends '_layout/webpack/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %} {% trans '登录' %} {% endblock %}
+
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'webpack/login.css' %}"/>
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/login.js' %}"></script>
+{% endblock %}

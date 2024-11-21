@@ -1,0 +1,130 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans 'Data details' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="{% static 'css/storage/show_template_review.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/storage/template/review/1/0" style="cursor: pointer;"><span>{% trans 'Review Templates' %}</span></a>
+      </div>
+  </div>
+
+  <div class="container" style="min-height: 480px">
+    <div id="state-group" class="btn-group" data-state="{{ state }}">
+      <a
+        class="btn btn-sm {% if state == 0 %} btn-primary {% else %} btn-primary-outline {% endif %}"
+        href="{% url 'storage:show_template_review' state=0 page=1 %}">{% trans 'Pending' %}</a>
+      <a
+        class="btn btn-sm {% if state == 1 %} btn-primary {% else %} btn-primary-outline {% endif %}"
+        href="{% url 'storage:show_template_review' state=1 page=1 %}">{% trans 'Approved' %}</a>
+      <a class="btn btn-sm {% if state == 2 %} btn-primary {% else %} btn-primary-outline {% endif %}"
+         href="{% url 'storage:show_template_review' state=2 page=1 %}">{% trans 'Disapproved' %}</a>
+      <a class="btn btn-sm {% if state == 3 %} btn-primary {% else %} btn-primary-outline {% endif %}"
+         href="{% url 'storage:show_template_review' state=3 page=1 %}">{% trans 'All' %}</a>
+    </div>
+    <div id="result" style="clear: both;">
+      {% for item in data %}
+        <div class="data-meta panel">
+          <div class="panel-heading">
+            <span class="d-title">{{ item.title }}</span>
+            <div style="float: right">
+              <span class="dm dt">{% trans 'Review State' %}</span>
+              <span class="dm dd author">{{ item.review_status_description }}</span>
+              <span class="dm dt">{% trans 'Created at' %}</span>
+              <span class="dm dd date">{{ item.pub_date }}</span>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8">
+                <ul class="list-unstyled">
+                  <li>
+                    <span class="dt">{% trans 'Material Category' %}</span>
+                    <span class="dd">{{ item.category }}</span>
+                  </li>
+                  <li>
+                    <span class="dt">{% trans 'Template Abstract' %}</span>
+                    <span class="dd">{{ item.abstract }}</span>
+                  </li>
+                  <li>
+                    <span class="dt">{% trans 'Author' %}</span>
+                    <span class="dd">{{ item.user_real_name }}</span>
+                  </li>
+                  {% if not item.pending %}
+                    <li>
+                      <span class="dt">{% trans 'Reviewer' %}</span>
+                      <span class="dd">{{ item.reviewer_real_name }}</span>
+                    </li>
+                  {% endif %}
+                  {% if item.disapproved %}
+                    <li>
+                      <span class="dt" style="color: red;">{% trans 'Reasons of Disapproval' %}</span>
+                      <span class="dd" style="color: red;">
+                        {% for reason in item.reason_list %}
+                          {{ reason }};&nbsp
+                        {% endfor %}
+                      </span>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="pull-right btn-group" style="margin-top: 10px" data-template-id="{{ item.id }}">
+                  <button class="btn btn-default btn-watch">{% trans 'View' %}</button>
+                  {% if item.pending %}
+                    <button class="btn btn-success btn-pass">{% trans 'Approve' %}</button>
+                    <button class="btn btn-danger btn-trash">{% trans 'Disapprove' %}</button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="col-sm-12 paginator-wrapper text-center">
+      <ul id="paginator" data-page-count="{{ pages }}"
+          data-current-page="{{ page }}">
+      </ul>
+    </div>
+
+    <div id="reason-div" style="display: none">
+      <form style="margin-left: 20px">
+        {% for reason in reasons %}
+          <div class="checkbox"><input id="{{ reason.value }}" type="checkbox"
+                                       data-reason-id="{{ reason.value }}"><label
+            for="{{ reason.value }}">{{ reason.text }}</label>
+          </div>
+        {% endfor %}
+      </form>
+    </div>
+  </div>
+
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script src="{% static 'js/storage/storage.js' %}"></script>
+  <script src="{% static 'js/storage/show_template_review.js' %}"></script>
+{% endblock %}

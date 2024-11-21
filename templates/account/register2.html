@@ -1,0 +1,13 @@
+{% extends '_layout/webpack/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %} {% trans '注册' %} {% endblock %}
+
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'webpack/signup.css' %}"/>
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/signup.js' %}"></script>
+{% endblock %}

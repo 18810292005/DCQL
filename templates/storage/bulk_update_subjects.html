@@ -1,0 +1,49 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block content %}
+    <form method="POST" action="/api/v1.1/storage/subjects/bulk/update/">
+        <p>批量修改用户课题信息</p>
+        {% csrf_token %}
+        项目编号：
+        <select id="select_project" name="project">
+            <option selected="" name="projectSelect">选择项目编号</option>
+            {% for project_id in project_ids %}
+                <option value="{{ project_id }}" name="project_id">{{ project_id }}</option>
+            {% endfor %}
+        </select>
+
+        课题编号：
+        <select id="select_subject" name="subject">
+            <option selected="" name="subjectSelect">选择课题编号</option>
+        </select>
+        用户名：<input type="text" required="required" name="username"/>
+        n天前到现在：<input type="text" placeholder="默认全部数据" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                      name="delta_day"/>
+        <input type="submit" value="确定"/>
+        </p>
+    </form>
+
+    {% if username %}
+        用户{{ username }}的{{ count }}条课题信息已经修改(搜索同步存在延迟，请在数据详情中查看)
+    {% endif %}
+
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script>
+        $("#select_project").change(function () {
+            let other_info = {{ project | safe }};
+            let project_id = $("#select_project option:selected").val();
+            for (const [index, projects] of Object.entries(other_info)) {
+                for (const [project, subjects] of Object.entries(projects)) {
+                    if (project === project_id) {
+                        $("#select_subject").html("<option>选择课题编号</option>");
+                        for (var i = 0; i < subjects.length; i++) {
+                            $("#select_subject").append("<option value=" + subjects[i] + ">" + subjects[i] + "</option>");
+                        }
+                    }
+                }
+            }
+        })
+
+    </script>
+{% endblock %}
+

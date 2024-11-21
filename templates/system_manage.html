@@ -1,0 +1,16 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageTitle %}
+  {% trans '系统管理' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+<!--  <link href="{% static 'webpack/system_manage.css' %}" rel="stylesheet"> --!>
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/system_manage.js' %}"></script>
+{% endblock %}
+

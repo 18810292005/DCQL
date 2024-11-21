@@ -1,0 +1,109 @@
+{% extends "_layout/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block pageTitle %}
+  {% trans 'Ticket List' %}
+{% endblock %}
+
+{% block pageHeadExtra %} 
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+{% endblock %} 
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="Breadcrumb">
+      <div class="Breadcrumb__item">
+          <a href="/" style="cursor: pointer;"><span>{% trans 'Materials Genome Engineering DataBases' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/search" style="cursor: pointer;"><span>{% trans 'Material Database' %}</span></a>
+      </div>
+      <img class="Breadcrumb__arrow" src="{% static 'webpack/img/nav-arrow.png' %}">
+      <div class="Breadcrumb__item">
+          <a href="/ticketing/list_tickets/" style="cursor: pointer;"><span>{% trans 'Tickets' %}</span></a>
+      </div>
+  </div>
+  <div class="container">
+
+    <div id="ticket-panel">
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="btn-group" role="group">
+            <a class="btn btn-sm {% if ticket_type == 'new' %} btn-primary {% else %} btn-primary-outline {% endif %}"
+               href="{% url 'ticketing:list_tickets' %}?page=1&type=new">{% trans 'New Replies' %}</a>
+            <a class="btn btn-sm {% if ticket_type == 'open' %} btn-success {% else %} btn-success-outline {% endif %}"
+               href="{% url 'ticketing:list_tickets' %}?page=1&type=open">{% trans 'Open' %}</a>
+            <a class="btn btn-sm {% if ticket_type == 'ended' %} btn-warning {% else %} btn-warning-outline {% endif %}"
+               href="{% url 'ticketing:list_tickets' %}?page=1&type=ended">{% trans 'Ended' %}</a>
+            <a class="btn btn-sm {% if ticket_type == 'closed' %} btn-danger {% else %} btn-danger-outline {% endif %}"
+               href="{% url 'ticketing:list_tickets' %}?page=1&type=closed">{% trans 'Closed' %}</a>
+          </div>
+        </div>
+
+        <div class="col-sm-2 ">
+          <a class="btn btn-primary pull-right"
+             href="{% url 'ticketing:create_ticket' %}">{% trans 'Create New Ticket' %}</a>
+        </div>
+      </div>
+
+      <div class="dividing-small"></div>
+
+      <div class="row">
+        <div id="ticket-table" class="col-sm-12">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>{% trans 'Status' %}</th>
+                <th>{% trans 'Topic' %}</th>
+                <th>{% trans 'Subject' %}</th>
+                <th>{% trans 'Created at' %}</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {% for ticket in ticket_list %}
+              <tr class="ticket-row" data-ticket-id="{{ ticket.id }}">
+                <td>{{ forloop.counter }}</td>   {# fixme：计算全部的还是每一页编个号就行 #}
+                <td>
+                  {% if ticket.status == 1 %}
+                    <span class="label label-success">
+                      {% trans 'Open' %}
+                    </span>
+                  {% elif ticket.status == 2 %}
+                    <span class="label label-danger">
+                      {% trans 'Closed' %}
+                    </span>
+                  {% else %}
+                    <span class="label label-warning">
+                      {% trans 'Ended' %}
+                    </span>
+                  {% endif %}
+                </td>
+                <td>{{ ticket.topic }}</td>
+                <td>{{ ticket.title }}</td>
+                <td>{{ ticket.created_at }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-12 paginator-wrapper text-center">
+          <ul id="paginator" data-ticket-type="{{ ticket_type }}" data-page-number="{{ page_number }}"
+              data-current-page="{{ current_page }}">
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% include '_component/footer.html' %}
+{% endblock %}
+
+{% block pageFootExtra %}
+  <link href="{% static 'css/ticketing/common.css' %}" rel="stylesheet">
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script src="{% static 'js/ticketing/list_tickets.js' %}"></script>
+{% endblock %}

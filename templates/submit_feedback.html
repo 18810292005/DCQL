@@ -1,0 +1,11 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/submit_feedback.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/submit_feedback.js' %}"></script>
+{% endblock %}

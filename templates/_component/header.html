@@ -1,0 +1,213 @@
+{% load i18n %}
+{% load static %}
+{#{% load static %}#}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as LANG %}
+{% get_available_languages as LANGUAGES %}
+
+<div class="ant-layout-header" style="display: flex; flex-direction: row;">
+  <a class="mge-header__title" href="http://nmdms.ustb.edu.cn">
+    <img src="{% static 'webpack/img/logo18.png' %}" style="display: flex; flex-direction: row; width: 200px;">
+    <!-- <div class="mge-header__title__text">
+      <div class="material">材料数据库</div>
+      <div class="mged">Material Database</div>
+    </div> -->
+  </a>
+  <div class="nav-menu " style="flex-grow: 2;">
+    <!-- <div class="nav-menu__item " onclick="window.location.href='http://nmdms.ustb.edu.cn'">
+      <span>NMDMS</span>
+    </div> -->
+    <div class="nav-menu__item ">
+      <span>{% trans 'Upload' %}</span>
+      <div class="nav-menu__item__overlay">
+        <!-- <a href="/storage/data/add" class="nav-menu__submenu">
+          <span>{% trans 'Data' %}</span>
+        </a>
+        <a href="/storage/template/add" class="nav-menu__submenu">
+          <span>{% trans 'Template' %}</span>
+        </a> -->
+        <a href="/storage/data/new" class="nav-menu__submenu">
+          <span>{% trans 'Data' %}</span>
+        </a>
+        <a href="/storage/template/new" class="nav-menu__submenu">
+          <span>{% trans 'Template' %}</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-menu__item ">
+      <span>{% trans 'Export' %}</span>
+      <div class="nav-menu__item__overlay">
+        <a href="/storage/export" class="nav-menu__submenu">
+          <span>{% trans 'Export' %}</span>
+        </a>
+        <a href="/dashboard/#/account/info" class="nav-menu__submenu">
+          <span>{% trans 'Dashboard' %}</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-menu__item ">
+      <span>{% trans 'Analytics' %}</span>
+      <div class="nav-menu__item__overlay">
+        <a href="/analytics/" class="nav-menu__submenu">
+          <span>{% trans 'Category Analytics' %}</span>
+        </a>
+        <a href="/project_analytics" class="nav-menu__submenu">
+          <span>{% trans 'Project Analytics' %}</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-menu__item ">
+      <span>{% trans 'Help' %}</span>
+      <div class="nav-menu__item__overlay">
+        <a href="/help" class="nav-menu__submenu">
+          <span>{% trans 'Help' %}</span>
+        </a>
+        <a href="javascript:service()" class="nav-menu__submenu">
+          <span>{% trans 'Customer Service' %}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mge-header__avatar">
+    <div class="nav-search" onclick="window.location.href='{% url 'search:index' %}';">
+      <img src="{% static 'webpack/img/search.png' %}">
+      <span>{% trans 'Search' %}</span>
+    </div>
+    <img class="lang-switch" onclick="switchLang()" src="{% static 'webpack/img/en-US.png' %}">
+    {% if request.user.is_authenticated %}
+      <div class="nav-menu ">
+        <div class="nav-menu__item ">
+          <div class="mge-avatar">
+            <img class="mge-avatar__avatar" src="{{ request.user.get_avatar_uri }}">
+            <span class="mge-avatar__title">{{ request.user.username }}</span>
+          </div>
+          <div class="nav-menu__item__overlay">
+            <a href="/dashboard/#/account/info" class="nav-menu__submenu">
+              <span>{% trans 'Dashboard' %}</span>
+            </a>
+            {% if request.user.roles_for_template.TEMPLATE_ADMIN %}
+              <a href="/dashboard/#/review/template/pending" class="nav-menu__submenu">
+                <span>{% trans 'Review Templates' %}</span>
+              </a>
+            {% endif %}
+            {% if request.user.roles_for_template.DATA_ADMIN %}
+              <a href="/dashboard/#/review/data/pending" class="nav-menu__submenu">
+                <span>{% trans 'Review Data' %}</span>
+              </a>
+            {% endif %}
+            {% if request.user.roles_for_template.DOI_ADMIN %}
+            <a href="/dashboard/#/review/doi/pending" class="nav-menu__submenu">
+              <span>{% trans 'Review DOI' %}</span>
+            </a>
+          {% endif %}
+            {% if request.user.roles_for_template.USER_ADMIN %}
+              <a href="{% url 'account:user_list' %}" class="nav-menu__submenu">
+                <span>{% trans 'Manage Users' %}</span>
+              </a>
+            {% endif %}
+            <a href="/ticketing/new/" class="nav-menu__submenu">
+              <span>{% trans 'Feedback' %}</span>
+            </a>
+            <a href="/account/notifications" class="nav-menu__submenu">
+              <span>{% trans 'Messages' %}</span>
+            </a>
+            <a href="/task/" class="nav-menu__submenu">
+              <span>{% trans 'Task' %}</span>
+            </a>
+            {% if request.user.roles_for_template.DATA_UPLOADER %}
+              <a href="/account/uploads/" class="nav-menu__submenu">
+                <span>{% trans 'Upload History' %}</span>
+              </a>
+              <a href="/dashboard/#/data" class="nav-menu__submenu">
+                <span>{% trans 'My Data' %}</span>
+              </a>
+            {% endif %}
+            {% if request.user.roles_for_template.TEMPLATE_UPLOADER %}
+              <a href="/dashboard/#/templates" class="nav-menu__submenu">
+                <span>{% trans 'My Templates' %}</span>
+              </a>
+            {% endif %}
+            {% if request.user.roles_for_template.DATA_UPLOADER %}
+              <a href="/dashboard/#/doi" class="nav-menu__submenu">
+                <span>{% trans 'Register DOI' %}</span>
+              </a>
+            {% endif %}
+            <a href="javascript:logout()" class="nav-menu__submenu">
+              <span>{% trans 'Sign out' %}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <!-- <a href="{% url 'account:login' %}"> -->
+      <a href="http://nmdms.ustb.edu.cn">
+            <span style="white-space: nowrap;">
+                <span>{% trans 'Sign In' %}</span> &nbsp;|&nbsp; <span>{% trans 'Sign Up' %}</span>
+            </span>
+      </a>
+    {% endif %}
+
+    {#      <ul class="nav navbar-nav" id="ul-lang-selector">#}
+    {#        <li class="dropdown">#}
+    {#          <a href="#" class="dropdown-toggle" data-toggle="dropdown"#}
+    {#             role="button" aria-haspopup="true" aria-expanded="false">#}
+    {#            <i class="fa fa-globe" aria-hidden="true"></i>#}
+    {#            <span>{{ LANG.name_local }}</span>#}
+    {#          </a>#}
+    {#          <ul class="dropdown-menu inverse-dropdown">#}
+    {#            {% for lang in LANGUAGES %}#}
+    {#              <li>#}
+    {#                {% get_language_info for lang.0 as cur_lang %}#}
+    {#                <a#}
+    {#                  href="{% url 'site_set_language' %}?lang={{ cur_lang.code }}&next={{ request.get_full_path|urlencode }}">{{ cur_lang.name_local }}</a>#}
+    {#              </li>#}
+    {#            {% endfor %}#}
+    {#          </ul>#}
+    {#        </li>#}
+    {#      </ul>#}
+    {##}
+    {#      {% if request.user.is_authenticated %}#}
+    {#        <ul class="nav navbar-header" id="ul-account">#}
+    {#        <li class="dropdown">#}
+    {#          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"#}
+    {#             aria-expanded="false">#}
+    {#            <img src="{{ request.user.get_avatar_uri }}"#}
+    {#                 class="img-responsive" alt="{{ request.user.username }}">#}
+    {#            {% if request.user.unread_count %}#}
+    {#              <span class="avatar-messages">{{ request.user.unread_count }}</span>#}
+    {#            {% endif %}#}
+    {#          </a>#}
+    {#          <ul class="dropdown-menu inverse-dropdown">#}
+    {#            <li><a href="{% url 'account:my_info' %}">{% trans 'Settings' %}</a></li>#}
+    {#            <li><a href="{% url 'account:notifications' %}">{% trans 'Messages' %}</a></li>#}
+    {#            <li role="separator" class="divider"></li>#}
+    {#            {% if request.user.roles_for_template.USER_ADMIN %}#}
+    {#              <li><a href="{% url 'account:user_list' %}">{% trans 'Manage Users' %}</a></li>#}
+    {#            {% endif %}#}
+    {#            {% if request.user.roles_for_template.DATA_ADMIN %}#}
+    {#              <li><a href="{% url 'storage:review_data' %}">{% trans 'Review Data' %}</a></li>#}
+    {#            {% endif %}#}
+    {#            {% if request.user.roles_for_template.TEMPLATE_ADMIN %}#}
+    {#              <li><a href="{% url 'storage:show_template_review' page=1 state=0 %}">{% trans 'Review Templates' %}</a></li>#}
+    {#            {% endif %}#}
+    {#            <li><a href="{% url 'task:index' %}">{% trans 'My Tasks' %}</a></li>#}
+    {#            <li><a href="{% url 'account:upload_history' %}">{% trans 'Data Importing Histories' %}</a></li>#}
+    {#            <li><a href="/dashboard/#/data">{% trans 'My Data' %}</a></li>#}
+    {#            <li><a href="{% url 'service:service_sub' %}">{% trans 'My Subscription' %}</a></li>#}
+    {#            <li role="separator" class="divider"></li>#}
+    {#            <li><a href="javascript:void(0)" id="btn-header-logout">{% trans 'Sign Out' %}</a></li>#}
+    {#          </ul>#}
+    {#        </li>#}
+    {#      {% else %}#}
+    {#        <ul class="nav navbar-nav" id="ul-account">#}
+    {#        <li>#}
+    <!-- {#          <a href="{% url 'account:login' %}">#} -->
+    {#          <a href="http://nmdms.ustb.edu.cn">#}
+    {#            <i class="fa fa-user-circle-o" aria-hidden="true"></i>#}
+    {#            <span>{% trans 'Sign In' %}&nbsp;|&nbsp;{% trans 'Sign Up' %}</span>#}
+    {#          </a>#}
+    {#        </li>#}
+    {#      {% endif %}#}
+    {#      </ul>#}
+  </div>
+</div>

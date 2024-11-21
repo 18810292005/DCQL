@@ -1,0 +1,35 @@
+{% extends '_layout/profile.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'My Subscription' %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'css/account/settings.css' %}">
+{% endblock %}
+
+
+{% block navList %}
+  <li>
+    <a href="{% url 'service:service_sub' %}">{% trans 'My Subscription' %}</a>
+  </li>
+
+  <li class="active">
+    <a href="{% url 'service:service_recommend' %}">{% trans 'Subscription News' %}</a>
+  </li>
+{% endblock %}
+
+
+
+{% block mainContent %}
+  <div>
+
+  </div>
+
+{% endblock %}
+
+{% block pageFootExtra %}
+
+{% endblock %}
+

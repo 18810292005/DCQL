@@ -1,0 +1,144 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_media_prefix as MEDIA %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ BASE_URL }}">
+    <title>
+        {% block pageTitle %}
+
+        {% endblock %}
+    </title>
+
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <link rel="bookmark" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/vendor/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/vendor/material-icons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webpack/vendors.css' %}" rel="stylesheet">
+    {% block pageHeadExtra %}
+
+    {% endblock %}
+</head>
+<body class="noscrollbar">
+<div id="wrap">
+    <div class="navbar-wrapper">
+        {% include '_component/header.html' %}
+    </div>
+
+    <div id="banner-fluid" class="carousel slide" data-ride="carousel">
+        <div class="carousel" role="listbox">
+            <div class="item active">
+                <img width="100%" src="{% static 'img/banner.png' %}">
+                <div class="carousel-caption container-fluid">
+                    <div class="profile-avatar col-lg-3">
+                        <img src="{{ request.user.get_normal_avatar_uri }}"
+                             class="avatar img-circle img-responsive" alt="{{ request.user.username }}">
+                        <span class="profile-avatar-username">{{ request.user.username }}</span>
+                    </div>
+                    <div class="profile-menu col-lg-6">
+                        <ul class="list-inline">
+                            {% if request.user.roles_for_template.TEMPLATE_UPLOADER %}
+                                <li><a role="button"
+                                       href="{% url 'account:my_templates' %}">{% trans 'My Templates' %}</a></li>
+                            {% endif %}
+                            <li><a role="button" href="{% url 'account:my_data' %}">{% trans 'My Data' %}</a></li>
+                            <!-- <li><a role="button" href="{% url 'service:service_sub' %}">{% trans 'My Subscription' %}</a></li> -->
+
+                        </ul>
+                    </div>
+                    <div class="profile-menu-extra col-lg-3">
+                        <ul class="list-inline">
+                            {#              {% if request.user.roles_for_template.TEMPLATE_UPLOADER %}#}
+                            {#                <li>#}
+                            {#                  <a role="button" href="{% url 'storage:add_template' %}" title="{% trans 'Create Template' %}">#}
+                            {#                    <i class="fa fa-plus-square"></i>#}
+                            {#                  </a>#}
+                            {#                </li>#}
+                            {#              {% endif %}#}
+                            {#              <li>#}
+                            {#                <a role="button" href="{% url 'storage:add_data' %}" title="{% trans 'Commit Data' %}">#}
+                            {#                  <i class="fa fa-upload"></i>#}
+                            {#                </a>#}
+                            {#              </li>#}
+                            {#              <li>#}
+                            {#                <a role="button" href="{% url 'search:index' %}" title="{% trans 'Search' %}">#}
+                            {#                  <i class="fa fa-search"></i>#}
+                            {#                </a>#}
+                            {#              </li>#}
+                            {% if request.user.roles_for_template.DOI_ADMIN %}
+                                <li>
+                                    <a role="button" href="{% url 'storage:doi_list' %}"
+                                       title="{% trans 'doi_application_list' %}">
+                                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="hidden-print">
+                    <ul class="nav nav-pills nav-stacked">
+
+                        {% block navList %}
+                            {#              <li class="active">#}
+                            {#                <a href="#aaa" data-toggle="tab">#}
+                            {#                  title here#}
+                            {#                </a>#}
+                            {#              </li>#}
+                        {% endblock %}
+
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <div class="tab-content clearfix">
+                        {% block mainContent %}
+                            {#          <div id="aaa" class="tab-pane active">#}
+                            {#          </div>#}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block pageBody %}
+
+    {% endblock %}
+
+    {% include '_component/footer.html' %}
+    {% include '_component/modal-dialog-overlay.html' %}
+</div>
+<script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/vendor/doT.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery.preloader.min.js' %}"></script>
+{% if LANGUAGE_CODE == 'zh-hans' %}
+    <script src="{% url 'javascript-catalog' %}?v={% version_code %}-zh"></script>
+{% elif LANGUAGE_CODE == 'en-us' %}
+    <script src="{% url 'javascript-catalog' %}?v={% version_code %}-en"></script>
+{% endif %}
+<script src="{% url 'site_urls' %}?v={% version_code %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+{% block pageFootExtra %}
+
+{% endblock %}
+
+</body>
+</html>

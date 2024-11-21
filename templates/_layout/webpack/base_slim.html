@@ -1,0 +1,35 @@
+{# 一个简洁版本的base模板 #}
+{# 没有jQuery和Bootstrap #}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="media-url-prefix" content="{{media_url}}">
+  <title>{% block pageTitle %} {% endblock %}</title>
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+  <link rel="bookmark" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  {% block pageHeadExtra %} {% endblock %}
+</head>
+<body class="noscrollbar">
+<div id="wrap">
+{% block pageBody %} {% endblock %}
+</div>
+
+<script src="{% url 'site_urls' %}?v={% version_code %}"></script>
+{% if LANGUAGE_CODE == 'zh-hans' %}
+<script src="{% url 'javascript-catalog' %}?v={% version_code %}-zh"></script>
+{% elif LANGUAGE_CODE == 'en-us' %}
+<script src="{% url 'javascript-catalog' %}?v={% version_code %}-en"></script>
+{% endif %}
+<script src="{% static 'webpack/dll/dll.js' %}"></script>
+<script src="{% static 'webpack/vendors.js' %}"></script>
+{% block pageFootExtra %} {% endblock %}
+
+</body>
+</html>

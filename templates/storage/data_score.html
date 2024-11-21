@@ -1,0 +1,56 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+{% block pageTitle %}
+  {% trans 'Data Score' %}
+{% endblock %}
+{% block pageHeadExtra %}
+  <link rel="stylesheet" href="{% static 'css/modal-dialog.css' %}">
+  <link rel="stylesheet" href="{% static 'css/storage/data_score.css' %}">
+{% endblock %}
+
+{% block pageBody %}
+  {% include '_component/header.html' %}
+  <div class="container">
+    <div class="page-header">
+      <h1>{% trans 'Data Score' %}</h1>
+    </div>
+
+    <div class="score-meta-info">
+      <div class="score-info">
+        <span class="score-description">{% trans 'Total number of currently evaluated' %}:</span>
+        <span class="score-detail"><span class="label label-primary">{{ total_number }}</span></span>
+        <br/>
+      </div>
+      <div class="score-info">
+        <span class="score-description">{% trans 'Current data score' %}:</span>
+        <span class="score-detail"><span class="label label-primary">{{ current_score|floatformat:2 }}</span></span>
+      </div>
+
+    </div>
+    <div class="rating">
+      {#      <a><i class="fa fa-arrows fa-3x fa-spin"></i>#}
+      <span class="score-description">{% trans 'Your score' %}:</span>
+      <div class="star">
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+        <span class="label label-danger">0</span>
+      </div>
+
+      <div style="margin-top: 2rem">
+        <button class="btn btn-lg btn-primary" id="submit-score"><span>{% trans 'Submit score' %}</span></button>
+      </div>
+
+    </div>
+
+  </div>
+  {% include '_component/footer.html' %}
+{% endblock %}
+{% block pageFootExtra %}
+  <script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"></script>
+  <script src="{% static 'js/vendor/bootstrap-paginator.js' %}"></script>
+  <script src="{% static 'js/storage/data_score.js' %}"></script>
+{% endblock %}

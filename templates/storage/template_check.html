@@ -1,0 +1,116 @@
+{% extends '_layout/base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+{% block pageTitle %}
+  {% if action == 'modify' %}
+  {% trans 'Modify Template' %}
+  {% elif action == 'view' %}
+  {% trans 'View Template' %}
+  {% else %}
+  {% trans 'Create Template' %}
+  {% endif %}
+{% endblock %}
+
+{% block pageHeadExtra %}
+  <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="{% static 'css/modal-dialog.css' %}" rel="stylesheet">
+  <link href="{% static 'css/storage/template.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block pageBody %}
+  {% include '_component/header.html' with nav_padding='none' nav_action='navbar-fixed-top' %}
+
+  <div class="container wrap" style="align-content: center">
+
+
+
+    <div>
+      <div class="alert alert-warning visible-xs-block visible-sm-block" role="alert">
+        <b>{% trans 'Warning!' %}</b>
+        {% trans 'Your screen is too small and the control will not display, which means you can not create a template on this device. Please try again after changing your device.' %}
+      </div>
+
+      <div id="designer">
+        <form class="form-inline text-right" style="margin-bottom: .5rem;">
+           <input type="hidden" id="t-action" value="{{ action|default:'add' }}" data-tid="{{ tid|default:'' }}">
+
+        <!--
+          <div class="row">
+            {% if tid %}
+            <div class="form-group">
+              <input type="button" class="btn btn-warning" id="btn-enable-modify" data-state="off"
+                     value="{% trans 'Enable Modify' %}({% trans 'OFF' %})" title="{% trans 'Click to turn on' %}">
+            </div>
+            {% endif %}
+            <div class="form-group">
+              <input type="button" class="btn btn-sm btn-warning" id="publish-state" data-state="0"
+                     value="{% trans 'State' %}({% trans 'Unpublished' %})">
+            </div>
+            <div class="form-group">
+              <input type="button" class="btn btn-sm btn-primary" id="btn-auto-save" data-state="on"
+                     value="{% trans 'AutoSave' %}({% trans 'ON' %})" title="{% trans 'Click to turn off' %}">
+            </div>
+          </div>
+        -->
+        </form>
+
+
+
+        <form>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group required">
+                <label class="control-label" for="t-title">{% trans 'Title' %}</label>
+                <input class="form-control" id="t-title" name="t-title" placeholder="{% trans 'Title(required)' %}"
+                       data-vf="true" data-vf-regex="^$|^_.*|.*\\..*" data-vf-inverse="true"
+                       data-vf-help="{% trans 'This field cannot be empty or start with `_` or contains `.`' %}" required>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group required">
+                <label class="control-label" for="t-category" >{% trans 'Material Category' %}</label>
+                <select class="form-control" id="t-category" name="t-category"  disabled="disabled"
+                        data-vf="true" data-vf-regex="\d+"
+                        data-vf-help="{% trans 'Please select material category' %}" required >
+                  <option value="null">----- {% trans 'Please select material category' %} -----</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+        <div id="root-container" class="t-field-container" draggable="true"></div>
+
+
+      <!--可用于之后模板审核的按钮使用
+        <div class="template-actions">
+          <button id="save-template" class="btn btn-lg btn-primary">{% trans 'Save and Continue' %}</button>
+          <button id="commit-template" class="btn btn-lg btn-primary">{% trans 'Publish Template' %}</button>
+          <button id="add-new-template"
+                  class="btn btn-lg btn-primary hidden">{% trans 'Add new template based on this' %}</button>
+        </div>
+-->
+        <div class="dividing"></div>
+      </div>
+    </div>
+  </div>
+  {% include '_component/modal-dialog-overlay.html' %}
+
+
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.8.1/js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{% static 'js/storage/storage_check.js' %}"></script>
+  <script src="{% static 'js/storage/template.js' %}"></script>
+
+{% endblock %}

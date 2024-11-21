@@ -1,0 +1,31 @@
+{% extends '_layout/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block pageBody %}
+  <link rel="stylesheet" href="{% static "css/error_page.css" %}">
+  {% include '_component/header.html' %}
+  <div class="errorbox">
+    <div class="errorpage">
+
+      <img class="errorpage" src="{% static 'img/logo.png' %}">
+      <h1>
+        {{ title }}
+      </h1>
+      <h3 class="errorpage">{{ message }}</h3>
+      <hr/>
+      <p class="errorpage">{{ detail }}</p>
+      <a onclick="goBack();" class="go-back errorpage">{% trans 'Go back' %}</a>
+    </div>
+
+  </div>
+  <script>
+    function goBack() {
+      if (history.length > 2) {
+        history.back();
+      }
+      else {
+        window.location = "{% url "site_index" %}"
+      }
+    }
+  </script>k
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends '_layout/webpack/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block pageHeadExtra %}
+  <link href="{% static 'webpack/show_data_nxp.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block pageFootExtra %}
+  <script src="{% static 'webpack/show_data_nxp.js' %}"></script>
+{% endblock %}
