@@ -1,0 +1,454 @@
+insert into a
+values
+(
+    string a,
+    number 1,
+    range (-2,3.5),
+    range (30,0.1),
+    choice 单块晶体,
+    choice 晶体(单块晶体),
+    image "C:\Users\Lenovo\Pictures\111",
+    image ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333"),
+    file "C:\Users\Lenovo\Files\111",
+    file ("C:\Users\Lenovo\Files\111","C:\Users\Lenovo\Files\222","C:\Users\Lenovo\Files\333"),
+    table
+    (
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+    ),
+    array string [a,b,c,d],
+    array number [-1,2,-3.5,4],
+    array range [(-2,3.5),(-1,3.5),(-2,3.9)],
+    array range [(30,0.1),(30,0.01),(-30,0.1)],
+    array choice [单块晶体,多块晶体,单块晶体],
+    array choice [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)],
+    array image ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"],
+    array image 
+    [
+        ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+        ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+        ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+    ],
+    array table
+    [
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        )
+    ],
+    array container
+    [
+        (string a),(number 1),(range (1,2))
+    ],
+    array generator
+    [
+        (string name (a)),(number name (1)),(range name ((1,2)))
+    ],
+    container
+    (
+        string a,
+        number 1,
+        range (-2,3.5),
+        range (30,0.1),
+        choice 单块晶体,
+        choice 晶体(单块晶体),
+        image "C:\Users\Lenovo\Pictures\111",
+        image ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333"),
+        file "C:\Users\Lenovo\Files\111",
+        file ("C:\Users\Lenovo\Files\111","C:\Users\Lenovo\Files\222","C:\Users\Lenovo\Files\333"),
+        table
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        array string [a,b,c,d],
+        array number [-1,2,-3.5,4],
+        array range [(-2,3.5),(-1,3.5),(-2,3.9)],
+        array range [(30,0.1),(30,0.01),(-30,0.1)],
+        array choice [单块晶体,多块晶体,单块晶体],
+        array choice [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)],
+        array image ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"],
+        array image 
+        [
+            ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+            ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+            ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+        ],
+        array table
+        [
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            )
+        ],
+        array container
+        [
+            (string a),(string a),(string a)
+        ],
+        array generator
+        [
+            (string name (a)),(number name (1)),(range name ((1,2)))
+        ],
+        container
+        (
+            string a
+        ),
+        generator string name
+        (
+            a
+        )
+    ),
+    generator string name
+    (
+        a
+    ),
+    generator number name
+    (
+        1
+    ),
+    generator range name
+    (
+        (-2,7.8)
+    ),
+    generator choice name
+    (
+        单块晶体
+    ),
+    generator choice name
+    (
+        晶体(单块晶体)
+    ),
+    generator image name
+    (
+        "C:\Users\Lenovo\Pictures\111"
+    ),
+    generator image name
+    (
+        ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+    ),
+    generator table name
+    (
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111")
+    ),
+    generator array string name
+    (
+        [a,b,c]
+    ),
+    generator array number name
+    (
+        [1,2,3]
+    ),
+    generator array range name
+    (
+        [(-2,3.5),(-1,3.5),(-2,3.9)]
+    ),
+    generator array choice name
+    (
+        [单块晶体,多块晶体,单块晶体]
+    ),
+    generator array choice name
+    (
+        [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)]
+    ),
+    generator array image name
+    (
+        ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"]
+    ),
+    generator array image name
+    (
+        [
+            ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+            ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+            ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+        ]
+    ),
+    generator array table name
+    (
+        [
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            )
+        ]
+    ),
+    generator array container name
+    (
+        [(string a),(number 1),(range (1,2))]
+    ),
+    generator array generator name
+    (
+        [(string name (a)),(number name (1)),(range name ((1,2)))]
+    ),
+    generator container name
+    (
+        string a,
+        number 1,
+        range (-2,3.5),
+        range (30,0.1),
+        choice 单块晶体,
+        choice 晶体(单块晶体)
+    )
+),
+(
+    string a,
+    number 1,
+    range (-2,3.5),
+    range (30,0.1),
+    choice 单块晶体,
+    choice 晶体(单块晶体),
+    image "C:\Users\Lenovo\Pictures\111",
+    image ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333"),
+    file "C:\Users\Lenovo\Files\111",
+    file ("C:\Users\Lenovo\Files\111","C:\Users\Lenovo\Files\222","C:\Users\Lenovo\Files\333"),
+    table
+    (
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+    ),
+    array string [a,b,c,d],
+    array number [-1,2,-3.5,4],
+    array range [(-2,3.5),(-1,3.5),(-2,3.9)],
+    array range [(30,0.1),(30,0.01),(-30,0.1)],
+    array choice [单块晶体,多块晶体,单块晶体],
+    array choice [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)],
+    array image ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"],
+    array image 
+    [
+        ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+        ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+        ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+    ],
+    array table
+    [
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        )
+    ],
+    array container
+    [
+        (string a),(number 1),(range (1,2))
+    ],
+    array generator
+    [
+        (string name (a)),(number name (1)),(range name ((1,2)))
+    ],
+    container
+    (
+        string a,
+        number 1,
+        range (-2,3.5),
+        range (30,0.1),
+        choice 单块晶体,
+        choice 晶体(单块晶体),
+        image "C:\Users\Lenovo\Pictures\111",
+        image ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333"),
+        file "C:\Users\Lenovo\Files\111",
+        file ("C:\Users\Lenovo\Files\111","C:\Users\Lenovo\Files\222","C:\Users\Lenovo\Files\333"),
+        table
+        (
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+            (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+        ),
+        array string [a,b,c,d],
+        array number [-1,2,-3.5,4],
+        array range [(-2,3.5),(-1,3.5),(-2,3.9)],
+        array range [(30,0.1),(30,0.01),(-30,0.1)],
+        array choice [单块晶体,多块晶体,单块晶体],
+        array choice [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)],
+        array image ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"],
+        array image 
+        [
+            ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+            ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+            ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+        ],
+        array table
+        [
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            )
+        ],
+        array container
+        [
+            (string a),(string a),(string a)
+        ],
+        array generator
+        [
+            (string name (a)),(number name (1)),(range name ((1,2)))
+        ],
+        container
+        (
+            string a
+        ),
+        generator string name
+        (
+            a
+        )
+    ),
+    generator string name
+    (
+        a
+    ),
+    generator number name
+    (
+        1
+    ),
+    generator range name
+    (
+        (-2,7.8)
+    ),
+    generator choice name
+    (
+        单块晶体
+    ),
+    generator choice name
+    (
+        晶体(单块晶体)
+    ),
+    generator image name
+    (
+        "C:\Users\Lenovo\Pictures\111"
+    ),
+    generator image name
+    (
+        ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+    ),
+    generator table name
+    (
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111"),
+        (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111")
+    ),
+    generator array string name
+    (
+        [a,b,c]
+    ),
+    generator array number name
+    (
+        [1,2,3]
+    ),
+    generator array range name
+    (
+        [(-2,3.5),(-1,3.5),(-2,3.9)]
+    ),
+    generator array choice name
+    (
+        [单块晶体,多块晶体,单块晶体]
+    ),
+    generator array choice name
+    (
+        [晶体(单块晶体),晶体(多块晶体),晶体(单块晶体)]
+    ),
+    generator array image name
+    (
+        ["C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\333"]
+    ),
+    generator array image name
+    (
+        [
+            ("C:\Users\Lenovo\Pictures\1","C:\Users\Lenovo\Pictures\2","C:\Users\Lenovo\Pictures\3"),
+            ("C:\Users\Lenovo\Pictures\11","C:\Users\Lenovo\Pictures\22","C:\Users\Lenovo\Pictures\33"),
+            ("C:\Users\Lenovo\Pictures\111","C:\Users\Lenovo\Pictures\222","C:\Users\Lenovo\Pictures\333")
+        ]
+    ),
+    generator array table name
+    (
+        [
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            ),
+            (
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111"),
+                (string a,number 1,range (-2,3.5),choice 单块晶体,image "C:\Users\Lenovo\Pictures\111",file "C:\Users\Lenovo\Files\111")
+            )
+        ]
+    ),
+    generator array container name
+    (
+        [(string a),(number 1),(range (1,2))]
+    ),
+    generator array generator name
+    (
+        [(string name (a)),(number name (1)),(range name ((1,2)))]
+    ),
+    generator container name
+    (
+        string a,
+        number 1,
+        range (-2,3.5),
+        range (30,0.1),
+        choice 单块晶体,
+        choice 晶体(单块晶体)
+    )
+)
