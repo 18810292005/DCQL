@@ -1,0 +1,277 @@
+.move-right {
+  -webkit-animation: move-right 1.5s infinite;
+  -o-animation: move-right 1.5s infinite;
+  animation:  move-right 1.5s infinite;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    margin-right: 2rem;
+    font-size: 1rem;
+    opacity: 0.6;
+  }
+  to {
+    margin-right: 1rem;
+    font-size: 3rem;
+    opacity: 1;
+  }
+}
+
+.move-down {
+  -webkit-animation: move-down 1.5s infinite;
+  -o-animation: move-down 1.5s infinite;
+  animation:  move-down 1.5s infinite;
+  position: relative;
+}
+
+@-webkit-keyframes move-down {
+  from {
+    top: 0;
+    font-size: .5rem;
+    opacity: 0.6;
+  }
+  to {
+    top: 5px;
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+}
+
+i.fa-remove {
+  color: #ccc;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+i.fa-remove:hover {
+  color: orangered;
+}
+
+.table-responsive {
+  position: relative;
+}
+
+.form-group.bad, .panel.bad {
+  background: #ec8383;
+}
+
+/*Form Wizard*/
+.bs-wizard {
+  margin-top: 40px;
+  padding: .25rem .25rem 1rem;
+}
+
+.bs-wizard > .bs-wizard-step {
+  padding: 0;
+  position: relative;
+}
+
+/*.bs-wizard > .bs-wizard-step + .bs-wizard-step {*/
+/*}*/
+
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
+  color: #595959;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.bs-wizard > .bs-wizard-step .bs-wizard-info {
+  color: #999;
+  font-size: 14px;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #a2fbb9;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+}
+
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
+  content: ' ';
+  width: 14px;
+  height: 14px;
+  background: #46fd79;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.bs-wizard > .bs-wizard-step > .progress {
+  position: relative;
+  border-radius: 0;
+  height: 8px;
+  box-shadow: none;
+  margin: 20px 0;
+}
+
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {
+  width: 0;
+  box-shadow: none;
+  background: #a2fbb9;
+}
+
+.bs-wizard > .bs-wizard-step.active > .bs-wizard-dot {
+  background-color: #ffea95
+}
+
+.bs-wizard > .bs-wizard-step.active > .bs-wizard-dot:after {
+  background-color: #ffd077
+}
+
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {
+  width: 100%;
+}
+
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {
+  width: 50%;
+}
+
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {
+  width: 0%;
+}
+
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {
+  width: 100%;
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
+  background-color: #f5f5f5;
+}
+
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
+  opacity: 0;
+}
+
+.bs-wizard > .bs-wizard-step:first-child > .progress {
+  left: 50%;
+  width: 50%;
+}
+
+.bs-wizard > .bs-wizard-step:last-child > .progress {
+  width: 50%;
+}
+
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot {
+  pointer-events: none;
+}
+
+/*END Form Wizard*/
+
+.dividing-fix{
+  width: 100%;
+  clear: both;
+}
+
+/* MGE File Picker: Start */
+/*
+Picker内套card，card是inline-block;
+card是relative的，然后内部有3层
+  最下层是button，点击它添加图片上传，然后添加img层和action层
+  img层展示图片/文件名
+  action在hover时展示，包含几个动作按钮：替换图片、删除图片、放大查看
+picker的属性里包括了
+*/
+.mge-file-picker-card > .disable {
+  display: none;
+}
+
+.mge-file-picker {
+  display:flex;
+  width: 100%;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 2px 2px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.mge-file-picker > .action-buttons {
+  width: 100%;
+  height: 32px;
+  padding: 2px 0;
+}
+
+.mge-file-picker > .action-buttons > button {
+  height: 100%;
+  margin: 0 2px;
+  padding: 0 8px;
+  border-radius: 4px;
+  border: none;
+  background: #2196F3;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.mge-file-picker > .action-buttons > button > i.material-icons{
+  /* magic fix code for material icon */
+  vertical-align: bottom;
+  line-height: 20px;
+}
+
+.mge-file-picker > .action-buttons > button.warn {
+  background: #F44336;
+}
+
+.mge-file-picker > .action-buttons > button :hover{
+  color: lightblue;
+}
+
+.mge-file-picker-card {
+  display: inline-flex;
+  max-height: 80px;
+  margin: 2px 2px;
+  position: relative;
+}
+
+.mge-file-picker-card > .file-remove {
+  height: 100%;
+  background: #EEE;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: none;
+}
+
+.mge-file-picker-card > .image-remove {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-top-right-radius: 4px;
+  padding: 0;
+  color: white;
+}
+
+.mge-file-picker-card > .file-remove:hover {
+  background: #DDD;
+}
+
+.mge-file-picker-card > .file-remove > i.material-icons{
+  /* magic fix code for material icon */
+  vertical-align: bottom;
+  line-height: 20px;
+}
+
+.mge-file-picker-card > a {
+  background: #EEE;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 8px;
+  padding-right: 4px;
+}
+
+.mge-file-picker-card > a:hover {
+  background: #DDD;
+}
+
+/* MGE File Picker: End   */

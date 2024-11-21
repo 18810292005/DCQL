@@ -1,0 +1,120 @@
+body, #wrap {
+  background: white;
+}
+
+.doi-row:hover {
+  cursor: pointer;
+}
+
+.btn-primary-outline {
+  color: #2e6da4;
+  border-color: #2e6da4;
+}
+
+.btn-success-outline {
+  color: #4cae4c;
+  border-color: #4cae4c;
+}
+
+.btn-warning-outline {
+  color: #eea236;
+  border-color: #eea236;
+}
+
+.btn-danger-outline {
+  color: #d43f3a;
+  border-color: #d43f3a;
+}
+
+.panel {
+  position: relative;
+}
+
+.panel > .panel-heading.pointer-left:after,
+.panel > .panel-heading.pointer-left:before,
+.panel > .panel-heading.pointer-right:after,
+.panel > .panel-heading.pointer-right:before {
+  position: absolute;
+  top: 11px;
+  width: 0;
+  height: 0;
+  display: block;
+  content: " ";
+  border-color: transparent;
+  border-style: solid solid outset;
+  pointer-events: none;
+}
+
+.panel > .panel-heading.pointer-left:after,
+.panel > .panel-heading.pointer-left:before {
+  left: -16px;
+  right: 100%;
+}
+
+.panel > .panel-heading.pointer-right:after,
+.panel > .panel-heading.pointer-right:before {
+  right: -16px;
+  left: 100%;
+}
+
+.panel > .panel-heading.pointer-left:after, .panel > .panel-heading.pointer-right:before {
+  border-width: 7px;
+  margin-top: 1px;
+  margin-left: 2px;
+}
+
+.panel > .panel-heading.pointer-left:after {
+  margin-left: 2px;
+}
+
+.panel > .panel-heading.pointer-right:before {
+  margin-right: 2px;
+}
+
+.panel > .panel-heading.pointer-left:before, .panel > .panel-heading.pointer-right:after {
+  border-width: 8px;
+}
+
+.panel > .panel-heading.pointer-left:before {
+  border-right-color: #ddd;
+}
+
+.panel > .panel-heading.pointer-right:before {
+  border-left-color: #ddd;
+}
+
+.panel > .panel-heading.pointer-right {
+  text-align: right;
+}
+
+.task-content .panel > .panel-body {
+  min-height: 150px;
+}
+
+#task-subject .state {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+th {
+  text-align: center;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.progress-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.progress {
+  margin: 0;
+}
+
+.progress-value {
+  margin-left: -20px;
+}

@@ -1,0 +1,40 @@
+.form-horizontal {
+  max-width: 60%;
+}
+
+.verified-status {
+  color: #50a627
+}
+.verify-link{
+  cursor: pointer;
+}
+.unverified-status {
+  color: #CA3C3C
+}
+
+.pull-right.verify-link {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+
+.avatar-content {
+  height: 400px;
+  text-align: center
+}
+
+#preview-area {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#avatar-wrapper {
+  height: 400px;
+}
+
+#avatar-input {
+  display: none;
+}

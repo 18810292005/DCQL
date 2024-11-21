@@ -1,0 +1,54 @@
+.sub-title i{
+  margin-right: 8px;
+}
+
+.sub-title h3{
+  padding-bottom: 6px;
+  border-bottom: 1px solid gray;
+}
+
+.sub-content span{
+  margin: 4px;
+  padding-right: 6px;
+}
+
+.sub-content span.tag{
+  border-radius: 28px;
+  padding-right: 8px;
+}
+
+.sub-content span > a{
+  margin-left: 4px;
+  text-decoration: none;
+  color: white
+}
+
+.sub-content .avatar-wrapper{
+  display: inline-block;
+  position:relative;
+  width: 60px;
+  margin:0 8px
+}
+
+.sub-content .avatar-wrapper span{
+  display: none;
+  position: absolute;
+  right: -4px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-content .avatar-wrapper a{
+  display: block;
+}
+
+.sub-content .avatar-wrapper .title{
+  width: 100%;
+  text-align: center;
+  font-size: 14px
+}
+
+.sub-content .avatar-wrapper:hover span{
+  display: block;
+}
