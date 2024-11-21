@@ -1,0 +1,1 @@
+import{ai as e,av as t}from"./index-Dxllzmhq.js";const s=a=>e.get("/api/storage/mydata/"+t(a)),o=a=>e.delete("/api/storage/mydata/batch_delete/",{data:{meta_id_list:a}}),i=a=>e.get("/api/v2/storage/data/"+a);export{o as a,i as b,s as r};

@@ -1,0 +1,1 @@
+const l=[{label:"公开",value:0},{label:"一级机构成员",value:1},{label:"二级机构成员",value:2},{label:"私有",value:3}],e=[{label:"待审核",value:0},{label:"已通过",value:1},{label:"未通过",value:2}],a={0:"访客",1:"科研人员",2:"数据审核员",3:"系统管理员",4:"超级管理员"};export{a as U,e as r,l as v};

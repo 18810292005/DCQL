@@ -1,0 +1,1 @@
+import{ai as t,av as a}from"./index-Dxllzmhq.js";const s=e=>t.get(`/api/storage/review/templates/?page=${e.page}&page_size=${e.page_size}&${e.review_state!="-1"?"review_state="+e.review_state:""}`),p=e=>t.patch("/api/storage/review/templates/"+e.tid+"/",{reason:e.reason,approved:e.approved}),i=e=>t.get("/api/v1/storage/template/management"+a(e));export{s as g,p as r,i as t};
